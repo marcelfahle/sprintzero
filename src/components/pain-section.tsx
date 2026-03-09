@@ -6,7 +6,7 @@ import { SectionWrapper, Tag, Headline, Divider } from "./section-wrapper";
 const pains = [
   {
     num: "01",
-    title: "Every feature takes 3x longer than it should.",
+    title: "Every feature takes 10x longer than it should.",
     body: "And nobody can give you a straight answer why. It's not your developers. It's the thousand small decisions baked into a codebase that was 'temporary' five years ago. Every new feature has to navigate around old mistakes like a car driving through a construction zone that never ends.",
   },
   {

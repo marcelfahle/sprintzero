@@ -16,7 +16,7 @@ const offerings = [
   },
   {
     title: "Developer Workshop",
-    desc: "Half-day, hands-on. Your team learns AI-assisted development on your actual codebase. They build a real feature with AI tools before the session ends.",
+    desc: "Half-day, hands-on. We outfit your team with AI workflows, custom skills, and tooling configured for your stack. They ship a real feature before the session ends. They leave 10x faster than they walked in.",
     value: "$8K–$12K",
   },
   {

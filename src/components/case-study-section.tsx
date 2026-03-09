@@ -5,7 +5,6 @@ import { SectionWrapper, Tag, Headline, Divider } from "./section-wrapper";
 
 const stats = [
   { value: "1,600+", label: "files modernized" },
-  { value: "4", label: "days" },
   { value: "100+", label: "vulns killed" },
   { value: "0", label: "downtime" },
 ];
@@ -28,8 +27,6 @@ export function CaseStudySection() {
           <Tag>What this looks like in practice</Tag>
           <Headline>
             1,600 files.
-            <br />
-            Four days.
             <br />
             <span className="gradient-text italic">Zero downtime.</span>
           </Headline>

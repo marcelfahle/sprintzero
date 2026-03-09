@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "Do you replace our development team?",
-    a: "Opposite. We make them better. They get a modern codebase they can actually work in, hands-on training with AI tools, and custom workflows that multiply their output. Good developers on a bad codebase look mediocre. Your people are probably better than you think.",
+    a: "Opposite. We make them dangerous. They get a modern codebase they can actually work in, plus we outfit them with AI workflows, custom skills, and tooling that makes them 10x faster. Good developers on a bad codebase look mediocre. Your people are probably better than you think.",
   },
   {
     q: "What happens after the 30 days?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "$35K is a lot.",
-    a: "It is. Now add up what you're spending every month in slow velocity, rejected candidates, security exposure, and developer frustration. Most companies we talk to are burning $15K to $30K per month on this problem and don't realize it. The sprint pays for itself inside 90 days. Everything after that is pure upside.",
+    a: "It is. Now add up what you're spending every month in slow velocity, rejected candidates, security exposure, and developer frustration. Most companies we talk to are burning $15K to $30K per month on this problem and don't realize it. The sprint pays for itself inside 90 days. And your team ships 10x faster from that point on. Everything after that is pure upside.",
   },
 ];
 

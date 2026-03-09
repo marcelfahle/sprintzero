@@ -2,11 +2,11 @@
 
 const items = [
   "1,600+ files modernized",
-  "4 days start to finish",
   "0 downtime",
   "100+ vulnerabilities eliminated",
   "$35K all-in",
   "AI-ready architecture guaranteed",
+  "10x developer velocity",
   "30-day performance guarantee",
   "2 engagements per month",
 ];

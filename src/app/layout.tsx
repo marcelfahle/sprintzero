@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       ? "We Unfuck Tech Stacks — Sprint Zero"
       : "Sprint Zero — Close the AI Gap in Days",
     description:
-      "1,600 files. 4 days. Zero downtime. We modernize legacy codebases in under two weeks.",
+      "1,600 files. Zero downtime. We modernize legacy codebases and make your team 10x faster.",
     type: "website",
   },
   twitter: {

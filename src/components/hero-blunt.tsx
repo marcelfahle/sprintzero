@@ -61,8 +61,8 @@ export function HeroBlunt() {
         >
           Your code is from 2019. Your dependencies are on fire. Your developers
           are frustrated and your competitors are lapping you. We come in,
-          modernize everything in under two weeks, and train your team to ship{" "}
-          <span className="text-foreground font-medium">3x faster with AI tools.</span>
+          modernize everything, and arm your team with the tools to ship{" "}
+          <span className="text-foreground font-medium">10x faster.</span>
         </motion.p>
 
         {/* CTA */}

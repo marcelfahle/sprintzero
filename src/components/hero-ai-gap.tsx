@@ -63,7 +63,7 @@ export function HeroAIGap() {
         >
           AI coding tools need clean architecture to work. Yours is from 2019.
           That gap gets wider every week.{" "}
-          <span className="text-foreground font-medium">We close it in days.</span>
+          <span className="text-foreground font-medium">We close it — and arm your team to ship 10x faster.</span>
         </motion.p>
 
         {/* CTA */}
