@@ -44,28 +44,22 @@ export function ProcessSection() {
             transition={{ duration: 0.7, delay: i * 0.1 }}
             className="relative group"
           >
-            {/* Connector line */}
             {i < steps.length - 1 && (
-              <div className="hidden lg:block absolute left-[2.25rem] top-[5.5rem] bottom-0 w-px bg-gradient-to-b from-accent/20 to-transparent" />
+              <div className="hidden lg:block absolute left-[2.25rem] top-[5.5rem] bottom-0 w-px bg-gradient-to-b from-accent/30 to-transparent" />
             )}
 
             <div className="grid lg:grid-cols-[4.5rem_12rem_1fr] gap-4 lg:gap-8 py-10 sm:py-14 border-b border-border last:border-b-0">
-              {/* Big number */}
-              <div className="font-serif text-6xl sm:text-7xl font-bold text-white/[0.04] group-hover:text-accent/10 transition-colors duration-700 leading-none">
+              <div className="font-serif text-6xl sm:text-7xl font-bold text-muted-faint group-hover:text-accent/20 transition-colors duration-700 leading-none">
                 {step.num}
               </div>
-
-              {/* Title + timing */}
               <div>
                 <h3 className="font-serif text-2xl sm:text-3xl font-semibold group-hover:text-accent-bright transition-colors duration-500">
                   {step.title}
                 </h3>
-                <span className="mono-tag text-accent-bright/50 mt-2 inline-block">
+                <span className="mono-tag text-accent mt-2 inline-block">
                   {step.timing}
                 </span>
               </div>
-
-              {/* Body */}
               <p className="text-muted leading-[1.8] text-base lg:pt-1">
                 {step.body}
               </p>

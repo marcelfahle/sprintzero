@@ -29,15 +29,15 @@ export function Nav() {
       transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-[#060608]/90 backdrop-blur-2xl border-b border-white/[0.04]"
+          ? "bg-[#08080c]/90 backdrop-blur-2xl border-b border-white/[0.06]"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
         <a href="#" className="group flex items-center gap-3">
           <span className="font-serif text-xl font-bold tracking-tight">
-            Sprint
-            <span className="text-accent-bright">Zero</span>
+            sprint
+            <span className="text-accent-bright">zero</span>
           </span>
         </a>
 
@@ -46,7 +46,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="mono-tag text-muted hover:text-foreground transition-colors duration-300"
+              className="mono-tag text-muted-soft hover:text-foreground transition-colors duration-300"
             >
               {link.label}
             </a>
@@ -55,7 +55,7 @@ export function Nav() {
 
         <a
           href="#cta"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/25 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/40 transition-all duration-300"
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/50 transition-all duration-300"
         >
           Book Audit Call
         </a>
@@ -75,7 +75,7 @@ export function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#060608]/98 backdrop-blur-2xl border-b border-white/[0.04] overflow-hidden"
+            className="md:hidden bg-[#08080c]/98 backdrop-blur-2xl border-b border-white/[0.06] overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-1">
               {links.map((link) => (
@@ -83,7 +83,7 @@ export function Nav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-muted hover:text-foreground transition-colors py-3 border-b border-white/[0.04] mono-tag"
+                  className="text-muted hover:text-foreground transition-colors py-3 border-b border-white/[0.06] mono-tag"
                 >
                   {link.label}
                 </a>
@@ -91,7 +91,7 @@ export function Nav() {
               <a
                 href="#cta"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 text-center py-3 rounded-full bg-accent/10 border border-accent/25 text-accent-bright text-sm font-medium"
+                className="mt-4 text-center py-3 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium"
               >
                 Book Audit Call
               </a>

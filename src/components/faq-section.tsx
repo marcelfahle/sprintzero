@@ -49,7 +49,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
         <span className="font-serif text-lg sm:text-xl md:text-2xl font-medium group-hover:text-accent-bright transition-colors duration-500 pr-8 leading-snug">
           {faq.q}
         </span>
-        <span className="shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:border-accent/30 transition-colors mt-1">
+        <span className="shrink-0 w-8 h-8 rounded-full border border-border-strong flex items-center justify-center group-hover:border-accent/40 transition-colors mt-1">
           {open ? (
             <Minus className="w-3.5 h-3.5 text-accent-bright" />
           ) : (

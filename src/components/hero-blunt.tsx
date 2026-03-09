@@ -6,14 +6,14 @@ import { ArrowRight } from "lucide-react";
 export function HeroBlunt() {
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden">
-      {/* Aggressive warm orbs */}
+      {/* Warm orbs */}
       <div className="absolute top-[20%] left-[15%] w-[500px] h-[500px] bg-red-500/[0.06] rounded-full blur-[140px] animate-drift" />
       <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-orange-500/[0.05] rounded-full blur-[120px] animate-drift" style={{ animationDelay: "3s" }} />
       <div className="absolute bottom-[25%] left-[40%] w-[500px] h-[500px] bg-amber-500/[0.04] rounded-full blur-[160px]" />
 
-      {/* Diagonal lines pattern */}
+      {/* Diagonal lines */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
           backgroundImage: `repeating-linear-gradient(
             -45deg,
@@ -33,13 +33,13 @@ export function HeroBlunt() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mb-10"
         >
-          <span className="mono-tag text-red-400 flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-red-400 pulse-soft" />
+          <span className="mono-tag text-accent-bright flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-accent-bright pulse-soft" />
             For engineering teams buried in technical debt
           </span>
         </motion.div>
 
-        {/* Headline — max impact */}
+        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export function HeroBlunt() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.2, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent origin-left"
+          className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent origin-left"
         />
       </div>
 
@@ -102,9 +102,9 @@ export function HeroBlunt() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-5 h-8 rounded-full border border-white/10 flex justify-center pt-1.5"
+          className="w-5 h-8 rounded-full border border-white/15 flex justify-center pt-1.5"
         >
-          <div className="w-1 h-2 rounded-full bg-orange-400/60" />
+          <div className="w-1 h-2 rounded-full bg-accent-bright/70" />
         </motion.div>
       </motion.div>
     </section>

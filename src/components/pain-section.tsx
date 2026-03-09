@@ -52,11 +52,9 @@ export function PainSection() {
           >
             {i > 0 && <Divider />}
             <div className="group py-10 sm:py-14 grid grid-cols-1 lg:grid-cols-[4rem_1fr] gap-6 lg:gap-10">
-              {/* Number */}
-              <span className="mono-tag text-accent/30 text-2xl font-bold pt-1 hidden lg:block">
+              <span className="mono-tag text-muted-faint text-2xl font-bold pt-1 hidden lg:block">
                 {pain.num}
               </span>
-
               <div>
                 <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-semibold leading-snug mb-4 group-hover:text-accent-bright transition-colors duration-500">
                   {pain.title}

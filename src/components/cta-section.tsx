@@ -7,7 +7,6 @@ import { ArrowRight } from "lucide-react";
 export function CTASection() {
   return (
     <SectionWrapper id="cta" className="relative overflow-hidden">
-      {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-accent/[0.06] rounded-full blur-[180px] pointer-events-none" />
 
       <div className="relative text-center max-w-3xl mx-auto">
@@ -33,14 +32,14 @@ export function CTASection() {
             href="https://cal.com/marcelfahle/sprint-zero-audit"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 px-12 py-5 rounded-full bg-accent hover:bg-accent-dim transition-all duration-300 text-white font-medium text-lg glow-accent"
+            className="group inline-flex items-center gap-3 px-12 py-5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-lg glow-fire"
           >
             Book Your Free Audit Call
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
 
-          <p className="mt-8 mono-tag text-muted/40">
-            <span className="text-accent-bright/60">2 spots per month</span>
+          <p className="mt-8 mono-tag text-muted-soft">
+            <span className="text-accent-bright">2 spots per month</span>
             {" "}· First come, first served
           </p>
         </motion.div>
