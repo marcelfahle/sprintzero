@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SectionWrapper, Tag, SectionTitle } from "./section-wrapper";
-import { ChevronDown } from "lucide-react";
+import { SectionWrapper, Tag, Headline, Divider } from "./section-wrapper";
+import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
     q: "How does one team do in a week what takes most teams months?",
-    a: "AI-powered development workflows. We use coordinated AI agents that process thousands of files while maintaining consistency across the entire codebase. We've spent a year building and testing this toolkit. The bottleneck in traditional migrations is human reading speed and context-switching. Our system doesn't have those limits. We provide the architecture decisions and quality control. The AI handles the mechanical transformation at scale.",
+    a: "AI-powered development workflows. We use coordinated AI agents that process thousands of files while maintaining consistency across the entire codebase. The bottleneck in traditional migrations is human reading speed and context-switching. Our system doesn't have those limits. We provide the architecture decisions and quality control. The AI handles the mechanical transformation at scale.",
   },
   {
     q: "Will this break our production environment?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "What if our stack isn't React?",
-    a: "The approach works across React, Angular, Vue, and older frameworks. The specific tooling changes but the methodology is the same. Book the audit call. We'll be honest about whether we can help.",
+    a: "The approach works across React, Angular, Vue, and older frameworks. The specific tooling changes but the methodology is the same. Book the audit call — we'll be honest about whether we can help.",
   },
   {
     q: "Do you replace our development team?",
@@ -37,24 +37,25 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="border-b border-border"
+      transition={{ duration: 0.4, delay: index * 0.04 }}
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-6 text-left group"
+        className="w-full flex items-start justify-between py-8 text-left group"
       >
-        <span className="text-base sm:text-lg font-medium group-hover:text-accent-bright transition-colors pr-4">
+        <span className="font-serif text-lg sm:text-xl md:text-2xl font-medium group-hover:text-accent-bright transition-colors duration-500 pr-8 leading-snug">
           {faq.q}
         </span>
-        <ChevronDown
-          className={`w-5 h-5 text-muted shrink-0 transition-transform duration-300 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
+        <span className="shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:border-accent/30 transition-colors mt-1">
+          {open ? (
+            <Minus className="w-3.5 h-3.5 text-accent-bright" />
+          ) : (
+            <Plus className="w-3.5 h-3.5 text-muted" />
+          )}
+        </span>
       </button>
       <AnimatePresence>
         {open && (
@@ -62,13 +63,16 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="text-muted leading-relaxed pb-6">{faq.a}</p>
+            <p className="text-muted leading-[1.8] pb-8 max-w-2xl text-base">
+              {faq.a}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
+      <Divider />
     </motion.div>
   );
 }
@@ -78,9 +82,14 @@ export function FAQSection() {
     <SectionWrapper id="faq">
       <div className="max-w-3xl mx-auto">
         <Tag>Questions you probably have</Tag>
-        <SectionTitle>Let&apos;s get these out of the way.</SectionTitle>
+        <Headline>
+          Let&apos;s get these
+          <br />
+          <span className="italic text-muted">out of the way.</span>
+        </Headline>
 
-        <div className="mt-8">
+        <div className="mt-12">
+          <Divider />
           {faqs.map((faq, i) => (
             <FAQItem key={i} faq={faq} index={i} />
           ))}

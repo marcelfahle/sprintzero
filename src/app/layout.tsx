@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,27 +13,32 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+});
+
 const isBlunt = process.env.NEXT_PUBLIC_VARIANT === "blunt";
 
 export const metadata: Metadata = {
   title: isBlunt
-    ? "We Unfuck Tech Stacks | Stack Sprint"
-    : "Your Competitors Ship with AI. Your Codebase Won't Let You. | Stack Sprint",
+    ? "We Unfuck Tech Stacks — Stack Sprint"
+    : "Close the AI Gap in Days — Stack Sprint",
   description:
     "We modernize legacy codebases in under two weeks with AI-powered workflows. Full codebase modernization, AI-ready architecture, developer training. $35K all-in.",
   openGraph: {
     title: isBlunt
-      ? "We Unfuck Tech Stacks | Stack Sprint"
+      ? "We Unfuck Tech Stacks — Stack Sprint"
       : "Stack Sprint — Close the AI Gap in Days",
     description:
-      "We modernize legacy codebases in under two weeks. 1,600 files. 4 days. Zero downtime.",
+      "1,600 files. 4 days. Zero downtime. We modernize legacy codebases in under two weeks.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: isBlunt
-      ? "We Unfuck Tech Stacks"
-      : "Stack Sprint — Close the AI Gap in Days",
+    title: isBlunt ? "We Unfuck Tech Stacks" : "Stack Sprint — Close the AI Gap",
     description:
       "Legacy codebase modernization in under 2 weeks. AI-ready architecture guaranteed.",
   },
@@ -46,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased noise`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased font-sans noise`}
       >
         {children}
       </body>

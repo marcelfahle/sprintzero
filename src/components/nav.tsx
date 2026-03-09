@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Problem", href: "#pain" },
-  { label: "Solution", href: "#process" },
   { label: "Results", href: "#case-study" },
+  { label: "Process", href: "#process" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -17,51 +17,52 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-[#050507]/80 backdrop-blur-xl border-b border-white/[0.06]"
+          ? "bg-[#060608]/90 backdrop-blur-2xl border-b border-white/[0.04]"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-            <Zap className="w-4 h-4 text-accent-bright" />
-          </div>
-          <span className="font-semibold tracking-tight">Stack Sprint</span>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
+        <a href="#" className="group flex items-center gap-3">
+          <span className="font-serif text-xl font-bold tracking-tight">
+            Stack
+            <span className="text-accent-bright">Sprint</span>
+          </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="mono-tag text-muted hover:text-foreground transition-colors duration-300"
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="#cta"
-            className="text-sm font-medium px-4 py-2 rounded-lg bg-accent hover:bg-accent-bright transition-colors text-white"
-          >
-            Book Audit Call
-          </a>
         </div>
+
+        <a
+          href="#cta"
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/25 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/40 transition-all duration-300"
+        >
+          Book Audit Call
+        </a>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-muted hover:text-foreground"
+          className="md:hidden text-muted hover:text-foreground p-2"
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -73,15 +74,16 @@ export function Nav() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#050507]/95 backdrop-blur-xl border-b border-white/[0.06] overflow-hidden"
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-[#060608]/98 backdrop-blur-2xl border-b border-white/[0.04] overflow-hidden"
           >
-            <div className="px-6 py-4 flex flex-col gap-3">
+            <div className="px-6 py-6 flex flex-col gap-1">
               {links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm text-muted hover:text-foreground transition-colors py-2"
+                  className="text-muted hover:text-foreground transition-colors py-3 border-b border-white/[0.04] mono-tag"
                 >
                   {link.label}
                 </a>
@@ -89,7 +91,7 @@ export function Nav() {
               <a
                 href="#cta"
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium px-4 py-3 rounded-lg bg-accent hover:bg-accent-bright transition-colors text-white text-center mt-2"
+                className="mt-4 text-center py-3 rounded-full bg-accent/10 border border-accent/25 text-accent-bright text-sm font-medium"
               >
                 Book Audit Call
               </a>

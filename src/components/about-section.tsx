@@ -1,57 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper, Tag, SectionTitle } from "./section-wrapper";
+import { SectionWrapper, Tag, Headline } from "./section-wrapper";
 
 export function AboutSection() {
   return (
     <SectionWrapper id="about">
-      <div className="max-w-3xl">
-        <Tag>Who does this</Tag>
-        <SectionTitle>
-          I haven&apos;t written a single line of code
-          <br />
-          <span className="gradient-text">by hand since June 2024.</span>
-        </SectionTitle>
+      <div className="grid lg:grid-cols-[1fr_1px_1fr] gap-12 lg:gap-16 items-start">
+        {/* Left — headline + attribution */}
+        <div>
+          <Tag>Who does this</Tag>
+          <Headline>
+            I haven&apos;t written a single line of code by hand{" "}
+            <span className="gradient-text italic">since June 2024.</span>
+          </Headline>
+          <div className="mt-8 mono-tag text-muted/40">
+            — Marcel Fahle
+          </div>
+          <p className="text-sm text-muted/50 mt-2">
+            15+ years building software · SaaS · Mobile · Elixir · TypeScript
+          </p>
+        </div>
 
+        {/* Divider */}
+        <div className="hidden lg:block w-px bg-border self-stretch" />
+
+        {/* Right — body */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-5 text-muted leading-relaxed"
+          className="space-y-6 text-muted leading-[1.8] text-base"
         >
           <p>
-            Weird thing to say on a page selling code modernization. But that&apos;s the whole point.
+            Weird thing to say on a page selling code modernization. But
+            that&apos;s the whole point.
           </p>
           <p>
-            I&apos;ve spent the last year doing one thing: building, testing, and refining AI-powered 
-            development workflows. Pitting models against each other. Building custom agents and skills. 
-            Running coordinated AI systems across entire codebases at a scale that would be insane to 
+            I&apos;ve spent the last year doing one thing: building, testing,
+            and refining AI-powered development workflows. Pitting models
+            against each other. Building custom agents and skills. Running
+            coordinated AI systems across entire codebases at a scale that
+            would be{" "}
+            <em className="font-serif text-foreground/80">insane</em> to
             attempt by hand.
           </p>
           <p>
-            The result is a toolkit that turns <span className="text-foreground font-medium">three months of migration work into days</span>. 
-            Not because anyone types faster. Because the approach is fundamentally different.
+            The result is a toolkit that turns{" "}
+            <span className="text-foreground font-medium">
+              three months of migration work into days
+            </span>
+            . Not because anyone types faster. Because the approach is
+            fundamentally different.
           </p>
-          <p>
-            Before this, 15+ years building software. SaaS products, mobile apps, Elixir, TypeScript, 
-            more legacy codebases than I care to count. I know what good architecture looks like because 
-            I&apos;ve lived with the consequences when it&apos;s bad.
+          <p className="text-foreground font-medium border-l-2 border-accent/40 pl-5 py-1 font-serif text-lg italic">
+            We&apos;re not selling hours. We&apos;re selling the velocity your
+            team should already have.
           </p>
-          <p className="text-foreground font-medium border-l-2 border-accent pl-4">
-            We&apos;re not selling hours. We&apos;re selling the velocity your team should already have.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 text-sm text-muted"
-        >
-          — Marcel Fahle
         </motion.div>
       </div>
     </SectionWrapper>

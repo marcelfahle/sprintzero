@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav";
 import { HeroAIGap } from "@/components/hero-ai-gap";
 import { HeroBlunt } from "@/components/hero-blunt";
+import { MarqueeStrip } from "@/components/marquee-strip";
 import { PainSection } from "@/components/pain-section";
 import { CostSection } from "@/components/cost-section";
 import { ComparisonSection } from "@/components/comparison-section";
@@ -21,6 +22,7 @@ export default function Home() {
     <main>
       <Nav />
       {isBlunt ? <HeroBlunt /> : <HeroAIGap />}
+      <MarqueeStrip />
       <PainSection />
       <CostSection />
       <ComparisonSection />

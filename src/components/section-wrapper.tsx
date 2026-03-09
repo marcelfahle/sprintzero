@@ -7,45 +7,65 @@ export function SectionWrapper({
   children,
   id,
   className = "",
+  wide = false,
 }: {
   children: ReactNode;
   id?: string;
   className?: string;
+  wide?: boolean;
 }) {
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative py-24 sm:py-32 ${className}`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative py-28 sm:py-36 ${className}`}
     >
-      <div className="max-w-6xl mx-auto px-6">{children}</div>
+      <div className={`${wide ? "max-w-7xl" : "max-w-5xl"} mx-auto px-6 sm:px-8`}>
+        {children}
+      </div>
     </motion.section>
   );
 }
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent-bright text-xs font-medium tracking-wider uppercase mb-4">
+    <span className="mono-tag inline-block text-accent-bright mb-6 tracking-[0.2em]">
       {children}
     </span>
   );
 }
 
-export function SectionTitle({
+export function Headline({
   children,
   className = "",
+  serif = true,
 }: {
   children: ReactNode;
   className?: string;
+  serif?: boolean;
 }) {
   return (
     <h2
-      className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-6 ${className}`}
+      className={`${
+        serif ? "font-serif" : "font-sans"
+      } text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6 ${className}`}
     >
       {children}
     </h2>
   );
+}
+
+export function Subhead({ children }: { children: ReactNode }) {
+  return (
+    <p className="text-lg sm:text-xl text-muted leading-relaxed max-w-2xl">
+      {children}
+    </p>
+  );
+}
+
+export function Divider() {
+  return <div className="editorial-rule my-0" />;
 }

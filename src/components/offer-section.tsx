@@ -1,76 +1,72 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper, Tag, SectionTitle } from "./section-wrapper";
-import { Code2, Cpu, Users, Wand2, Headphones, BookOpen } from "lucide-react";
+import { SectionWrapper, Tag, Headline } from "./section-wrapper";
 
 const offerings = [
   {
-    icon: Code2,
     title: "Full Codebase Modernization",
     desc: "We tear out the dead weight and rebuild the architecture with modern patterns. Class components become hooks. Outdated state management gets replaced. The spaghetti becomes something your team can actually reason about.",
-    value: "$120,000 – $180,000",
+    value: "$120K–$180K",
   },
   {
-    icon: Cpu,
     title: "AI-Ready Architecture",
-    desc: "TypeScript foundations. Clean interfaces. Testable structure. This is the difference between AI tools generating garbage and AI tools that actually work on your code.",
-    value: "$40,000 – $60,000",
+    desc: "TypeScript foundations. Clean interfaces. Testable structure. The difference between AI tools generating garbage and AI tools that actually work on your code.",
+    value: "$40K–$60K",
   },
   {
-    icon: Users,
     title: "Developer Workshop",
-    desc: "Half-day, hands-on. We train your team on the new architecture and teach them AI-assisted development using your actual codebase. They build a real feature with AI tools before the session ends.",
-    value: "$8,000 – $12,000",
+    desc: "Half-day, hands-on. Your team learns AI-assisted development on your actual codebase. They build a real feature with AI tools before the session ends.",
+    value: "$8K–$12K",
   },
   {
-    icon: Wand2,
     title: "Custom AI Skills Package",
-    desc: "The exact workflows, skills files, and AI commands we've built and tested. Configured for your specific stack. Your developers use them starting the day we hand off.",
-    value: "$15,000 – $25,000",
+    desc: "The exact workflows, skills files, and AI commands we've spent a year building. Configured for your specific stack. Your developers use them starting day one.",
+    value: "$15K–$25K",
   },
   {
-    icon: Headphones,
     title: "30-Day Support Window",
-    desc: "Async access to our team. Code review on the first features shipped on the new architecture. Check-in calls at day 14 and 30 to make sure velocity is tracking.",
-    value: "$10,000 – $15,000",
+    desc: "Async access to our team. Code review on the first features shipped on the new architecture. Check-in calls at day 14 and 30.",
+    value: "$10K–$15K",
   },
   {
-    icon: BookOpen,
     title: "Hiring Playbook",
-    desc: "Interview questions, evaluation rubrics, and red flags calibrated to your new stack. One bad hire at $80K salary costs you north of $200K.",
-    value: "One bad hire = $200K+",
+    desc: "Interview questions, evaluation rubrics, and red flags calibrated to your new stack. One bad hire at $80K costs you north of $200K.",
+    value: "$200K+ saved",
   },
 ];
 
 export function OfferSection() {
   return (
-    <SectionWrapper id="offer">
+    <SectionWrapper id="offer" wide>
       <Tag>Everything you get</Tag>
-      <SectionTitle>
+      <Headline>
         Nothing held back.
         <br />
-        <span className="text-muted">Nothing extra to buy.</span>
-      </SectionTitle>
+        <span className="italic text-muted">Nothing extra to buy.</span>
+      </Headline>
 
-      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
         {offerings.map((item, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="group rounded-2xl border border-border bg-surface-2/50 p-6 hover:border-accent/20 transition-all duration-300"
+            transition={{ duration: 0.5, delay: i * 0.06 }}
+            className="group bg-surface-2 p-7 sm:p-8 hover:bg-surface-3 transition-colors duration-500 flex flex-col"
           >
-            <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-              <item.icon className="w-5 h-5 text-accent-bright" />
+            <div className="flex items-start justify-between mb-4">
+              <h3 className="font-serif text-lg sm:text-xl font-semibold group-hover:text-accent-bright transition-colors duration-500 leading-snug max-w-[80%]">
+                {item.title}
+              </h3>
+              <span className="mono-tag text-accent/40 text-[0.6rem] shrink-0 pt-1">
+                {item.value}
+              </span>
             </div>
-            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-            <p className="text-sm text-muted leading-relaxed mb-4">{item.desc}</p>
-            <div className="text-xs font-mono text-accent-bright/70 border-t border-border pt-3">
-              Value: {item.value}
-            </div>
+            <p className="text-sm text-muted leading-[1.7] flex-1">
+              {item.desc}
+            </p>
           </motion.div>
         ))}
       </div>
