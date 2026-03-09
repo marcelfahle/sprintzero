@@ -150,7 +150,7 @@ export function BookingModal({
 
             {/* CTA */}
             <a
-              href="https://savvycal.com/marcelfahle/sprint-zero"
+              href="https://savvycal.com/marcel-from-bold/sprint-zero"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-base glow-fire"
