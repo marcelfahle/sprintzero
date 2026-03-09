@@ -7,25 +7,22 @@ export function AboutSection() {
   return (
     <SectionWrapper id="about">
       <div className="grid lg:grid-cols-[1fr_1px_1fr] gap-12 lg:gap-16 items-start">
-        {/* Left — headline + attribution */}
         <div>
           <Tag>Who does this</Tag>
           <Headline>
             I haven&apos;t written a single line of code by hand{" "}
             <span className="gradient-text italic">since June 2024.</span>
           </Headline>
-          <div className="mt-8 mono-tag text-muted/40">
+          <div className="mt-8 mono-tag text-muted-soft">
             — Marcel Fahle
           </div>
-          <p className="text-sm text-muted/50 mt-2">
+          <p className="text-sm text-muted mt-2">
             15+ years building software · SaaS · Mobile · Elixir · TypeScript
           </p>
         </div>
 
-        {/* Divider */}
-        <div className="hidden lg:block w-px bg-border self-stretch" />
+        <div className="hidden lg:block w-px bg-border-strong self-stretch" />
 
-        {/* Right — body */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +39,7 @@ export function AboutSection() {
             against each other. Building custom agents and skills. Running
             coordinated AI systems across entire codebases at a scale that
             would be{" "}
-            <em className="font-serif text-foreground/80">insane</em> to
+            <em className="font-serif text-foreground">insane</em> to
             attempt by hand.
           </p>
           <p>
@@ -53,7 +50,7 @@ export function AboutSection() {
             . Not because anyone types faster. Because the approach is
             fundamentally different.
           </p>
-          <p className="text-foreground font-medium border-l-2 border-accent/40 pl-5 py-1 font-serif text-lg italic">
+          <p className="text-foreground font-medium border-l-2 border-accent pl-5 py-1 font-serif text-lg italic">
             We&apos;re not selling hours. We&apos;re selling the velocity your
             team should already have.
           </p>

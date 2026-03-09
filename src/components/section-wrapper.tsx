@@ -41,17 +41,13 @@ export function Tag({ children }: { children: ReactNode }) {
 export function Headline({
   children,
   className = "",
-  serif = true,
 }: {
   children: ReactNode;
   className?: string;
-  serif?: boolean;
 }) {
   return (
     <h2
-      className={`${
-        serif ? "font-serif" : "font-sans"
-      } text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6 ${className}`}
+      className={`font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6 ${className}`}
     >
       {children}
     </h2>

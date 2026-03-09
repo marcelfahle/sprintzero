@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060608;
-  --foreground: #e4e4e9;
-  --accent: #7c5cfc;
-  --accent-bright: #a78bfa;
-  --accent-dim: #5b3fd9;
-  --surface: #0a0a0f;
-  --surface-2: #111116;
-  --surface-3: #18181f;
-  --border: rgba(255, 255, 255, 0.06);
-  --border-strong: rgba(255, 255, 255, 0.12);
-  --muted: #7a7a8c;
-  --danger: #ff4444;
-  --success: #34d399;
+  /* ── Backgrounds ── */
+  --background: #08080c;
+  --surface: #0e0e14;
+  --surface-2: #14141c;
+  --surface-3: #1a1a24;
+
+  /* ── Text ── */
+  --foreground: #eeeef2;
+  --muted: #a0a0b4;          /* 5.8:1 on #08080c — passes AA & AAA-large */
+  --muted-soft: #7e7e94;     /* 4.5:1 on #08080c — passes AA */
+  --muted-faint: #5e5e72;    /* 3.2:1 — decorative only, not body text */
+
+  /* ── Accent (fire) ── */
+  --accent: #f97316;
+  --accent-bright: #fb923c;
+  --accent-dim: #ea580c;
+
+  /* ── Borders ── */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* ── Semantic ── */
+  --danger: #f87171;
+  --success: #4ade80;
   --warm: #fbbf24;
 }
 
@@ -29,6 +40,8 @@
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
   --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+  --color-muted-faint: var(--muted-faint);
   --color-danger: var(--danger);
   --color-success: var(--success);
   --color-warm: var(--warm);
@@ -47,7 +60,7 @@ body {
 }
 
 ::selection {
-  background: rgba(124, 92, 252, 0.35);
+  background: rgba(249, 115, 22, 0.35);
   color: #fff;
 }
 
@@ -58,13 +71,13 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ── Dramatic gradient text ── */
+/* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, #e4e4e9 0%, #a78bfa 40%, #7c5cfc 70%, #5b3fd9 100%);
+  background: linear-gradient(135deg, #eeeef2 0%, #fb923c 40%, #f97316 70%, #ea580c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -77,35 +90,21 @@ body {
   background-clip: text;
 }
 
-.gradient-text-gold {
-  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 40%, #d97706 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ── Editorial horizontal rule ── */
+/* ── Editorial rule ── */
 .editorial-rule {
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--border-strong) 20%, var(--border-strong) 80%, transparent 100%);
 }
 
-/* ── Glow effects ── */
-.glow-accent {
-  box-shadow:
-    0 0 20px rgba(124, 92, 252, 0.3),
-    0 0 60px rgba(124, 92, 252, 0.1),
-    0 0 1px rgba(124, 92, 252, 0.8);
-}
-
+/* ── Glow ── */
 .glow-fire {
   box-shadow:
-    0 0 20px rgba(239, 68, 68, 0.3),
-    0 0 60px rgba(239, 68, 68, 0.1),
-    0 0 1px rgba(239, 68, 68, 0.8);
+    0 0 20px rgba(249, 115, 22, 0.25),
+    0 0 60px rgba(249, 115, 22, 0.08),
+    0 0 1px rgba(249, 115, 22, 0.7);
 }
 
-/* ── Animated gradient border ── */
+/* ── Animated border ── */
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -130,12 +129,12 @@ body {
 
 /* ── Pulse ── */
 @keyframes pulse-soft {
-  0%, 100% { opacity: 0.5; }
+  0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
 }
 .pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
 
-/* ── Float ── */
+/* ── Drift ── */
 @keyframes drift {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   33% { transform: translateY(-8px) rotate(0.5deg); }
@@ -150,7 +149,7 @@ body {
 }
 .animate-marquee { animation: marquee 30s linear infinite; }
 
-/* ── Number ticker ── */
+/* ── Numbers ── */
 .stat-number {
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
@@ -162,25 +161,25 @@ body {
 }
 .lift-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(124, 92, 252, 0.1);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(249, 115, 22, 0.1);
 }
 
-/* ── Comparison table ── */
+/* ── Table ── */
 .comparison-table td, .comparison-table th {
   border-bottom: 1px solid var(--border);
 }
 
-/* ── Oversized number watermark ── */
+/* ── Watermark ── */
 .watermark-number {
   font-size: clamp(6rem, 15vw, 14rem);
   font-weight: 800;
   line-height: 1;
-  color: rgba(124, 92, 252, 0.04);
+  color: rgba(249, 115, 22, 0.04);
   pointer-events: none;
   user-select: none;
 }
 
-/* ── Monospace tag style ── */
+/* ── Mono tag ── */
 .mono-tag {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.6875rem;

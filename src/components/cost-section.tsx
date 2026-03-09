@@ -13,7 +13,6 @@ const stats = [
 export function CostSection() {
   return (
     <SectionWrapper id="cost" className="relative overflow-hidden">
-      {/* Giant watermark */}
       <div className="absolute -right-10 top-1/2 -translate-y-1/2 watermark-number font-serif select-none">
         $25K
       </div>
@@ -31,8 +30,7 @@ export function CostSection() {
           quo costs a team of five:
         </p>
 
-        {/* Stats — dramatic oversized numbers */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border-strong rounded-2xl overflow-hidden mb-16">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -45,21 +43,20 @@ export function CostSection() {
               <div className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold stat-number gradient-text mb-1">
                 {stat.value}
               </div>
-              <div className="mono-tag text-accent-bright/60 mb-3">{stat.label}</div>
+              <div className="mono-tag text-accent-bright mb-3">{stat.label}</div>
               <p className="text-sm text-muted leading-relaxed">{stat.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Callout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative rounded-2xl border border-red-500/15 bg-red-500/[0.03] p-8 sm:p-10"
+          className="relative rounded-2xl border border-danger/20 bg-danger/[0.04] p-8 sm:p-10"
         >
           <div className="absolute -top-3 left-8">
-            <span className="mono-tag text-danger bg-[#060608] px-3 py-0.5">
+            <span className="mono-tag text-danger bg-background px-3 py-0.5">
               Do the math
             </span>
           </div>

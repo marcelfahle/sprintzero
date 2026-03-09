@@ -28,14 +28,14 @@ export function ComparisonSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="mt-16 rounded-2xl border border-border overflow-hidden"
+        className="mt-16 rounded-2xl border border-border-strong overflow-hidden"
       >
         <div className="overflow-x-auto">
           <table className="comparison-table w-full text-left min-w-[500px]">
             <thead>
               <tr className="bg-surface-2">
-                <th className="p-5 sm:p-6 mono-tag text-muted font-normal w-[30%]" />
-                <th className="p-5 sm:p-6 mono-tag text-muted/60 font-normal w-[35%]">
+                <th className="p-5 sm:p-6 mono-tag text-muted-soft font-normal w-[30%]" />
+                <th className="p-5 sm:p-6 mono-tag text-muted-soft font-normal w-[35%]">
                   Internal / Consultancy
                 </th>
                 <th className="p-5 sm:p-6 w-[35%]">
@@ -50,12 +50,12 @@ export function ComparisonSection() {
               {rows.map((row, i) => (
                 <tr
                   key={i}
-                  className="bg-surface hover:bg-surface-2/50 transition-colors duration-300"
+                  className="bg-surface hover:bg-surface-2 transition-colors duration-300"
                 >
                   <td className="p-5 sm:p-6 text-sm font-medium">{row.label}</td>
-                  <td className="p-5 sm:p-6 text-sm text-muted/60">
+                  <td className="p-5 sm:p-6 text-sm text-muted-soft">
                     <span className="flex items-center gap-2">
-                      {row.hasBool && <X className="w-3.5 h-3.5 text-red-400/60 shrink-0" />}
+                      {row.hasBool && <X className="w-3.5 h-3.5 text-danger shrink-0" />}
                       {row.old}
                     </span>
                   </td>

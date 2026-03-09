@@ -31,8 +31,7 @@ export function ICPSection() {
         kind of company.
       </Headline>
 
-      <div className="mt-16 grid md:grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
-        {/* Fit */}
+      <div className="mt-16 grid md:grid-cols-2 gap-px bg-border-strong rounded-2xl overflow-hidden">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -52,7 +51,6 @@ export function ICPSection() {
           </div>
         </motion.div>
 
-        {/* Not fit */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -60,14 +58,14 @@ export function ICPSection() {
           transition={{ delay: 0.1 }}
           className="bg-surface p-8 sm:p-10"
         >
-          <h3 className="font-serif text-xl font-semibold text-muted/60 mb-8">
+          <h3 className="font-serif text-xl font-semibold text-muted-soft mb-8">
             Probably not a fit if —
           </h3>
           <div className="space-y-5">
             {notFits.map((item, i) => (
               <div key={i} className="flex items-start gap-4">
-                <Minus className="w-4 h-4 text-muted/30 shrink-0 mt-1" />
-                <span className="text-sm text-muted/60 leading-relaxed">{item}</span>
+                <Minus className="w-4 h-4 text-muted-soft shrink-0 mt-1" />
+                <span className="text-sm text-muted-soft leading-relaxed">{item}</span>
               </div>
             ))}
           </div>

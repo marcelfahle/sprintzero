@@ -52,8 +52,7 @@ export function CaseStudySection() {
           </div>
         </div>
 
-        {/* Stats column — vertical stack */}
-        <div className="flex flex-row lg:flex-col gap-px bg-border rounded-2xl overflow-hidden lg:w-48">
+        <div className="flex flex-row lg:flex-col gap-px bg-border-strong rounded-2xl overflow-hidden lg:w-48">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -66,7 +65,7 @@ export function CaseStudySection() {
               <div className="font-serif text-3xl sm:text-4xl font-bold stat-number mb-1">
                 {stat.value}
               </div>
-              <div className="mono-tag text-muted text-[0.6rem]">{stat.label}</div>
+              <div className="mono-tag text-muted-soft">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -74,21 +73,20 @@ export function CaseStudySection() {
 
       <Divider />
 
-      {/* Tech details */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="pt-12"
       >
-        <h3 className="mono-tag text-accent-bright/50 mb-8">
+        <h3 className="mono-tag text-accent-bright mb-8">
           For the engineers in the room
         </h3>
         <div className="grid sm:grid-cols-2 gap-x-12 gap-y-4">
           {techDetails.map((detail, i) => (
             <div key={i} className="flex items-start gap-3 py-1">
-              <span className="mt-2 w-1 h-1 rounded-full bg-accent-bright/40 shrink-0" />
-              <span className="text-sm text-muted/80 leading-relaxed">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+              <span className="text-sm text-muted leading-relaxed">
                 {detail}
               </span>
             </div>
