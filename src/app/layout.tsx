@@ -24,21 +24,21 @@ const isBlunt = true;
 
 export const metadata: Metadata = {
   title: isBlunt
-    ? "We Unfuck Tech Stacks — Stack Sprint"
-    : "Close the AI Gap in Days — Stack Sprint",
+    ? "We Unfuck Tech Stacks — Sprint Zero"
+    : "Close the AI Gap in Days — Sprint Zero",
   description:
     "We modernize legacy codebases in under two weeks with AI-powered workflows. Full codebase modernization, AI-ready architecture, developer training. $35K all-in.",
   openGraph: {
     title: isBlunt
-      ? "We Unfuck Tech Stacks — Stack Sprint"
-      : "Stack Sprint — Close the AI Gap in Days",
+      ? "We Unfuck Tech Stacks — Sprint Zero"
+      : "Sprint Zero — Close the AI Gap in Days",
     description:
       "1,600 files. 4 days. Zero downtime. We modernize legacy codebases in under two weeks.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: isBlunt ? "We Unfuck Tech Stacks" : "Stack Sprint — Close the AI Gap",
+    title: isBlunt ? "We Unfuck Tech Stacks" : "Sprint Zero — Close the AI Gap",
     description:
       "Legacy codebase modernization in under 2 weeks. AI-ready architecture guaranteed.",
   },

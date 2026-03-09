@@ -41,7 +41,7 @@ export function ComparisonSection() {
                 <th className="p-5 sm:p-6 w-[35%]">
                   <span className="mono-tag text-accent-bright font-normal flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent-bright" />
-                    Stack Sprint
+                    Sprint Zero
                   </span>
                 </th>
               </tr>

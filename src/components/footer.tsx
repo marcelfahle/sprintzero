@@ -7,7 +7,7 @@ export function Footer() {
         <Divider />
         <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-serif text-sm text-muted/40">
-            Stack Sprint · Marcel Fahle · 2026
+            Sprint Zero · Marcel Fahle · 2026
           </span>
           <div className="flex items-center gap-8">
             <a

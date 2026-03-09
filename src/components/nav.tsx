@@ -36,8 +36,8 @@ export function Nav() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
         <a href="#" className="group flex items-center gap-3">
           <span className="font-serif text-xl font-bold tracking-tight">
-            Stack
-            <span className="text-accent-bright">Sprint</span>
+            Sprint
+            <span className="text-accent-bright">Zero</span>
           </span>
         </a>
 
