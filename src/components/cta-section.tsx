@@ -30,7 +30,7 @@ export function CTASection() {
           </p>
 
           <a
-            href="https://cal.com/marcelfahle/stack-sprint-audit"
+            href="https://cal.com/marcelfahle/sprint-zero-audit"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 px-12 py-5 rounded-full bg-accent hover:bg-accent-dim transition-all duration-300 text-white font-medium text-lg glow-accent"
