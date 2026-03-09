@@ -65,7 +65,7 @@ export function CaseStudySection() {
               <div className="font-serif text-3xl sm:text-4xl font-bold stat-number mb-1">
                 {stat.value}
               </div>
-              <div className="mono-tag text-muted-soft">{stat.label}</div>
+              <div className="mono-tag text-muted">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -86,7 +86,7 @@ export function CaseStudySection() {
           {techDetails.map((detail, i) => (
             <div key={i} className="flex items-start gap-3 py-1">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-              <span className="text-sm text-muted leading-relaxed">
+              <span className="text-base text-muted leading-relaxed">
                 {detail}
               </span>
             </div>

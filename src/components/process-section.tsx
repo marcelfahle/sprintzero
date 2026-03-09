@@ -8,7 +8,7 @@ const steps = [
     num: "01",
     title: "The Audit Call",
     timing: "Day 0",
-    body: "Free. 15 minutes. Show us the repo. We tell you exactly what's broken and what it's costing you. No slides. No pitch deck. Just an honest read on your codebase. If we're not the right fit, we'll tell you.",
+    body: "Free. 30 minutes. Show us the repo. We tell you exactly what's broken and what it's costing you. No slides. No pitch deck. Just an honest read on your codebase. If we're not the right fit, we'll tell you.",
   },
   {
     num: "02",

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { BookingTrigger } from "./booking-modal";
 
 export function HeroBlunt() {
   return (
@@ -71,15 +72,14 @@ export function HeroBlunt() {
           transition={{ duration: 0.7, delay: 0.9 }}
           className="flex flex-col sm:flex-row items-start gap-5"
         >
-          <a
-            href="#cta"
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-base glow-fire"
+          <BookingTrigger
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-base glow-fire cursor-pointer"
           >
             Book Your Free Audit Call
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </BookingTrigger>
           <span className="text-sm text-muted max-w-xs leading-relaxed pt-1">
-            15 minutes · No pitch · We tell you what&apos;s broken and what it costs you
+            30 minutes · No pitch · We tell you what&apos;s broken and what it costs you
           </span>
         </motion.div>
 

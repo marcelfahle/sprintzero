@@ -34,8 +34,8 @@ export function ComparisonSection() {
           <table className="comparison-table w-full text-left min-w-[500px]">
             <thead>
               <tr className="bg-surface-2">
-                <th className="p-5 sm:p-6 mono-tag text-muted-soft font-normal w-[30%]" />
-                <th className="p-5 sm:p-6 mono-tag text-muted-soft font-normal w-[35%]">
+                <th className="p-5 sm:p-6 mono-tag text-muted font-normal w-[30%]" />
+                <th className="p-5 sm:p-6 mono-tag text-muted font-normal w-[35%]">
                   Internal / Consultancy
                 </th>
                 <th className="p-5 sm:p-6 w-[35%]">
@@ -53,7 +53,7 @@ export function ComparisonSection() {
                   className="bg-surface hover:bg-surface-2 transition-colors duration-300"
                 >
                   <td className="p-5 sm:p-6 text-sm font-medium">{row.label}</td>
-                  <td className="p-5 sm:p-6 text-sm text-muted-soft">
+                  <td className="p-5 sm:p-6 text-sm text-muted">
                     <span className="flex items-center gap-2">
                       {row.hasBool && <X className="w-3.5 h-3.5 text-danger shrink-0" />}
                       {row.old}

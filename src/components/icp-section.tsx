@@ -45,7 +45,7 @@ export function ICPSection() {
             {fits.map((item, i) => (
               <div key={i} className="flex items-start gap-4">
                 <Check className="w-4 h-4 text-success shrink-0 mt-1" />
-                <span className="text-sm text-muted leading-relaxed">{item}</span>
+                <span className="text-base text-muted leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
@@ -58,14 +58,14 @@ export function ICPSection() {
           transition={{ delay: 0.1 }}
           className="bg-surface p-8 sm:p-10"
         >
-          <h3 className="font-serif text-xl font-semibold text-muted-soft mb-8">
+          <h3 className="font-serif text-xl font-semibold text-muted mb-8">
             Probably not a fit if —
           </h3>
           <div className="space-y-5">
             {notFits.map((item, i) => (
               <div key={i} className="flex items-start gap-4">
                 <Minus className="w-4 h-4 text-muted-soft shrink-0 mt-1" />
-                <span className="text-sm text-muted-soft leading-relaxed">{item}</span>
+                <span className="text-base text-muted leading-relaxed">{item}</span>
               </div>
             ))}
           </div>

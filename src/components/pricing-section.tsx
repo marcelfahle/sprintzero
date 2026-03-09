@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionWrapper, Divider } from "./section-wrapper";
 import { ArrowRight, Shield } from "lucide-react";
+import { BookingTrigger } from "./booking-modal";
 
 export function PricingSection() {
   return (
@@ -15,7 +16,7 @@ export function PricingSection() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <span className="mono-tag text-muted-soft block mb-3">Total value</span>
+          <span className="mono-tag text-muted block mb-3">Total value</span>
           <div className="font-serif text-5xl sm:text-6xl font-bold text-muted-faint line-through decoration-danger/50 decoration-2 mb-3">
             $250,000+
           </div>
@@ -36,18 +37,17 @@ export function PricingSection() {
               <br />
               No hourly billing. No change orders.
             </p>
-            <p className="mono-tag text-muted-soft mb-10">
+            <p className="mono-tag text-muted mb-10">
               We take on{" "}
               <span className="text-foreground font-semibold">2 engagements</span>{" "}
               per month. That&apos;s it.
             </p>
-            <a
-              href="#cta"
-              className="group inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium glow-fire"
+            <BookingTrigger
+              className="group inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium glow-fire cursor-pointer"
             >
               Book Your Free Audit Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </BookingTrigger>
           </div>
         </motion.div>
 
