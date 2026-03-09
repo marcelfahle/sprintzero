@@ -6,7 +6,7 @@ import { SectionWrapper, Tag, Headline } from "./section-wrapper";
 const stats = [
   { value: "$18K+", label: "per month", desc: "Developer hours lost to fighting the stack" },
   { value: "60%", label: "rejection rate", desc: "Senior candidates who ghost after seeing the repo" },
-  { value: "3×", label: "slower", desc: "Feature velocity vs. teams on modern stacks" },
+  { value: "10×", label: "slower", desc: "Feature velocity vs. teams on modern stacks with AI" },
   { value: "$0", label: "AI ROI", desc: "Cursor and Copilot generate garbage on legacy code" },
 ];
 

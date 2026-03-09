@@ -20,7 +20,7 @@ const steps = [
     num: "03",
     title: "Handoff + Workshop",
     timing: "Days 11–12",
-    body: "We walk your team through everything that changed and why. Then a hands-on workshop — your developers learn AI-assisted development on your actual codebase. They build something real with the new tools before the session ends.",
+    body: "We walk your team through everything that changed and why. Then we outfit every developer with AI workflows, custom skills, and tooling configured for your stack. They ship a real feature with the new setup before the session ends. No theory. They leave dangerous.",
   },
 ];
 
