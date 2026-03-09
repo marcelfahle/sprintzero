@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { BookingTrigger } from "./booking-modal";
 
 const links = [
   { label: "Problem", href: "#pain" },
@@ -46,19 +47,18 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="mono-tag text-muted-soft hover:text-foreground transition-colors duration-300"
+              className="mono-tag text-muted hover:text-foreground transition-colors duration-300"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <a
-          href="#cta"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/50 transition-all duration-300"
+        <BookingTrigger
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/50 transition-all duration-300 cursor-pointer"
         >
           Book Audit Call
-        </a>
+        </BookingTrigger>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -88,13 +88,11 @@ export function Nav() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#cta"
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 text-center py-3 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium"
+              <BookingTrigger
+                className="mt-4 text-center py-3 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium cursor-pointer"
               >
                 Book Audit Call
-              </a>
+              </BookingTrigger>
             </div>
           </motion.div>
         )}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionWrapper, Headline } from "./section-wrapper";
 import { ArrowRight } from "lucide-react";
+import { BookingTrigger } from "./booking-modal";
 
 export function CTASection() {
   return (
@@ -23,22 +24,19 @@ export function CTASection() {
           </Headline>
 
           <p className="text-muted text-lg leading-relaxed mb-12 max-w-lg mx-auto">
-            15-minute call. We look at your codebase and tell you what&apos;s
+            30-minute call. We look at your codebase and tell you what&apos;s
             broken, what it costs you, and whether we can help. If we
             can&apos;t, you still walk away with a free audit.
           </p>
 
-          <a
-            href="https://cal.com/marcelfahle/sprint-zero-audit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 px-12 py-5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-lg glow-fire"
+          <BookingTrigger
+            className="group inline-flex items-center gap-3 px-12 py-5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-lg glow-fire cursor-pointer"
           >
             Book Your Free Audit Call
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </BookingTrigger>
 
-          <p className="mt-8 mono-tag text-muted-soft">
+          <p className="mt-8 mono-tag text-muted">
             <span className="text-accent-bright">2 spots per month</span>
             {" "}· First come, first served
           </p>

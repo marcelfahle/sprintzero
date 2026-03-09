@@ -60,7 +60,7 @@ export function OfferSection() {
               <h3 className="font-serif text-lg sm:text-xl font-semibold group-hover:text-accent-bright transition-colors duration-500 leading-snug max-w-[80%]">
                 {item.title}
               </h3>
-              <span className="mono-tag text-muted-soft text-[0.6rem] shrink-0 pt-1">
+              <span className="mono-tag text-muted-soft shrink-0 pt-1">
                 {item.value}
               </span>
             </div>

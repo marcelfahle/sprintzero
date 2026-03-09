@@ -16,7 +16,7 @@ export function MarqueeStrip() {
     <div className="relative border-y border-border-strong overflow-hidden py-4 bg-surface/80">
       <div className="flex animate-marquee whitespace-nowrap">
         {[...items, ...items].map((item, i) => (
-          <span key={i} className="mono-tag text-muted-soft mx-8 sm:mx-12 shrink-0">
+          <span key={i} className="mono-tag text-muted mx-8 sm:mx-12 shrink-0">
             {item}
             <span className="ml-8 sm:ml-12 text-accent/40">·</span>
           </span>

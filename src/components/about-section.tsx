@@ -13,7 +13,7 @@ export function AboutSection() {
             I haven&apos;t written a single line of code by hand{" "}
             <span className="gradient-text italic">since June 2024.</span>
           </Headline>
-          <div className="mt-8 mono-tag text-muted-soft">
+          <div className="mt-8 mono-tag text-muted">
             — Marcel Fahle
           </div>
           <p className="text-sm text-muted mt-2">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
+import { BookingProvider } from "@/components/booking-modal";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -54,7 +55,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased font-sans noise`}
       >
-        {children}
+        <BookingProvider>{children}</BookingProvider>
       </body>
     </html>
   );
