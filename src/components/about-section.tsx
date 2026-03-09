@@ -14,7 +14,7 @@ export function AboutSection() {
             <span className="gradient-text italic">since June 2024.</span>
           </Headline>
           <div className="mt-8 mono-tag text-muted">
-            — Marcel Fahle
+            — Sprint Zero
           </div>
           <p className="text-sm text-muted mt-2">
             15+ years building software · SaaS · Mobile · Elixir · TypeScript

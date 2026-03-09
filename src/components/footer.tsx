@@ -7,22 +7,14 @@ export function Footer() {
         <Divider />
         <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-serif text-sm text-muted">
-            Sprint Zero · Marcel Fahle · 2026
+            Sprint Zero · 2026
           </span>
           <div className="flex items-center gap-8">
             <a
-              href="mailto:marcel@marcelfahle.net"
+              href="mailto:hello@sprintzero.sh"
               className="mono-tag text-muted hover:text-foreground transition-colors duration-300"
             >
               Contact
-            </a>
-            <a
-              href="https://marcelfahle.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mono-tag text-muted hover:text-foreground transition-colors duration-300"
-            >
-              marcelfahle.net
             </a>
           </div>
         </div>
