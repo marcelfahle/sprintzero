@@ -15,7 +15,7 @@ import { FAQSection } from "@/components/faq-section";
 import { CTASection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 
-const isBlunt = process.env.NEXT_PUBLIC_VARIANT === "blunt";
+const isBlunt = true;
 
 export default function Home() {
   return (

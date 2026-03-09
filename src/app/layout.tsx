@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-const isBlunt = process.env.NEXT_PUBLIC_VARIANT === "blunt";
+const isBlunt = true;
 
 export const metadata: Metadata = {
   title: isBlunt
