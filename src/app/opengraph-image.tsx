@@ -1,9 +1,11 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Sprint Zero — We Unfuck Tech Stacks';
+export const alt = 'Sprint Zero — Legacy Codebase Modernization';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+
+const isBlunt = process.env.NEXT_PUBLIC_VARIANT === 'blunt';
 
 export default function Image() {
   return new ImageResponse(
@@ -73,7 +75,7 @@ export default function Image() {
           <div
             style={{
               display: 'flex',
-              fontSize: 64,
+              fontSize: isBlunt ? 64 : 56,
               fontWeight: 800,
               color: '#ffffff',
               letterSpacing: '-0.03em',
@@ -81,7 +83,9 @@ export default function Image() {
               textAlign: 'center',
             }}
           >
-            We Unfuck Tech Stacks.
+            {isBlunt
+              ? 'We Unfuck Tech Stacks.'
+              : 'AI Made Every Dev Team 10x Faster. Except Yours.'}
           </div>
           <div
             style={{

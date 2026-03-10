@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav";
 import { HeroBlunt } from "@/components/hero-blunt";
+import { HeroAIGap } from "@/components/hero-ai-gap";
 import { MarqueeStrip } from "@/components/marquee-strip";
 import { PainSection } from "@/components/pain-section";
 import { CostSection } from "@/components/cost-section";
@@ -14,11 +15,13 @@ import { FAQSection } from "@/components/faq-section";
 import { CTASection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 
+const isBlunt = process.env.NEXT_PUBLIC_VARIANT === "blunt";
+
 export default function Home() {
   return (
     <main>
       <Nav />
-      <HeroBlunt />
+      {isBlunt ? <HeroBlunt /> : <HeroAIGap />}
       <MarqueeStrip />
       <PainSection />
       <CostSection />
