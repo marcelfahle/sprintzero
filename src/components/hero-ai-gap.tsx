@@ -43,14 +43,12 @@ export function HeroAIGap() {
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight max-w-5xl mb-8"
         >
-          Your competitors ship
+          AI made every dev team
           <br className="hidden sm:block" />
-          features with AI.
+          10x faster.
           <br />
           <span className="gradient-text italic">
-            Your codebase won&apos;t
-            <br className="hidden sm:block" />
-            let you try.
+            Except yours.
           </span>
         </motion.h1>
 
@@ -61,9 +59,9 @@ export function HeroAIGap() {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl mb-12"
         >
-          AI coding tools need clean architecture to work. Yours is from 2019.
-          That gap gets wider every week.{" "}
-          <span className="text-foreground font-medium">We close it — and arm your team to ship 10x faster.</span>
+          AI tools need clean architecture. Yours is from 2019. Every week
+          the gap gets wider and the cost gets higher.{" "}
+          <span className="text-foreground font-medium">We fix the codebase and arm your team to close it.</span>
         </motion.p>
 
         {/* CTA */}
