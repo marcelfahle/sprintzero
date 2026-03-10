@@ -45,7 +45,7 @@ export function HeroAIGap() {
         >
           AI made every dev team
           <br className="hidden sm:block" />
-          10x faster.
+          10x better.
           <br />
           <span className="gradient-text italic">
             Except yours.

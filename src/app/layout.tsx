@@ -25,11 +25,11 @@ const isBlunt = process.env.NEXT_PUBLIC_VARIANT === "blunt";
 
 const title = isBlunt
   ? "We Unfuck Tech Stacks — Sprint Zero"
-  : "AI Made Every Dev Team 10x Faster — Sprint Zero";
+  : "AI Made Every Dev Team 10x Better — Sprint Zero";
 
 const ogTitle = isBlunt
   ? "We Unfuck Tech Stacks — Sprint Zero"
-  : "AI Made Every Dev Team 10x Faster. Except Yours. — Sprint Zero";
+  : "AI Made Every Dev Team 10x Better. Except Yours. — Sprint Zero";
 
 export const metadata: Metadata = {
   title,

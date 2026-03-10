@@ -85,7 +85,7 @@ export default function Image() {
           >
             {isBlunt
               ? 'We Unfuck Tech Stacks.'
-              : 'AI Made Every Dev Team 10x Faster. Except Yours.'}
+              : 'AI Made Every Dev Team 10x Better. Except Yours.'}
           </div>
           <div
             style={{
