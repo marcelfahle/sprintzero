@@ -1,5 +1,4 @@
 import { Nav } from "@/components/nav";
-import { HeroAIGap } from "@/components/hero-ai-gap";
 import { HeroBlunt } from "@/components/hero-blunt";
 import { MarqueeStrip } from "@/components/marquee-strip";
 import { PainSection } from "@/components/pain-section";
@@ -15,13 +14,11 @@ import { FAQSection } from "@/components/faq-section";
 import { CTASection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 
-const isBlunt = false;
-
 export default function Home() {
   return (
     <main>
       <Nav />
-      {isBlunt ? <HeroBlunt /> : <HeroAIGap />}
+      <HeroBlunt />
       <MarqueeStrip />
       <PainSection />
       <CostSection />

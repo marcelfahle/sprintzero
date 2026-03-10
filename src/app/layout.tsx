@@ -21,25 +21,19 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-const isBlunt = false;
-
 export const metadata: Metadata = {
-  title: isBlunt
-    ? "We Unfuck Tech Stacks — Sprint Zero"
-    : "Close the AI Gap in Days — Sprint Zero",
+  title: "We Unfuck Tech Stacks — Sprint Zero",
   description:
     "We modernize legacy codebases in under two weeks with AI-powered workflows. Full codebase modernization, AI-ready architecture, developer training. $35K all-in.",
   openGraph: {
-    title: isBlunt
-      ? "We Unfuck Tech Stacks — Sprint Zero"
-      : "Sprint Zero — Close the AI Gap in Days",
+    title: "We Unfuck Tech Stacks — Sprint Zero",
     description:
       "1,600 files. Zero downtime. We modernize legacy codebases and make your team 10x faster.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: isBlunt ? "We Unfuck Tech Stacks" : "Sprint Zero — Close the AI Gap",
+    title: "We Unfuck Tech Stacks — Sprint Zero",
     description:
       "Legacy codebase modernization in under 2 weeks. AI-ready architecture guaranteed.",
   },
