@@ -44,7 +44,7 @@ export function HeroAIGap() {
           className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight max-w-5xl mb-8"
         >
           AI made every dev team
-          <br className="hidden sm:block" />
+          <br className="hidden sm:block" />{" "}
           10x better.
           <br />
           <span className="gradient-text italic">
