@@ -59,14 +59,8 @@ export function HeroBlunt() {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl mb-12"
         >
-          Your outsourced team is billing by the hour, building in the wrong
-          framework, and three months behind. Your codebase is a liability, not
-          an asset. We come in, modernize everything, and hand it back to your
-          team so they can ship{" "}
-          <span className="text-foreground font-medium">
-            10x faster
-          </span>{" "}
-          — with or without us.
+          Your codebase is holding everyone back. We modernize it in 30 days
+          and hand your team the keys.
         </motion.p>
 
         {/* CTA */}
