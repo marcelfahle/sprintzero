@@ -6,6 +6,7 @@ import { PainSection } from "@/components/pain-section";
 import { CostSection } from "@/components/cost-section";
 import { ComparisonSection } from "@/components/comparison-section";
 import { CaseStudySection } from "@/components/case-study-section";
+import { SocialProofSection } from "@/components/social-proof-section";
 import { ProcessSection } from "@/components/process-section";
 import { OfferSection } from "@/components/offer-section";
 import { PricingSection } from "@/components/pricing-section";
@@ -27,6 +28,7 @@ export default function Home() {
       <CostSection />
       <ComparisonSection />
       <CaseStudySection />
+      <SocialProofSection />
       <ProcessSection />
       <OfferSection />
       <PricingSection />

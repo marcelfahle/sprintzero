@@ -5,20 +5,22 @@ import { SectionWrapper, Tag, Headline } from "./section-wrapper";
 import { Check, Minus } from "lucide-react";
 
 const fits = [
-  "Software or SaaS company doing $2M–$50M",
+  "Software company or SaaS doing $1M\u2013$50M",
   "Codebase is 3+ years old and showing its age",
-  "Team of 3–8 developers, mostly mid-level",
-  "Decision-maker who can approve $35K without a committee",
-  "You've noticed AI tools don't work on your code",
-  "Security audit coming and you already know it's bad",
+  "You\u2019re paying an outsourced team $5K\u2013$15K/month and can\u2019t tell what you\u2019re getting",
+  "Your solo developer or small team (2\u20138 devs) is stuck maintaining instead of building",
+  "You\u2019ve tried AI coding tools and they generated garbage on your code",
+  "A security audit, SOC 2, or compliance review is on the horizon",
+  "You need this fixed before a conference, a funding round, or a product launch",
+  "Decision-maker who can approve investment without a committee",
 ];
 
 const notFits = [
-  "Enterprise with procurement layers",
-  "Greenfield project — start clean, you don't need us",
-  "Modern stack that's just poorly managed",
-  "Looking for full-time staff augmentation",
-  "Budget under $25K",
+  "Enterprise with procurement layers and six-month vendor cycles",
+  "Greenfield project \u2014 start clean, you don\u2019t need us",
+  ".NET, Java, Go, or Rust stack (we\u2019re JS ecosystem, Elixir, Rails, PHP, Python)",
+  "Modern stack that\u2019s just poorly managed \u2014 you need a better process, not a migration",
+  "Looking for full-time staff augmentation or a permanent team member",
 ];
 
 export function ICPSection() {

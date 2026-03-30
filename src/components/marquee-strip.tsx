@@ -4,11 +4,11 @@ const items = [
   "1,600+ files modernized",
   "0 downtime",
   "100+ vulnerabilities eliminated",
-  "$35K all-in",
+  "Starting at $35K, all-in",
   "AI-ready architecture guaranteed",
   "10x developer velocity",
   "30-day performance guarantee",
-  "2 engagements per month",
+  "Your team keeps the keys",
 ];
 
 export function MarqueeStrip() {

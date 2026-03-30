@@ -8,19 +8,19 @@ const steps = [
     num: "01",
     title: "The Audit Call",
     timing: "Day 0",
-    body: "Free. 30 minutes. Show us the repo. We tell you exactly what's broken and what it's costing you. No slides. No pitch deck. Just an honest read on your codebase. If we're not the right fit, we'll tell you.",
+    body: "Free. 30 minutes. Show us the repo. We tell you exactly what\u2019s broken and what it\u2019s costing you. No slides. No pitch deck. Just an honest read. If we\u2019re not the right fit, we say so. If the problem is smaller than you think, we\u2019ll tell you that too.",
   },
   {
     num: "02",
     title: "The Sprint",
-    timing: "Days 1–10",
-    body: "We get repo access and go to work. Your team keeps shipping normally. We run in parallel, modernizing the stack with our AI-powered workflow. Daily async updates. No status meetings. No standups. Just progress.",
+    timing: "Days 1\u201325",
+    body: "We get repo access and go to work. Your team keeps shipping normally \u2014 we run in parallel. Our AI-powered workflow processes thousands of files while maintaining consistency across the entire codebase. Daily async updates in Slack. No status meetings. No standups. Just progress and a shared channel.",
   },
   {
     num: "03",
     title: "Handoff + Workshop",
-    timing: "Days 11–12",
-    body: "We walk your team through everything that changed and why. Then we outfit every developer with AI workflows, custom skills, and tooling configured for your stack. They ship a real feature with the new setup before the session ends. No theory. They leave dangerous.",
+    timing: "Days 26\u201330",
+    body: "This is the whole point. We walk your team through everything that changed and why. Then we outfit every developer with AI workflows, custom skills, and tooling configured for your exact stack. They ship a real feature with the new setup before the session ends. No theory. No slideshows. They leave dangerous. Your existing technical lead \u2014 the person who knows the product and the domain \u2014 is the handoff partner. We don\u2019t replace that person. We make them more powerful.",
   },
 ];
 
@@ -29,9 +29,9 @@ export function ProcessSection() {
     <SectionWrapper id="process">
       <Tag>How it works</Tag>
       <Headline>
-        Three steps. Two weeks.
+        We go in, get it done,
         <br />
-        <span className="gradient-text italic">Done.</span>
+        <span className="gradient-text italic">and hand you the keys.</span>
       </Headline>
 
       <div className="mt-20 grid gap-0">

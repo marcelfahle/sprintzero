@@ -6,28 +6,28 @@ import { SectionWrapper, Tag, Headline, Divider } from "./section-wrapper";
 const pains = [
   {
     num: "01",
-    title: "Every feature takes 10x longer than it should.",
-    body: "And nobody can give you a straight answer why. It's not your developers. It's the thousand small decisions baked into a codebase that was 'temporary' five years ago. Every new feature has to navigate around old mistakes like a car driving through a construction zone that never ends.",
+    title: "You\u2019re paying five figures a month and can\u2019t explain what you\u2019re getting.",
+    body: "Your outsourced team sends estimates by the screen. They picked a framework because it\u2019s what they knew, not what was right. They can\u2019t do responsive design. They can\u2019t do phased releases. Every conversation ends with \u201Cit will take more hours.\u201D You\u2019re stuck \u2014 not because you picked bad people, but because the model is broken.",
   },
   {
     num: "02",
     title: "You tried AI coding tools. They generated garbage.",
-    body: "Cursor, Copilot, Claude Code — your competitors rave about them. Your team tried them and got unusable output. AI tools need clean architecture to work. Typed interfaces. Modern patterns. Testable code. Your codebase speaks a dialect these tools don't understand.",
+    body: "Cursor, Copilot, Claude Code \u2014 your competitors rave about them. Your team tried them and got unusable output. It\u2019s not the tools. AI needs clean architecture to work: typed interfaces, modern patterns, testable code. Your codebase speaks a dialect these tools don\u2019t understand.",
   },
   {
     num: "03",
-    title: "Your last two senior hires looked at the repo and disappeared.",
-    body: "Good engineers are allergic to bad code. They clone the repo, open it up, see the mess, and quietly move on. You're not losing candidates because your salary is low. You're losing them because talented people refuse to spend their days fighting a codebase.",
+    title: "Good engineers won\u2019t touch this codebase. And you can\u2019t blame them.",
+    body: "They clone the repo, open it up, see the mess, and quietly move on. You\u2019re not losing candidates because your salary is low. You\u2019re losing them because talented people refuse to spend their days fighting architecture decisions that were made in 2018.",
   },
   {
     num: "04",
-    title: "There's a security audit in your future. You already know it's bad.",
-    body: "100+ vulnerable dependencies. Packages that haven't been updated in years. One compliance review, one customer asking the wrong question, one incident — that's all it takes to turn a quiet problem into an expensive one.",
+    title: "There\u2019s a compliance conversation coming. You already know it\u2019s bad.",
+    body: "SOC 2. A security audit. A big customer\u2019s vendor questionnaire. 100+ vulnerable dependencies. Basic auth in 2026. Packages that haven\u2019t been updated in years. One review, one customer asking the wrong question, one incident \u2014 that\u2019s all it takes to turn a quiet problem into an expensive one.",
   },
   {
     num: "05",
-    title: "Your developers spend more time on damage control than building.",
-    body: "Pull requests that should take an hour take a week. Bugs cascade in ways nobody predicts. Onboarding a new developer takes months because the patterns are so unusual that even experienced engineers need a guided tour.",
+    title: "Your team spends more time on damage control than building.",
+    body: "Pull requests that should take an hour take a week. Bugs cascade in ways nobody predicts. Onboarding a new developer takes months. The patterns are so unusual that even experienced engineers need a guided tour. Your developers aren\u2019t slow \u2014 they\u2019re drowning.",
   },
 ];
 
@@ -36,9 +36,9 @@ export function PainSection() {
     <SectionWrapper id="pain">
       <Tag>Sound familiar?</Tag>
       <Headline>
-        Your team isn&apos;t slow.
+        The code isn&apos;t the problem.
         <br />
-        <span className="italic text-muted">Your stack is strangling them.</span>
+        <span className="italic text-muted">The decisions behind it are.</span>
       </Headline>
 
       <div className="mt-20 space-y-0">

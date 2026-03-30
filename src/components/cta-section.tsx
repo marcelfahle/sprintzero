@@ -20,13 +20,14 @@ export function CTASection() {
           <Headline className="text-center">
             Stop paying for the problem.
             <br />
-            <span className="gradient-text italic">Fix it once.</span>
+            <span className="gradient-text italic">Fix it in 30 days.</span>
           </Headline>
 
           <p className="text-muted text-lg leading-relaxed mb-12 max-w-lg mx-auto">
             30-minute call. We look at your codebase and tell you what&apos;s
             broken, what it costs you, and whether we can help. If we
-            can&apos;t, you still walk away with a free audit.
+            can&apos;t, you still walk away with a free technical audit
+            worth $5K.
           </p>
 
           <BookingTrigger

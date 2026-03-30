@@ -36,7 +36,7 @@ export function HeroBlunt() {
         >
           <span className="mono-tag text-accent-bright flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-accent-bright pulse-soft" />
-            For engineering teams buried in technical debt
+            For founders paying too much and shipping too little
           </span>
         </motion.div>
 
@@ -59,10 +59,14 @@ export function HeroBlunt() {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl mb-12"
         >
-          Your code is from 2019. Your dependencies are on fire. Your developers
-          are frustrated and your competitors are lapping you. We come in,
-          modernize everything, and arm your team with the tools to ship{" "}
-          <span className="text-foreground font-medium">10x faster.</span>
+          Your outsourced team is billing by the hour, building in the wrong
+          framework, and three months behind. Your codebase is a liability, not
+          an asset. We come in, modernize everything, and hand it back to your
+          team so they can ship{" "}
+          <span className="text-foreground font-medium">
+            10x faster
+          </span>{" "}
+          — with or without us.
         </motion.p>
 
         {/* CTA */}
