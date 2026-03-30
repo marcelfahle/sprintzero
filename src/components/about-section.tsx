@@ -10,8 +10,7 @@ export function AboutSection() {
         <div>
           <Tag>Who does this</Tag>
           <Headline>
-            15 years of building software.
-            <br />
+            15 years of building software.{" "}
             <span className="gradient-text italic">
               Two years of making AI do it better.
             </span>

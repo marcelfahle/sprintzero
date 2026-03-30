@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { BookingTrigger } from "./booking-modal";
+import { FitText } from "./fit-text";
 
 export function HeroAIGap() {
   return (
@@ -37,18 +38,25 @@ export function HeroAIGap() {
         </motion.div>
 
         {/* Headline — editorial serif */}
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight max-w-5xl mb-8"
+          className="max-w-5xl mb-8"
         >
-          AI makes dev teams 10x faster.
-          <br />
-          <span className="gradient-text italic">
-            Except yours.
-          </span>
-        </motion.h1>
+          <FitText
+            lines={2}
+            min={36}
+            max={140}
+            leading={1.05}
+            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight"
+          >
+            <h1>
+              AI makes dev teams 10x faster.{" "}
+              <span className="gradient-text italic">Except yours.</span>
+            </h1>
+          </FitText>
+        </motion.div>
 
         {/* Subhead — clean sans */}
         <motion.p

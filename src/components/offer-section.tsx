@@ -35,8 +35,7 @@ export function OfferSection() {
     <SectionWrapper id="offer" wide>
       <Tag>Everything you get</Tag>
       <Headline>
-        Nothing held back.
-        <br />
+        Nothing held back.{" "}
         <span className="italic text-muted">Nothing extra to buy.</span>
       </Headline>
 

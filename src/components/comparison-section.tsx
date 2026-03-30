@@ -20,8 +20,7 @@ export function ComparisonSection() {
     <SectionWrapper id="comparison">
       <Tag>Your three real options</Tag>
       <Headline>
-        Keep the offshore shop. Hire a consultancy.
-        <br />
+        Keep the offshore shop. Hire a consultancy.{" "}
         <span className="italic text-muted">Or call the team that does this in 30 days.</span>
       </Headline>
 

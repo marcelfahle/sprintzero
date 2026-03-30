@@ -20,8 +20,7 @@ export function CostSection() {
       <div className="relative">
         <Tag>The math on doing nothing</Tag>
         <Headline>
-          You&apos;re not paying for the fix.
-          <br />
+          You&apos;re not paying for the fix.{" "}
           <span className="italic text-muted">You&apos;re already paying for the problem.</span>
         </Headline>
 

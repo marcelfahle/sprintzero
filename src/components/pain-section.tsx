@@ -36,8 +36,7 @@ export function PainSection() {
     <SectionWrapper id="pain">
       <Tag>Sound familiar?</Tag>
       <Headline>
-        The code isn&apos;t the problem.
-        <br />
+        The code isn&apos;t the problem.{" "}
         <span className="italic text-muted">The decisions behind it are.</span>
       </Headline>
 

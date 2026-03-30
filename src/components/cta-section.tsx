@@ -18,8 +18,7 @@ export function CTASection() {
           transition={{ duration: 0.8 }}
         >
           <Headline className="text-center">
-            Stop paying for the problem.
-            <br />
+            Stop paying for the problem.{" "}
             <span className="gradient-text italic">Fix it in 30 days.</span>
           </Headline>
 

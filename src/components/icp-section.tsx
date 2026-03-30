@@ -28,8 +28,7 @@ export function ICPSection() {
     <SectionWrapper id="fit">
       <Tag>Is this you?</Tag>
       <Headline>
-        This works for a <em className="italic">very specific</em>
-        <br />
+        This works for a <em className="italic">very specific</em>{" "}
         kind of company.
       </Headline>
 

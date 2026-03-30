@@ -91,8 +91,7 @@ export function FAQSection() {
       <div className="max-w-3xl mx-auto">
         <Tag>Questions you probably have</Tag>
         <Headline>
-          Let&apos;s get these
-          <br />
+          Let&apos;s get these{" "}
           <span className="italic text-muted">out of the way.</span>
         </Headline>
 

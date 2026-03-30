@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { BookingTrigger } from "./booking-modal";
+import { FitText } from "./fit-text";
 
 export function HeroBlunt() {
   return (
@@ -41,16 +42,25 @@ export function HeroBlunt() {
         </motion.div>
 
         {/* Headline */}
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] font-black leading-[0.95] tracking-tight max-w-5xl mb-10"
+          className="max-w-5xl mb-10"
         >
-          We unfuck
-          <br />
-          <span className="gradient-text-fire italic">tech stacks.</span>
-        </motion.h1>
+          <FitText
+            lines={2}
+            min={48}
+            max={180}
+            leading={0.95}
+            className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] font-black leading-[0.95] tracking-tight"
+          >
+            <h1>
+              We unfuck{" "}
+              <span className="gradient-text-fire italic">tech stacks.</span>
+            </h1>
+          </FitText>
+        </motion.div>
 
         {/* Subhead */}
         <motion.p

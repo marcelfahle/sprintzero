@@ -29,8 +29,7 @@ export function ProcessSection() {
     <SectionWrapper id="process">
       <Tag>How it works</Tag>
       <Headline>
-        We go in, get it done,
-        <br />
+        We go in, get it done,{" "}
         <span className="gradient-text italic">and hand you the keys.</span>
       </Headline>
 

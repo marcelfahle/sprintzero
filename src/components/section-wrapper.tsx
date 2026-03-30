@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { FitText } from "./fit-text";
 
 export function SectionWrapper({
   children,
@@ -41,16 +42,22 @@ export function Tag({ children }: { children: ReactNode }) {
 export function Headline({
   children,
   className = "",
+  lines = 3,
 }: {
   children: ReactNode;
   className?: string;
+  lines?: number;
 }) {
   return (
-    <h2
+    <FitText
+      lines={lines}
+      min={28}
+      max={64}
+      leading={1.08}
       className={`font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6 ${className}`}
     >
-      {children}
-    </h2>
+      <h2>{children}</h2>
+    </FitText>
   );
 }
 

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionWrapper, Tag, Divider } from "./section-wrapper";
 import { ArrowRight, Shield } from "lucide-react";
 import { BookingTrigger } from "./booking-modal";
+import { FitText } from "./fit-text";
 
 export function PricingSection() {
   return (
@@ -17,11 +18,18 @@ export function PricingSection() {
           className="text-center"
         >
           <Tag>The investment</Tag>
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6">
-            What this costs.
-            <br />
-            <span className="italic text-muted">What it&apos;s actually worth.</span>
-          </h2>
+          <FitText
+            lines={2}
+            min={28}
+            max={64}
+            leading={1.08}
+            className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6"
+          >
+            <h2>
+              What this costs.{" "}
+              <span className="italic text-muted">What it&apos;s actually worth.</span>
+            </h2>
+          </FitText>
 
           <div className="animated-border rounded-3xl p-10 sm:p-14 text-center">
             <span className="mono-tag text-accent-bright block mb-6">
@@ -33,8 +41,7 @@ export function PricingSection() {
             <p className="text-muted text-sm mb-2 mono-tag">Starting at</p>
             <p className="text-muted text-base mb-8 max-w-sm mx-auto leading-relaxed">
               Scoped after the audit call. Based on codebase complexity.
-              <br />
-              No hourly billing. No change orders. No surprises.
+              {" "}No hourly billing. No change orders. No surprises.
             </p>
             <p className="mono-tag text-muted mb-10">
               We take on{" "}

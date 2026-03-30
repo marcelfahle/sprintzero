@@ -17,8 +17,7 @@ export function CaseStudySection() {
       <div>
         <Tag>What this looks like in practice</Tag>
         <Headline>
-          Their outsourced team quoted $10K and three months.
-          <br />
+          Their outsourced team quoted $10K and three months.{" "}
           <span className="gradient-text italic">We shipped it in a week.</span>
         </Headline>
 
