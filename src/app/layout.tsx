@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import { BookingProvider } from "@/components/booking-modal";
@@ -31,7 +32,22 @@ const ogTitle = isBlunt
   ? "We Unfuck Tech Stacks — Sprint Zero"
   : "AI Made Every Dev Team 10x Better. Except Yours. — Sprint Zero";
 
+// Determine the base URL based on the domain
+const getMetadataBase = () => {
+  // In production, use the actual domain
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`);
+  }
+  // Default to sprintzero.sh for production builds
+  if (process.env.NODE_ENV === "production") {
+    return new URL(isBlunt ? "https://unfuckyourstack.com" : "https://sprintzero.sh");
+  }
+  // Development fallback
+  return new URL("http://localhost:3000");
+};
+
 export const metadata: Metadata = {
+  metadataBase: getMetadataBase(),
   title,
   description:
     "We modernize legacy codebases in under two weeks with AI-powered workflows. Full codebase modernization, AI-ready architecture, developer training. $35K all-in.",
@@ -40,12 +56,21 @@ export const metadata: Metadata = {
     description:
       "1,600 files. Zero downtime. We modernize legacy codebases and make your team 10x faster.",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Sprint Zero — Legacy Codebase Modernization",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: ogTitle,
     description:
       "Legacy codebase modernization in under 2 weeks. AI-ready architecture guaranteed.",
+    images: ["/twitter-image"],
   },
 };
 
@@ -56,6 +81,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <Script
+          defer
+          data-domain="sprintzero.sh,unfuckyourstack.com"
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased font-sans noise`}
       >
