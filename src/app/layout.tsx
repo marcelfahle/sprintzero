@@ -83,11 +83,13 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <Script
-          defer
-          data-domain="sprintzero.sh,unfuckyourstack.com"
-          src="https://plausible.io/js/script.js"
+          async
+          src="https://plausible.io/js/pa-yaXxF7dVcKtBSbOtfYd8j.js"
           strategy="afterInteractive"
         />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{};plausible.init()}`}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased font-sans noise`}
