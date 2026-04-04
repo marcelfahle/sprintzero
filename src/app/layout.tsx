@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
+import PlausibleProvider from "next-plausible";
 import { BookingProvider } from "@/components/booking-modal";
 import "./globals.css";
 
@@ -81,20 +81,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <Script
-          async
-          src="https://plausible.io/js/pa-yaXxF7dVcKtBSbOtfYd8j.js"
-          strategy="afterInteractive"
-        />
-        <Script id="plausible-init" strategy="afterInteractive">
-          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{};plausible.init()}`}
-        </Script>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased font-sans noise`}
       >
-        <BookingProvider>{children}</BookingProvider>
+        <PlausibleProvider enabled>
+          <BookingProvider>{children}</BookingProvider>
+        </PlausibleProvider>
       </body>
     </html>
   );
