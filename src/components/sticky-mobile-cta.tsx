@@ -14,22 +14,22 @@ export function StickyMobileCTA() {
   }, []);
 
   return (
-    <div
-      className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-all duration-500 ${
+    <a
+      href={BOOKING_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`fixed bottom-0 inset-x-0 z-40 md:hidden flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium text-sm transition-all duration-500 ${
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-full opacity-0"
       }`}
+      style={{
+        paddingTop: "0.875rem",
+        paddingBottom: "max(0.875rem, calc(env(safe-area-inset-bottom) + 0.5rem))",
+      }}
     >
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 w-full border-t border-white/[0.08] bg-[#08080c]/95 backdrop-blur-xl text-white font-medium text-sm pt-3.5 safe-bottom-btn"
-      >
-        Book Your Free Audit Call
-        <ArrowRight className="w-4 h-4" />
-      </a>
-    </div>
+      Book Your Free Audit Call
+      <ArrowRight className="w-4 h-4" />
+    </a>
   );
 }
