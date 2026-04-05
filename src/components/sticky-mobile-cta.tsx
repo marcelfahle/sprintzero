@@ -21,17 +21,15 @@ export function StickyMobileCTA() {
           : "translate-y-full opacity-0"
       }`}
     >
-      <div className="bg-[#08080c]/95 backdrop-blur-xl border-t border-white/[0.08] px-4 py-3 safe-bottom">
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium text-sm glow-fire"
-        >
-          Book Your Free Audit Call
-          <ArrowRight className="w-4 h-4" />
-        </a>
-      </div>
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium text-sm glow-fire pt-3.5 safe-bottom-btn"
+      >
+        Book Your Free Audit Call
+        <ArrowRight className="w-4 h-4" />
+      </a>
     </div>
   );
 }

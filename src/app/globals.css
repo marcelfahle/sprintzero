@@ -184,6 +184,10 @@ body {
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
 
+.safe-bottom-btn {
+  padding-bottom: max(0.875rem, calc(env(safe-area-inset-bottom) + 0.5rem));
+}
+
 /* ── Mono tag ── */
 .mono-tag {
   font-family: var(--font-geist-mono), ui-monospace, monospace;

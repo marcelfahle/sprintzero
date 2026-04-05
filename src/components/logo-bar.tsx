@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const logos = [
-  { name: "enCappture", src: "/logos/encappture.png", height: 24 },
-  { name: "FounderWell", src: "/logos/founderwell.svg", height: 28 },
-  { name: "HRTU", src: "/logos/hrtu.png", height: 26 },
+  { name: "enCappture", src: "/logos/encappture.png", className: "h-4 sm:h-6" },
+  { name: "FounderWell", src: "/logos/founderwell.svg", className: "h-5 sm:h-7" },
+  { name: "HRTU", src: "/logos/hrtu.png", className: "h-4 sm:h-[26px]" },
 ];
 
 export function LogoBar() {
@@ -22,16 +22,15 @@ export function LogoBar() {
         <p className="mono-tag text-muted-faint text-center mb-8">
           Trusted by
         </p>
-        <div className="flex items-center justify-center gap-10 sm:gap-16 mb-10">
+        <div className="flex items-center justify-center gap-6 sm:gap-16 mb-10">
           {logos.map((logo) => (
             <Image
               key={logo.name}
               src={logo.src}
               alt={logo.name}
               width={200}
-              height={logo.height}
-              className="w-auto"
-              style={{ height: logo.height }}
+              height={28}
+              className={`w-auto ${logo.className}`}
             />
           ))}
         </div>
