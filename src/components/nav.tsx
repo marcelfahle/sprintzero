@@ -31,13 +31,13 @@ export function Nav() {
       className="fixed top-0 left-0 right-0 z-50"
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      {/* Background on absolute child for Safari 26 Liquid Glass compatibility */}
+      {/* Background extends behind Dynamic Island via inset-0 + safe-area padding */}
       <div
         aria-hidden
         className={`absolute inset-0 transition-all duration-700 ${
           scrolled
             ? "bg-[#08080c]/90 backdrop-blur-2xl border-b border-white/[0.06]"
-            : "bg-[#08080c]/40 backdrop-blur-md"
+            : "bg-[#08080c]/70 backdrop-blur-xl"
         }`}
       />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
