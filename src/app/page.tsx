@@ -3,7 +3,6 @@ import { HeroBlunt } from "@/components/hero-blunt";
 import { HeroAIGap } from "@/components/hero-ai-gap";
 import { LogoBar } from "@/components/logo-bar";
 import { PainSection } from "@/components/pain-section";
-import { CostSection } from "@/components/cost-section";
 import { ComparisonSection } from "@/components/comparison-section";
 import { ProcessSection } from "@/components/process-section";
 import { OfferSection } from "@/components/offer-section";
@@ -24,7 +23,6 @@ export default function Home() {
       {isBlunt ? <HeroBlunt /> : <HeroAIGap />}
       <LogoBar />
       <PainSection />
-      <CostSection />
       <ComparisonSection />
       <ProcessSection />
       <OfferSection />
