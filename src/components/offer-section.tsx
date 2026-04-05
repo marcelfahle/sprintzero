@@ -6,7 +6,7 @@ import { SectionWrapper, Tag, Headline } from "./section-wrapper";
 const offerings = [
   {
     title: "Full Codebase Modernization",
-    desc: "We tear out the dead weight and rebuild the architecture with modern patterns. Class components become hooks. Outdated state management gets replaced. The spaghetti becomes something your team can actually reason about \u2014 and that AI tools can actually work with.",
+    desc: "We tear out the dead weight and rebuild with modern patterns. Legacy abstractions get replaced with clean, maintainable code. The spaghetti becomes something your team can reason about \u2014 and that AI tools can actually work with.",
   },
   {
     title: "AI-Ready Architecture",

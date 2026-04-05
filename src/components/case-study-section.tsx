@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { SectionWrapper, Tag, Headline, Divider } from "./section-wrapper";
+import { BookingTrigger } from "./booking-modal";
 
 const results = [
   { label: "Frontend rebuild", before: "200 hours quoted", after: "6 hours delivered" },
@@ -79,6 +81,24 @@ export function CaseStudySection() {
             </table>
           </div>
         </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-16 text-center"
+      >
+        <p className="text-muted text-base mb-6">
+          Want to see what we&apos;d find in your codebase?
+        </p>
+        <BookingTrigger
+          className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-base glow-fire"
+        >
+          Book Your Free Audit Call
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </BookingTrigger>
       </motion.div>
     </SectionWrapper>
   );

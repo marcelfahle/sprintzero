@@ -25,8 +25,8 @@ export function CTASection() {
           <p className="text-muted text-lg leading-relaxed mb-12 max-w-lg mx-auto">
             30-minute call. We look at your codebase and tell you what&apos;s
             broken, what it costs you, and whether we can help. If we
-            can&apos;t, you still walk away with a free technical audit
-            worth $5K.
+            can&apos;t, you still walk away with an honest read on your
+            architecture.
           </p>
 
           <BookingTrigger

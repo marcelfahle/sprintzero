@@ -67,28 +67,15 @@ export function PricingSection() {
           <h3 className="mono-tag text-accent-bright mb-6">
             What it&apos;s worth &mdash; the math your CFO will run
           </h3>
-          <div className="space-y-5 text-muted leading-[1.8] text-base">
-            <p>
-              If the modernization lets you close even two deals you&apos;d
-              otherwise lose to a security questionnaire or a failed vendor
-              assessment, that&apos;s{" "}
-              <span className="text-foreground font-medium">$60K+ in revenue</span>{" "}
-              &mdash; on a $35K investment. That&apos;s before you factor in the
-              developers who stop ghosting, the features that ship in days instead
-              of weeks, or the AI tools that finally work on your code.
-            </p>
-            <p>
-              And if you&apos;re thinking about selling in the next 3&ndash;5
-              years: the difference between a clean, documented, modern codebase
-              and one that signals &ldquo;budget for a rewrite&rdquo; to a buyer
-              is hundreds of thousands in acquisition price. Technical due
-              diligence is where deals die. A{" "}
-              <span className="text-foreground font-medium">
-                $35K fix that adds $500K+ to your valuation
-              </span>{" "}
-              is probably the best ROI decision you&apos;ll make this year.
-            </p>
-          </div>
+          <p className="text-muted leading-[1.8] text-base">
+            Close two deals you&apos;d otherwise lose to a security
+            questionnaire &mdash; that&apos;s{" "}
+            <span className="text-foreground font-medium">$60K+</span> on a
+            $35K investment. Planning to sell in the next 3&ndash;5 years? The
+            difference between a modern codebase and one that signals
+            &ldquo;budget for a rewrite&rdquo; is hundreds of thousands in
+            acquisition price. Technical due diligence is where deals die.
+          </p>
         </motion.div>
 
         <Divider />

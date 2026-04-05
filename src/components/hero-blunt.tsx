@@ -77,7 +77,7 @@ export function HeroBlunt() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
           className="flex flex-col sm:flex-row items-start gap-5"
         >
           <BookingTrigger
@@ -87,7 +87,9 @@ export function HeroBlunt() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </BookingTrigger>
           <span className="text-sm text-muted max-w-xs leading-relaxed pt-1">
-            30 minutes · No pitch · We tell you what&apos;s broken and what it costs you
+            30 minutes · No pitch
+            <br />
+            <span className="text-accent-bright">Only 2 spots per month</span>
           </span>
         </motion.div>
 

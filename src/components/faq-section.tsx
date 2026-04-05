@@ -23,6 +23,10 @@ const faqs = [
     a: "JavaScript ecosystem (React, Vue, Angular, Node, TypeScript), Elixir/Phoenix, Rails, PHP/Laravel, and Python/Django. We don\u2019t do .NET, Java, Go, or Rust. If your stack isn\u2019t in our list, we\u2019ll tell you on the audit call.",
   },
   {
+    q: "Is this right for my company?",
+    a: "We work best with SaaS companies doing $1M\u2013$50M with a codebase that\u2019s 3+ years old and a small team (2\u20138 devs) stuck maintaining instead of building. You need a decision-maker who can approve the investment without a procurement committee. Not a fit: enterprise with six-month vendor cycles, greenfield projects, or codebases that are just poorly managed \u2014 you need a better process, not a migration.",
+  },
+  {
     q: "Do you replace our development team?",
     a: "Opposite. We make them dangerous. Good developers on a bad codebase look mediocre. Your people are probably better than you think \u2014 they just need a codebase that doesn\u2019t fight them on every commit. After the workshop, they ship with the same AI-powered workflows we use.",
   },
@@ -36,7 +40,7 @@ const faqs = [
   },
   {
     q: "$35K is a lot.",
-    a: "Compare it to what? Your outsourced team\u2019s annual bill? That\u2019s $60K\u2013$120K and you still can\u2019t ship. The senior hire who ghosted? That\u2019s $30K in recruiting costs for nothing. The compliance review you\u2019re not ready for? That\u2019s an existential risk to the business. Most companies we talk to are already burning $10K to $25K per month on this problem \u2014 they just don\u2019t see it as one line item. The sprint pays for itself in 60\u201390 days. And if you\u2019re ever selling the company, a clean codebase vs a legacy mess is the difference between \u201Cwe can put a team on this\u201D and \u201Cwe need to budget for a rewrite.\u201D That delta alone is multiples of the investment.",
+    a: "Compare it to what? Your outsourced team bills $60K\u2013$120K a year and you still can\u2019t ship. The senior hire who ghosted cost $30K in recruiting for nothing. Most companies we talk to are burning $10K\u2013$25K per month on this problem \u2014 they just don\u2019t see it as one line item. The sprint pays for itself in 60\u201390 days.",
   },
 ];
 

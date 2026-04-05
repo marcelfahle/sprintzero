@@ -179,6 +179,11 @@ body {
   user-select: none;
 }
 
+/* ── Safe area ── */
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
 /* ── Mono tag ── */
 .mono-tag {
   font-family: var(--font-geist-mono), ui-monospace, monospace;

@@ -6,28 +6,20 @@ import { SectionWrapper, Tag, Headline, Divider } from "./section-wrapper";
 const pains = [
   {
     num: "01",
-    title: "You\u2019re paying five figures a month and can\u2019t explain what you\u2019re getting.",
-    body: "Your outsourced team sends estimates by the screen. They picked a framework because it\u2019s what they knew, not what was right. They can\u2019t do responsive design. They can\u2019t do phased releases. Every conversation ends with \u201Cit will take more hours.\u201D You\u2019re stuck \u2014 not because you picked bad people, but because the model is broken.",
+    title:
+      "You\u2019re paying five figures a month and can\u2019t explain what you\u2019re getting.",
+    body: "Your outsourced team picks frameworks they know, not what\u2019s right. They can\u2019t do responsive design or phased releases. Every conversation ends with \u201Cit will take more hours.\u201D You\u2019re stuck \u2014 not because you picked bad people, but because the model is broken.",
   },
   {
     num: "02",
     title: "You tried AI coding tools. They generated garbage.",
-    body: "Cursor, Copilot, Claude Code \u2014 your competitors rave about them. Your team tried them and got unusable output. It\u2019s not the tools. AI needs clean architecture to work: typed interfaces, modern patterns, testable code. Your codebase speaks a dialect these tools don\u2019t understand.",
+    body: "Cursor, Copilot, Claude Code \u2014 your competitors rave about them. Your team tried and got unusable output. It\u2019s not the tools. AI needs clean architecture: typed interfaces, modern patterns, testable code. Your codebase speaks a dialect they don\u2019t understand.",
   },
   {
     num: "03",
-    title: "Good engineers won\u2019t touch this codebase. And you can\u2019t blame them.",
-    body: "They clone the repo, open it up, see the mess, and quietly move on. You\u2019re not losing candidates because your salary is low. You\u2019re losing them because talented people refuse to spend their days fighting architecture decisions that were made in 2018.",
-  },
-  {
-    num: "04",
-    title: "There\u2019s a compliance conversation coming. You already know it\u2019s bad.",
-    body: "SOC 2. A security audit. A big customer\u2019s vendor questionnaire. 100+ vulnerable dependencies. Basic auth in 2026. Packages that haven\u2019t been updated in years. One review, one customer asking the wrong question, one incident \u2014 that\u2019s all it takes to turn a quiet problem into an expensive one.",
-  },
-  {
-    num: "05",
-    title: "Your team spends more time on damage control than building.",
-    body: "Pull requests that should take an hour take a week. Bugs cascade in ways nobody predicts. Onboarding a new developer takes months. The patterns are so unusual that even experienced engineers need a guided tour. Your developers aren\u2019t slow \u2014 they\u2019re drowning.",
+    title:
+      "Good engineers won\u2019t touch this codebase. And you can\u2019t blame them.",
+    body: "They clone the repo, see the mess, and quietly move on. You\u2019re not losing candidates because your salary is low \u2014 you\u2019re losing them because talented people refuse to fight architecture decisions made in 2018.",
   },
 ];
 

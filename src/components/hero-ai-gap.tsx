@@ -33,7 +33,7 @@ export function HeroAIGap() {
         >
           <span className="mono-tag text-accent-bright flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-accent-bright pulse-soft" />
-            While you&apos;re reading this, your competitors are shipping with AI
+            For SaaS teams stuck on legacy code
           </span>
         </motion.div>
 
@@ -66,14 +66,14 @@ export function HeroAIGap() {
           className="text-lg sm:text-xl text-muted leading-relaxed max-w-xl mb-12"
         >
           AI tools need clean architecture. Yours is from 2019.{" "}
-          <span className="text-foreground font-medium">We modernize the codebase and arm your team to close the gap.</span>
+          <span className="text-foreground font-medium">We modernize your codebase in 30 days and train your team to build with AI.</span>
         </motion.p>
 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
           className="flex flex-col sm:flex-row items-start gap-5"
         >
           <BookingTrigger
@@ -83,7 +83,9 @@ export function HeroAIGap() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </BookingTrigger>
           <span className="text-sm text-muted max-w-xs leading-relaxed pt-1">
-            30 minutes · No pitch · We tell you what&apos;s broken and what it costs you
+            30 minutes · No pitch
+            <br />
+            <span className="text-accent-bright">Only 2 spots per month</span>
           </span>
         </motion.div>
 

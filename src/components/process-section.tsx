@@ -20,7 +20,7 @@ const steps = [
     num: "03",
     title: "Handoff + Workshop",
     timing: "Days 26\u201330",
-    body: "This is the whole point. We walk your team through everything that changed and why. Then we outfit every developer with AI workflows, custom skills, and tooling configured for your exact stack. They ship a real feature with the new setup before the session ends. No theory. No slideshows. They leave dangerous. Your existing technical lead \u2014 the person who knows the product and the domain \u2014 is the handoff partner. We don\u2019t replace that person. We make them more powerful.",
+    body: "We walk your team through everything that changed and why. Then we outfit every developer with AI workflows and tooling configured for your stack. They ship a real feature before the session ends. Your tech lead \u2014 the person who knows the product \u2014 is the handoff partner. We don\u2019t replace them. We make them dangerous.",
   },
 ];
 
