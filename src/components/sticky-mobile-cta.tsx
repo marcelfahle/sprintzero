@@ -25,7 +25,7 @@ export function StickyMobileCTA() {
         href={BOOKING_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium text-sm glow-fire pt-3.5 safe-bottom-btn"
+        className="flex items-center justify-center gap-2 w-full border-t border-white/[0.08] bg-[#08080c]/95 backdrop-blur-xl text-white font-medium text-sm pt-3.5 safe-bottom-btn"
       >
         Book Your Free Audit Call
         <ArrowRight className="w-4 h-4" />
