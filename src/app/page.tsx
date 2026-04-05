@@ -8,6 +8,7 @@ import { ComparisonSection } from "@/components/comparison-section";
 import { ProcessSection } from "@/components/process-section";
 import { OfferSection } from "@/components/offer-section";
 import { PricingSection } from "@/components/pricing-section";
+import { SocialProofSection } from "@/components/social-proof-section";
 import { AboutSection } from "@/components/about-section";
 import { FAQSection } from "@/components/faq-section";
 import { CTASection } from "@/components/cta-section";
@@ -28,6 +29,7 @@ export default function Home() {
       <ProcessSection />
       <OfferSection />
       <PricingSection />
+      <SocialProofSection />
       <AboutSection />
       <FAQSection />
       <CTASection />

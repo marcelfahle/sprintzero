@@ -28,13 +28,19 @@ export function Nav() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        scrolled
-          ? "bg-[#08080c]/90 backdrop-blur-2xl border-b border-white/[0.06]"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
+      {/* Background on absolute child for Safari 26 Liquid Glass compatibility */}
+      <div
+        aria-hidden
+        className={`absolute inset-0 transition-all duration-700 ${
+          scrolled
+            ? "bg-[#08080c]/90 backdrop-blur-2xl border-b border-white/[0.06]"
+            : "bg-[#08080c]/40 backdrop-blur-md"
+        }`}
+      />
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
         <a href="#" className="group flex items-center gap-3">
           <span className="font-serif text-xl font-bold tracking-tight">
             sprint
@@ -75,7 +81,7 @@ export function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#08080c]/98 backdrop-blur-2xl border-b border-white/[0.06] overflow-hidden"
+            className="relative md:hidden bg-[#08080c]/98 backdrop-blur-2xl border-b border-white/[0.06] overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-1">
               {links.map((link) => (
