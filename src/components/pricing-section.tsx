@@ -35,7 +35,7 @@ export function PricingSection() {
             <span className="mono-tag text-accent-bright block mb-6">
               Your investment
             </span>
-            <div className="font-serif text-7xl sm:text-8xl md:text-9xl font-bold gradient-text leading-none mb-6">
+            <div className="font-serif text-7xl sm:text-8xl md:text-9xl font-bold gradient-text leading-[1.1] pb-2 mb-6">
               $35K
             </div>
             <p className="text-muted text-sm mb-2 mono-tag">Starting at</p>
