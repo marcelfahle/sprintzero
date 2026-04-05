@@ -24,66 +24,64 @@ export function Nav() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 right-0 z-50"
-      style={{ paddingTop: "env(safe-area-inset-top)" }}
-    >
-      {/* Background extends behind Dynamic Island via inset-0 + safe-area padding */}
-      <div
-        aria-hidden
-        className={`absolute inset-0 transition-all duration-700 ${
-          scrolled
-            ? "bg-[#08080c]/90 backdrop-blur-2xl border-b border-white/[0.06]"
-            : "bg-[#08080c]/70 backdrop-blur-xl"
-        }`}
-      />
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
-        <a href="#" className="group flex items-center gap-3">
-          <span className="font-serif text-xl font-bold tracking-tight">
-            sprint
-            <span className="text-accent-bright">zero</span>
-          </span>
-        </a>
-
-        <div className="hidden md:flex items-center gap-10">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="mono-tag text-muted hover:text-foreground transition-colors duration-300"
-            >
-              {link.label}
+    <>
+      {/* ── Floating nav island (mobile + desktop) ── */}
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-0 left-0 right-0 z-50 pointer-events-none"
+        style={{ paddingTop: "calc(env(safe-area-inset-top) + 8px)" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="pointer-events-auto rounded-2xl bg-[#08080c]/70 backdrop-blur-2xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)] px-5 sm:px-6 h-14 flex items-center justify-between">
+            <a href="#" className="group flex items-center gap-3">
+              <span className="font-serif text-lg font-bold tracking-tight">
+                sprint
+                <span className="text-accent-bright">zero</span>
+              </span>
             </a>
-          ))}
+
+            <div className="hidden md:flex items-center gap-10">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="mono-tag text-muted hover:text-foreground transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            <BookingTrigger
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/50 transition-all duration-300 cursor-pointer"
+            >
+              Book Audit Call
+            </BookingTrigger>
+
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden text-muted hover:text-foreground p-2 -mr-2"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
+      </motion.nav>
 
-        <BookingTrigger
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/50 transition-all duration-300 cursor-pointer"
-        >
-          Book Audit Call
-        </BookingTrigger>
-
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-muted hover:text-foreground p-2"
-        >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
+      {/* ── Mobile menu overlay ── */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="relative md:hidden bg-[#08080c]/98 backdrop-blur-2xl border-b border-white/[0.06] overflow-hidden"
+            className="fixed inset-0 z-40 md:hidden bg-[#08080c]/95 backdrop-blur-2xl"
+            style={{ paddingTop: "calc(env(safe-area-inset-top) + 80px)" }}
           >
-            <div className="px-6 py-6 flex flex-col gap-1">
+            <div className="px-8 py-6 flex flex-col gap-1">
               {links.map((link) => (
                 <a
                   key={link.href}
@@ -103,6 +101,6 @@ export function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 }

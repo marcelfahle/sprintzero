@@ -19,26 +19,15 @@ export function StickyMobileCTA() {
         visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       style={{
-        paddingBottom: "env(safe-area-inset-bottom)",
+        paddingBottom: "calc(env(safe-area-inset-bottom) + 12px)",
       }}
     >
-      {/* Scrim gradient fades scrolling content behind Safari bottom glass */}
-      <div
-        aria-hidden
-        className="absolute inset-x-0 -top-8 h-8 bg-gradient-to-t from-[#08080c]/90 to-transparent pointer-events-none"
-      />
-      {/* Background fills entire shell including safe area below */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[#08080c]/90 backdrop-blur-xl"
-        style={{ bottom: "calc(-1 * env(safe-area-inset-bottom))" }}
-      />
-      <div className="relative px-4 py-2.5">
+      <div className="px-4">
         <a
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="pointer-events-auto flex items-center justify-center gap-2 text-white font-semibold text-sm py-3.5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-[0_8px_30px_rgba(249,115,22,0.3)]"
+          className="pointer-events-auto flex items-center justify-center gap-2 text-white font-semibold text-sm py-3.5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 shadow-[0_8px_40px_rgba(249,115,22,0.35),0_2px_8px_rgba(0,0,0,0.3)]"
         >
           Book Your Free Audit Call
           <ArrowRight className="w-4 h-4" />
