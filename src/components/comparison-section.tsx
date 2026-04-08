@@ -28,7 +28,7 @@ function ComparisonCard({
 }) {
   return (
     <div
-      className={`rounded-2xl p-6 ${
+      className={`rounded-lg p-6 ${
         highlighted
           ? "border border-accent/30 bg-surface-2"
           : "border border-border-strong bg-surface"
@@ -38,7 +38,7 @@ function ComparisonCard({
         {icon}
         <span
           className={`mono-tag ${
-            highlighted ? "text-accent-bright" : "text-muted"
+            highlighted ? "text-foreground" : "text-muted"
           }`}
         >
           {title}
@@ -82,7 +82,7 @@ export function ComparisonSection() {
         <ComparisonCard
           title="Sprint Zero"
           highlighted
-          icon={<span className="w-1.5 h-1.5 rounded-full bg-accent-bright" />}
+          icon={<span className="w-1.5 h-1.5 rounded-full bg-foreground/60" />}
           data={rows.map((r) => ({
             label: r.label,
             value: r.sprint,
@@ -113,7 +113,7 @@ export function ComparisonSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="hidden md:block mt-16 rounded-2xl border border-border-strong overflow-hidden"
+        className="hidden md:block mt-16 rounded-lg border border-border-strong overflow-hidden"
       >
         <table className="comparison-table w-full text-left">
           <thead>
@@ -126,8 +126,8 @@ export function ComparisonSection() {
                 Big Consultancy
               </th>
               <th className="p-5 sm:p-6 w-[26%]">
-                <span className="mono-tag text-accent-bright font-normal flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent-bright" />
+                <span className="mono-tag text-foreground font-normal flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-foreground/60" />
                   Sprint Zero
                 </span>
               </th>

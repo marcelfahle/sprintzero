@@ -23,7 +23,7 @@ export function CaseStudySection() {
           <span className="gradient-text italic">We shipped it in a week.</span>
         </Headline>
 
-        <div className="space-y-5 text-muted leading-[1.8] text-base max-w-3xl mt-8">
+        <div className="space-y-5 text-muted leading-[1.8] text-base max-w-xl mt-8">
           <p>
             A 13-year-old SaaS company serving regulated financial institutions.
             One part-time developer who&apos;d been the sole technical lead since
@@ -55,15 +55,15 @@ export function CaseStudySection() {
         viewport={{ once: true }}
         className="pt-12"
       >
-        <h3 className="mono-tag text-accent-bright mb-8">The result</h3>
-        <div className="rounded-2xl border border-border-strong overflow-hidden">
+        <h3 className="mono-tag text-foreground/70 mb-8">The result</h3>
+        <div className="rounded-lg border border-border-strong overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left min-w-[500px]">
               <thead>
                 <tr className="bg-surface-2">
                   <th className="p-5 sm:p-6 mono-tag text-muted font-normal w-[30%]" />
                   <th className="p-5 sm:p-6 mono-tag text-muted font-normal w-[35%]">Before</th>
-                  <th className="p-5 sm:p-6 mono-tag text-accent-bright font-normal w-[35%]">After</th>
+                  <th className="p-5 sm:p-6 mono-tag text-foreground font-normal w-[35%]">After</th>
                 </tr>
               </thead>
               <tbody>
@@ -94,11 +94,14 @@ export function CaseStudySection() {
           Want to see what we&apos;d find in your codebase?
         </p>
         <BookingTrigger
-          className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-base glow-fire"
+          className="group inline-flex items-center gap-3 px-8 py-4 rounded bg-accent hover:bg-accent-dim transition-colors duration-200 text-white font-medium text-base cursor-pointer"
         >
-          Book Your Free Audit Call
+          See What We&apos;d Find in Yours
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </BookingTrigger>
+        <p className="mt-4 text-sm text-muted">
+          30 min · No pitch · No obligation
+        </p>
       </motion.div>
     </SectionWrapper>
   );

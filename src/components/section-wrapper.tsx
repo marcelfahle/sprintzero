@@ -33,7 +33,7 @@ export function SectionWrapper({
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="mono-tag inline-block text-accent-bright mb-6 tracking-[0.2em]">
+    <span className="mono-tag inline-block text-foreground/70 mb-6 tracking-[0.2em]">
       {children}
     </span>
   );

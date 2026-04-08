@@ -34,7 +34,7 @@ export function Nav() {
         style={{ paddingTop: "calc(env(safe-area-inset-top) + 8px)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <div className="pointer-events-auto rounded-2xl bg-[#08080c]/70 backdrop-blur-2xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)] px-5 sm:px-6 h-14 flex items-center justify-between">
+          <div className="pointer-events-auto rounded-lg bg-[#08080c]/70 backdrop-blur-2xl border border-white/[0.06] shadow-[0_8px_32px_rgba(0,0,0,0.4)] px-5 sm:px-6 h-14 flex items-center justify-between">
             <a href="#" className="group flex items-center gap-3">
               <span className="font-serif text-lg font-bold tracking-tight">
                 sprint
@@ -55,7 +55,7 @@ export function Nav() {
             </div>
 
             <BookingTrigger
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/50 transition-all duration-300 cursor-pointer"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium hover:bg-accent/20 hover:border-accent/50 transition-all duration-300 cursor-pointer"
             >
               Book Audit Call
             </BookingTrigger>
@@ -93,7 +93,7 @@ export function Nav() {
                 </a>
               ))}
               <BookingTrigger
-                className="mt-4 text-center py-3 rounded-full bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium cursor-pointer"
+                className="mt-4 text-center py-3 rounded bg-accent/10 border border-accent/30 text-accent-bright text-sm font-medium cursor-pointer"
               >
                 Book Audit Call
               </BookingTrigger>

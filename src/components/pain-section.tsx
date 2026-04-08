@@ -47,10 +47,10 @@ export function PainSection() {
                 {pain.num}
               </span>
               <div>
-                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-semibold leading-snug mb-4 group-hover:text-accent-bright transition-colors duration-500">
+                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-semibold leading-snug mb-4 group-hover:text-foreground transition-colors duration-500">
                   {pain.title}
                 </h3>
-                <p className="text-muted leading-[1.8] max-w-2xl text-base">
+                <p className="text-muted leading-[1.8] max-w-xl text-base">
                   {pain.body}
                 </p>
               </div>

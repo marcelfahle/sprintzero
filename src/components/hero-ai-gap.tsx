@@ -8,14 +8,9 @@ import { FitText } from "./fit-text";
 export function HeroAIGap() {
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden">
-      {/* Layered gradient orbs */}
-      <div className="absolute top-[15%] left-[10%] w-[500px] h-[500px] bg-[#7c5cfc]/[0.07] rounded-full blur-[140px] animate-drift" />
-      <div className="absolute bottom-[20%] right-[5%] w-[600px] h-[600px] bg-[#3b82f6]/[0.05] rounded-full blur-[160px] animate-drift" style={{ animationDelay: "4s" }} />
-      <div className="absolute top-[60%] left-[50%] w-[300px] h-[300px] bg-[#a78bfa]/[0.04] rounded-full blur-[100px]" />
-
       {/* Grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
@@ -31,8 +26,8 @@ export function HeroAIGap() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mb-10"
         >
-          <span className="mono-tag text-accent-bright flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-accent-bright pulse-soft" />
+          <span className="mono-tag text-foreground/70 flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-foreground/50 pulse-soft" />
             For SaaS teams stuck on legacy code
           </span>
         </motion.div>
@@ -77,15 +72,15 @@ export function HeroAIGap() {
           className="flex flex-col sm:flex-row items-start gap-5"
         >
           <BookingTrigger
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 transition-all duration-300 text-white font-medium text-base glow-fire cursor-pointer"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded bg-accent hover:bg-accent-dim transition-colors duration-200 text-white font-medium text-base cursor-pointer"
           >
             Book Your Free Audit Call
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </BookingTrigger>
           <span className="text-sm text-muted max-w-xs leading-relaxed pt-1">
-            30 minutes · No pitch
+            30 min · No pitch · Starting at $35K
             <br />
-            <span className="text-accent-bright">Only 2 spots per month</span>
+            <span className="text-accent-bright">2 spots left — May 2026</span>
           </span>
         </motion.div>
 
@@ -98,21 +93,6 @@ export function HeroAIGap() {
         />
       </div>
 
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-5 h-8 rounded-full border border-white/10 flex justify-center pt-1.5"
-        >
-          <div className="w-1 h-2 rounded-full bg-accent-bright/60" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

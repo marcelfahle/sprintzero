@@ -39,7 +39,7 @@ export function OfferSection() {
         <span className="italic text-muted">Nothing extra to buy.</span>
       </Headline>
 
-      <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border-strong rounded-2xl overflow-hidden">
+      <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border-strong rounded-lg overflow-hidden">
         {offerings.map((item, i) => (
           <motion.div
             key={i}
@@ -50,7 +50,7 @@ export function OfferSection() {
             className="group bg-surface-2 p-7 sm:p-8 hover:bg-surface-3 transition-colors duration-500 flex flex-col"
           >
             <div className="mb-4">
-              <h3 className="font-serif text-lg sm:text-xl font-semibold group-hover:text-accent-bright transition-colors duration-500 leading-snug">
+              <h3 className="font-serif text-lg sm:text-xl font-semibold group-hover:text-foreground transition-colors duration-500 leading-snug">
                 {item.title}
               </h3>
             </div>

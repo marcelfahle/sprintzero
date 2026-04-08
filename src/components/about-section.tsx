@@ -25,7 +25,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-border-strong bg-surface-2 p-8 sm:p-10"
+          className="rounded-lg border border-border-strong bg-surface-2 p-8 sm:p-10"
         >
           <div className="flex items-start gap-6 mb-6">
             <Image
@@ -33,13 +33,13 @@ export function AboutSection() {
               alt="Vanessa Roberts"
               width={160}
               height={160}
-              className="rounded-2xl object-cover w-24 h-24 sm:w-32 sm:h-32 shrink-0"
+              className="rounded-lg object-cover w-24 h-24 sm:w-32 sm:h-32 shrink-0"
             />
             <div>
               <h3 className="font-serif text-2xl font-semibold">
                 Vanessa Roberts
               </h3>
-              <p className="mono-tag text-accent-bright mt-1">
+              <p className="mono-tag text-foreground/60 mt-1">
                 CEO &middot; Partnerships
               </p>
             </div>
@@ -66,7 +66,7 @@ export function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="rounded-2xl border border-border-strong bg-surface-2 p-8 sm:p-10"
+          className="rounded-lg border border-border-strong bg-surface-2 p-8 sm:p-10"
         >
           <div className="flex items-start gap-6 mb-6">
             <Image
@@ -74,13 +74,13 @@ export function AboutSection() {
               alt="Marcel Fahle"
               width={160}
               height={160}
-              className="rounded-2xl object-cover w-24 h-24 sm:w-32 sm:h-32 shrink-0"
+              className="rounded-lg object-cover w-24 h-24 sm:w-32 sm:h-32 shrink-0"
             />
             <div>
               <h3 className="font-serif text-2xl font-semibold">
                 Marcel Fahle
               </h3>
-              <p className="mono-tag text-accent-bright mt-1">
+              <p className="mono-tag text-foreground/60 mt-1">
                 CTO &middot; Engineering
               </p>
             </div>

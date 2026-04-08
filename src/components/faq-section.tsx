@@ -58,12 +58,12 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between py-8 text-left group"
       >
-        <span className="font-serif text-lg sm:text-xl md:text-2xl font-medium group-hover:text-accent-bright transition-colors duration-500 pr-8 leading-snug">
+        <span className="font-serif text-lg sm:text-xl md:text-2xl font-medium group-hover:text-foreground transition-colors duration-500 pr-8 leading-snug">
           {faq.q}
         </span>
-        <span className="shrink-0 w-8 h-8 rounded-full border border-border-strong flex items-center justify-center group-hover:border-accent/40 transition-colors mt-1">
+        <span className="shrink-0 w-8 h-8 rounded-md border border-border-strong flex items-center justify-center group-hover:border-foreground/30 transition-colors mt-1">
           {open ? (
-            <Minus className="w-3.5 h-3.5 text-accent-bright" />
+            <Minus className="w-3.5 h-3.5 text-foreground" />
           ) : (
             <Plus className="w-3.5 h-3.5 text-muted" />
           )}
@@ -78,7 +78,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="text-muted leading-[1.8] pb-8 max-w-2xl text-base">
+            <p className="text-muted leading-[1.8] pb-8 max-w-xl text-base">
               {faq.a}
             </p>
           </motion.div>

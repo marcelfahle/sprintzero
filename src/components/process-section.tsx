@@ -52,14 +52,14 @@ export function ProcessSection() {
                 {step.num}
               </div>
               <div>
-                <h3 className="font-serif text-2xl sm:text-3xl font-semibold group-hover:text-accent-bright transition-colors duration-500">
+                <h3 className="font-serif text-2xl sm:text-3xl font-semibold group-hover:text-foreground transition-colors duration-500">
                   {step.title}
                 </h3>
-                <span className="mono-tag text-accent mt-2 inline-block">
+                <span className="mono-tag text-muted-soft mt-2 inline-block">
                   {step.timing}
                 </span>
               </div>
-              <p className="text-muted leading-[1.8] text-base lg:pt-1">
+              <p className="text-muted leading-[1.8] text-base lg:pt-1 max-w-xl">
                 {step.body}
               </p>
             </div>
