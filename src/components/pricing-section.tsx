@@ -31,17 +31,32 @@ export function PricingSection() {
             </h2>
           </FitText>
 
-          <div className="animated-border rounded-lg p-10 sm:p-14 text-center">
-            <span className="mono-tag text-foreground/70 block mb-6">
+          <div className="animated-border rounded-lg p-10 sm:p-14 text-center shadow-[0_0_40px_-10px_rgba(234,88,12,0.2)]">
+            <span className="mono-tag text-foreground/70 block mb-8">
               Your investment
             </span>
-            <div className="font-serif text-7xl sm:text-8xl md:text-9xl font-bold text-accent-bright leading-[1.1] pb-2 mb-6">
+
+            {/* Anchor price */}
+            <div className="mb-1">
+              <span className="mono-tag text-muted-soft/60 block mb-1.5">Standard rate</span>
+              <span className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-muted-soft/40 line-through decoration-2">
+                $50K
+              </span>
+            </div>
+
+            {/* Current price */}
+            <p className="mono-tag text-accent-bright/70 mt-4 mb-2">Founding client rate</p>
+            <div className="font-serif text-7xl sm:text-8xl md:text-9xl font-bold text-accent-bright leading-[1.1] pb-2 mb-4 price-glow">
               $35K
             </div>
-            <p className="text-muted text-sm mb-2 mono-tag">Starting at</p>
-            <p className="text-muted text-base mb-8 max-w-sm mx-auto leading-relaxed">
-              Scoped after the audit call. Based on codebase complexity.
-              {" "}No hourly billing. No change orders. No surprises.
+
+            {/* Savings badge */}
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-success/10 border border-success/25 mb-8 savings-pulse">
+              <span className="mono-tag text-success font-semibold">Save $15,000</span>
+            </div>
+
+            <p className="text-muted text-sm mb-8 max-w-xs mx-auto leading-relaxed">
+              Scoped after the audit call. No hourly billing. No change orders.
             </p>
             <p className="mono-tag text-muted mb-10">
               <span className="text-accent-bright font-semibold">2 spots left — May 2026</span>
@@ -71,8 +86,8 @@ export function PricingSection() {
           <p className="text-muted leading-[1.8] text-base max-w-xl">
             Close two deals you&apos;d otherwise lose to a security
             questionnaire &mdash; that&apos;s{" "}
-            <span className="text-foreground font-medium">$60K+</span> on a
-            $35K investment. Planning to sell in the next 3&ndash;5 years? The
+            <span className="text-foreground font-medium">$60K+</span> back on a{" "}
+            <span className="text-foreground font-medium">$35K</span> investment. Planning to sell in the next 3&ndash;5 years? The
             difference between a modern codebase and one that signals
             &ldquo;budget for a rewrite&rdquo; is hundreds of thousands in
             acquisition price. Technical due diligence is where deals die.
