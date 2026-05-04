@@ -46,8 +46,9 @@ export function PricingSection() {
 
             {/* Current price */}
             <p className="mono-tag text-accent-bright/70 mt-4 mb-2">Founding client rate</p>
-            <div className="font-serif text-7xl sm:text-8xl md:text-9xl font-bold text-accent-bright leading-[1.1] pb-2 mb-4 price-glow">
-              $35K
+            <div className="flex items-baseline justify-center gap-2 sm:gap-3 mb-4">
+              <span className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal italic text-accent-bright/50">from</span>
+              <span className="font-serif text-7xl sm:text-8xl md:text-9xl font-bold text-accent-bright leading-[1.1] pb-2 price-glow">$35K</span>
             </div>
 
             {/* Savings badge */}
