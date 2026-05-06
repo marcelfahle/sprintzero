@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────────────────────
+   SprintZero Design System — Light theme primary, accent teal
+   ──────────────────────────────────────────────────────────── */
+
+@theme {
+  /* ── Font stacks ── */
+  --font-display: var(--font-geist-sans), system-ui, sans-serif;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", "Fira Code", monospace;
+
+  /* ── Brand color tokens ── */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f3;
+  --color-bg-tertiary: #ededeb;
+  --color-bg-inverse: #0a0a09;
+
+  --color-fg-primary: #0c0c0b;
+  --color-fg-secondary: #52524f;
+  --color-fg-tertiary: #a8a8a1;
+  --color-fg-inverse: #ffffff;
+
+  --color-accent-300: #5eead4;
+  --color-accent-400: #2dd4bf;
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
+  --color-accent-700: #0f766e;
+
+  --color-border-default: #e5e5e2;
+  --color-border-strong: #d4d4cf;
+  --color-border-subtle: #ededeb;
+
+  --color-dark-bg: #0a0a09;
+  --color-dark-bg-2: #0e0e0d;
+  --color-dark-border: #1e1e1c;
+  --color-dark-border-2: #292927;
+  --color-dark-fg: #fafaf9;
+  --color-dark-fg-secondary: #a8a8a1;
+  --color-dark-fg-tertiary: #737370;
+  --color-dark-border-strong: #3f3f3c;
+
+  /* ── Tracking ── */
+  --tracking-display: -0.04em;
+  --tracking-heading: -0.03em;
+  --tracking-subhead: -0.02em;
+  --tracking-tight: -0.01em;
+  --tracking-mono: 0.05em;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--color-bg-primary);
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-fg-primary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: rgba(20, 184, 166, 0.25);
+  color: var(--color-fg-primary);
+}
+
+.font-mono {
+  font-feature-settings: "ss01", "cv01";
+}
