@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "./container";
 
 const stats = [
@@ -11,6 +12,17 @@ export function ProofStrip() {
   return (
     <section className="bg-bg-primary px-0 pt-12 pb-16">
       <Container>
+        <div className="mb-8 flex flex-wrap items-baseline justify-between gap-3">
+          <p className="font-mono text-[13px] font-medium tracking-mono text-accent-600 uppercase">
+            What our last sprint shipped
+          </p>
+          <Link
+            href="/case-studies"
+            className="text-[14px] font-medium text-fg-primary underline-offset-4 hover:underline"
+          >
+            Read the case study →
+          </Link>
+        </div>
         <div className="flex flex-wrap items-stretch gap-10 sm:gap-12">
           {stats.map((s, i) => (
             <div key={s.label} className="flex items-center gap-10 sm:gap-12">

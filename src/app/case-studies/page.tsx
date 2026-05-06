@@ -79,10 +79,10 @@ export default function CaseStudiesIndexPage() {
               Same client. Twice.
             </h1>
             <p className="max-w-[780px] text-[18px] leading-[1.65] text-fg-secondary sm:text-[19px]">
-              Most agencies brag about logos. We&apos;d rather show the same client coming back. Our
-              first SprintZero engagement was a frontend modernization for a HIPAA-compliant
-              healthcare SaaS. After we shipped, they hired us again — this time for the backend.
-              Two sprints, one client, full-stack proof.
+              Most agencies brag about logos. We&apos;d rather show the same client coming back. A
+              HIPAA-compliant healthcare SaaS hired us for a frontend modernization. After we
+              shipped, they came back — this time for the backend. Two sprints, one client,
+              full-stack proof.
             </p>
           </Container>
         </header>

@@ -68,7 +68,7 @@ export function CaseStudy() {
             &ldquo;Where can I deploy more money for this?&rdquo;
           </blockquote>
           <figcaption className="font-mono text-[13px] tracking-mono text-accent-400 uppercase">
-            — SaaS founder, after our first sprint together
+            — Founder, HIPAA SaaS client
           </figcaption>
           <p className="border-t border-[#292927] pt-4 text-[14px] leading-[1.5] text-[#a8a8a1]">
             They came back for Sprint 2. Same client. Twice. That&apos;s the proof.
