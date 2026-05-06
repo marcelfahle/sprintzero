@@ -19,7 +19,7 @@ const steps = [
   {
     n: "04",
     title: "Handover",
-    desc: "Live workshop, custom AI skills package, and a 2-week catch-up. Your team owns the new codebase and the AI workflows that built it.",
+    desc: "Live workshop, custom AI skills package, and a 30-day support window. Your team owns the new codebase and the AI workflows that built it.",
   },
 ];
 

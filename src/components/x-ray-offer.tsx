@@ -52,7 +52,7 @@ export function XRayOffer() {
                 </span>
                 <span className="flex-1 text-[15px] text-fg-primary">
                   <strong className="font-semibold">Handover</strong> — workshop, custom AI skills,
-                  2-week catch-up.{" "}
+                  30-day support window.{" "}
                   <span className="rounded-full bg-accent-500/15 px-2 py-0.5 font-mono text-[11px] font-semibold tracking-mono whitespace-nowrap text-accent-700 uppercase">
                     Included
                   </span>

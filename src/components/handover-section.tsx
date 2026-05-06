@@ -12,9 +12,9 @@ const handovers = [
     desc: "The actual Claude, Cursor, and Copilot workflows we used during the sprint — tuned to your stack. No prompt-engineering homework. Even juniors apply them and ship.",
   },
   {
-    eyebrow: "2 hours · two weeks later",
-    title: "The catch-up",
-    desc: "We come back two weeks after the sprint to check what stuck, fix what didn't, and answer the questions that only surface once your team is shipping in the new code.",
+    eyebrow: "30 days · async + catch-up",
+    title: "The support window",
+    desc: "We don't disappear when the sprint ships. For 30 days your team can ping us async with questions that surface in shipping. Plus a scheduled 2-hour catch-up at week 2 to check what stuck and fix what didn't.",
   },
 ];
 
