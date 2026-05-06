@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Container } from "./container";
 
+type Metric = { value: string; label: string };
 type Card = {
   label: string;
   title: string;
-  tags: string[];
-  metrics: { value: string; label: string; caption?: string }[];
+  metrics: [Metric, Metric, Metric];
   desc: string;
   href:
     | "/case-studies/cra-to-vite-migration-healthcare-saas"
@@ -16,31 +16,23 @@ const cards: Card[] = [
   {
     label: "Sprint 1 — Frontend",
     title: "CRA → Vite, Redux Saga → RTK",
-    tags: ["React", "CRA", "Redux Saga", "Vite", "RTK Query"],
     metrics: [
       { value: "993", label: "Files migrated" },
-      {
-        value: "194 → 29",
-        label: "Vulnerabilities",
-        caption: "85% reduction at handoff; falling under our 30-day guarantee",
-      },
+      { value: "194 → 29", label: "Vulnerabilities (falling)" },
       { value: "25+ → 4", label: "Reducers" },
     ],
-    desc: "993 files migrated from Create React App to Vite. 25+ Redux Saga reducers consolidated to 4 RTK slices. First real test suite added. Zero feature regressions.",
+    desc: "End-of-life build toolchain replaced. Redux Saga complexity unwound. First automated test suite ever shipped for the codebase.",
     href: "/case-studies/cra-to-vite-migration-healthcare-saas",
   },
   {
     label: "Sprint 2 — Backend",
     title: "Laravel 8 → 13, PHP 7.3 → 8.5",
-    tags: ["Laravel", "PHP", "MySQL", "HIPAA"],
     metrics: [
       { value: "7", label: "Services modernized" },
-      { value: "184", label: "Controllers mapped" },
-      { value: "13", label: "Critical + high findings closed" },
       { value: "71", label: "Advisories resolved" },
       { value: "2,400+", label: "Dead lines removed" },
     ],
-    desc: "7-service Laravel backend modernized end-to-end. Stack moved to Laravel 13 on PHP 8.5. Security debt cleared. CI and test baseline shipped. HIPAA posture mapped and addressed.",
+    desc: "7-service Laravel backend modernized end-to-end. Security debt cleared. CI and test baseline shipped.",
     href: "/case-studies/laravel-modernization-healthcare-saas",
   },
 ];
@@ -66,43 +58,30 @@ export function CaseStudy() {
           {cards.map((c) => (
             <article
               key={c.label}
-              className="flex flex-col gap-5 rounded-lg border border-[#292927] bg-white/[0.03] p-8"
+              className="flex flex-col gap-6 rounded-xl border border-[#292927] bg-white/[0.03] p-8"
             >
               <span className="font-mono text-[12px] font-medium tracking-mono text-accent-400 uppercase">
                 {c.label}
               </span>
-              <h3 className="font-display text-[22px] leading-[1.25] font-semibold tracking-subhead text-[#fafaf9]">
+              <h3 className="font-display text-[24px] leading-[1.2] font-semibold tracking-subhead text-[#fafaf9]">
                 {c.title}
               </h3>
-              <div className="flex flex-wrap gap-1.5">
-                {c.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full bg-white/[0.06] px-3 py-1 font-mono text-[12px] font-medium text-[#a8a8a1]"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
+              <dl className="grid grid-cols-3 gap-4 border-y border-[#1e1e1c] py-5">
                 {c.metrics.map((m) => (
-                  <div key={m.label} className="flex flex-col gap-1">
-                    <span className="font-mono text-[20px] font-semibold text-[#fafaf9]">
+                  <div key={m.label} className="flex flex-col gap-1.5">
+                    <dd className="font-mono text-[20px] leading-none font-semibold tracking-tight text-[#fafaf9] tabular-nums">
                       {m.value}
-                    </span>
-                    <span className="text-[13px] text-[#737370]">{m.label}</span>
-                    {m.caption ? (
-                      <span className="text-[11px] leading-tight text-accent-400/80">
-                        {m.caption}
-                      </span>
-                    ) : null}
+                    </dd>
+                    <dt className="text-[12px] leading-tight text-[#737370]">
+                      {m.label}
+                    </dt>
                   </div>
                 ))}
-              </div>
-              <p className="text-[16px] leading-[1.6] text-[#a8a8a1]">{c.desc}</p>
+              </dl>
+              <p className="text-[15px] leading-[1.6] text-[#a8a8a1]">{c.desc}</p>
               <Link
                 href={c.href}
-                className="mt-auto text-[15px] font-medium text-accent-400 underline-offset-4 hover:underline"
+                className="mt-auto text-[14px] font-medium text-accent-400 underline-offset-4 hover:underline"
               >
                 Read the full case study →
               </Link>

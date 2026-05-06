@@ -1,7 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { ProofStrip } from "@/components/proof-strip";
-import { ProofCallout } from "@/components/proof-callout";
 import { ProblemSection } from "@/components/problem-section";
 import { CaseStudy } from "@/components/case-study";
 import { WhatWeAre } from "@/components/what-we-are";
@@ -23,7 +22,6 @@ export default function HomePage() {
       <main>
         <Hero />
         <ProofStrip />
-        <ProofCallout />
         <ProblemSection />
         <CaseStudy />
         <WhatWeAre />

@@ -10,12 +10,11 @@ export function Hero() {
           30-day legacy codebase modernization
         </p>
         <h1 className="mb-6 max-w-[920px] font-display text-[40px] leading-[1.05] font-bold tracking-display text-fg-primary sm:text-[56px] lg:text-[68px]">
-          AI tools can&apos;t fix your legacy codebase. We can. In 30 days.
+          Your codebase is the bottleneck. We fix it in 30 days.
         </h1>
-        <p className="mb-10 max-w-[700px] text-[18px] leading-[1.65] text-fg-secondary sm:text-[19px]">
-          AI-ready architecture for SaaS teams on aging React, Laravel, Rails, and Phoenix stacks.
-          993 files in one sprint. 85% vulnerability reduction. Zero feature regressions.
-          Performance guarantee.
+        <p className="mb-10 max-w-[680px] text-[18px] leading-[1.65] text-fg-secondary sm:text-[19px]">
+          AI-assisted engineering, not vibe coding. For SaaS teams on aging
+          React, Laravel, Rails, and Phoenix stacks.
         </p>
         <div className="flex flex-wrap items-center gap-4">
           <a
@@ -33,11 +32,8 @@ export function Hero() {
             See the case study →
           </a>
         </div>
-        <p className="mt-5 max-w-[640px] font-mono text-[13px] tracking-mono text-fg-tertiary">
-          Modernization sprint from $35K · X-Ray credits 100% if you proceed ·{" "}
-          <a href="/x-ray" className="text-fg-primary underline-offset-4 hover:underline">
-            See an example X-Ray →
-          </a>
+        <p className="mt-5 font-mono text-[13px] tracking-mono text-fg-tertiary">
+          Modernization sprint from $35K · X-Ray credits 100% if you proceed
         </p>
       </Container>
     </section>
