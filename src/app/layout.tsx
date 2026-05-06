@@ -23,23 +23,30 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+const TITLE = "Your codebase is the bottleneck. We fix it in 30 days.";
+const DESCRIPTION =
+  "AI-assisted engineering, not vibe coding. For SaaS teams on aging React, Laravel, Rails, and Phoenix stacks. Starts with a $2,500 Codebase X-Ray; modernization sprint from $35K.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://sprintzero.sh"),
-  title: "SprintZero — Legacy codebase modernization in one sprint",
-  description:
-    "Modernize the legacy codebase that's slowing your team down. 30-day fixed-scope sprint for SaaS companies on aging JS, PHP, and Rails stacks.",
+  title: {
+    default: `${TITLE} — SprintZero`,
+    template: "%s — SprintZero",
+  },
+  description: DESCRIPTION,
+  alternates: { canonical: "https://sprintzero.sh" },
   openGraph: {
-    title: "SprintZero — Legacy codebase modernization in one sprint",
-    description:
-      "30-day fixed-scope modernization sprint. Starts with a paid Codebase X-Ray. For SaaS teams on aging stacks.",
     type: "website",
     url: "https://sprintzero.sh",
     siteName: "SprintZero",
+    title: TITLE,
+    description: DESCRIPTION,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SprintZero — Legacy codebase modernization in one sprint",
-    description: "30-day fixed-scope modernization sprint for SaaS teams on aging stacks.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
