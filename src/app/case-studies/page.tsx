@@ -78,29 +78,15 @@ export default function CaseStudiesIndexPage() {
             <p className="mb-5 font-mono text-[13px] font-medium tracking-mono text-accent-600 uppercase">
               Case studies
             </p>
-            <h1 className="mb-6 font-display text-[40px] leading-[1.05] font-bold tracking-display text-fg-primary sm:text-[52px] lg:text-[60px]">
+            <h1 className="mb-5 max-w-[780px] font-display text-[32px] leading-[1.1] font-bold tracking-heading text-fg-primary sm:text-[40px] lg:text-[44px]">
               A HIPAA SaaS, modernized end-to-end.
             </h1>
-            <p className="max-w-[780px] text-[18px] leading-[1.65] text-fg-secondary sm:text-[19px]">
+            <p className="max-w-[680px] text-[17px] leading-[1.6] text-fg-secondary">
               Frontend in 30 days. Backend right after. Same client both
-              times. Below: both sprints, in full — the work, the numbers,
-              the patterns.
+              times. Below: both sprints, in full.
             </p>
           </Container>
         </header>
-
-        <section className="border-b border-border-default bg-bg-primary py-14">
-          <Container>
-            <figure className="mx-auto flex max-w-[820px] flex-col gap-4 rounded-xl border border-accent-500/30 bg-accent-500/[0.05] p-8 sm:p-10">
-              <blockquote className="font-display text-[24px] leading-[1.25] font-semibold tracking-subhead text-fg-primary sm:text-[28px]">
-                &ldquo;Where can I deploy more money for this?&rdquo;
-              </blockquote>
-              <figcaption className="font-mono text-[13px] tracking-mono text-accent-700 uppercase">
-                — Founder, HIPAA SaaS client
-              </figcaption>
-            </figure>
-          </Container>
-        </section>
 
         <section className="bg-bg-secondary py-20">
           <Container>
