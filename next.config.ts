@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withPlausibleProxy } from "next-plausible";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -6,4 +7,6 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
 };
 
-export default nextConfig;
+export default withPlausibleProxy({
+  src: "https://plausible.io/js/pa-yaXxF7dVcKtBSbOtfYd8j.js",
+})(nextConfig);
