@@ -2,7 +2,7 @@ import { Container } from "./container";
 
 const stats = [
   { value: "993", label: "Files migrated" },
-  { value: "194 → 0", label: "Production vulnerabilities" },
+  { value: "194 → 29", label: "Production vulnerabilities (falling)" },
   { value: "0", label: "Feature regressions" },
   { value: "1 sprint", label: "30 days, fixed scope" },
 ];

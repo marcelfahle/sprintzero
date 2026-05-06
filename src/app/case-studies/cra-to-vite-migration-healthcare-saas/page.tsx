@@ -52,7 +52,7 @@ const articleSchema = {
 };
 
 const metricsRows = [
-  { metric: "Production vulnerabilities", before: "194", after: "0" },
+  { metric: "Production vulnerabilities", before: "194", after: "29 (falling)" },
   { metric: "Build toolchain", before: "CRA (end-of-life)", after: "Vite" },
   {
     metric: "State management",
@@ -77,7 +77,7 @@ export default function FrontendCaseStudyPage() {
           subtitle="993 files migrated. Zero feature regressions. One sprint."
           intro="A mid-market healthcare SaaS came to us with a Create React App build, a Redux Saga state management layer that punished every new feature, and 194 production vulnerabilities. We modernized the entire frontend in 30 days. Then they hired us again for the backend."
           heroMetrics={[
-            { value: "0", label: "Production vulnerabilities at handoff" },
+            { value: "85%", label: "Vulnerability reduction at handoff" },
             { value: "993", label: "Files migrated" },
             { value: "0", label: "Feature regressions" },
             { value: "30 days", label: "Fixed scope" },
@@ -136,10 +136,9 @@ export default function FrontendCaseStudyPage() {
             </p>
             <p>
               <strong className="font-semibold text-fg-primary">
-                Security: 194 production vulnerabilities → 0.
+                Security: 194 production vulnerabilities → 29.
               </strong>{" "}
-              85% reduction at handoff, then continued to zero under our 30-day commitment
-              guarantee.
+              85% reduction at handoff, falling under our 30-day commitment guarantee.
             </p>
           </CaseStudySection>
 

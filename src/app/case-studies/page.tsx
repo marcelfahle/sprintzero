@@ -46,7 +46,7 @@ const cards: Card[] = [
     meta: "HIPAA Healthcare SaaS · 30 days",
     desc: "A 993-file React modernization for a HIPAA-compliant healthcare platform. End-of-life build toolchain replaced. Redux Saga complexity unwound. First automated test suite ever shipped for the codebase.",
     metrics: [
-      { value: "0", label: "Production vulnerabilities at handoff" },
+      { value: "85%", label: "Vulnerability reduction at handoff" },
       { value: "993", label: "Files migrated" },
       { value: "4", label: "Reducers (down from 25+)" },
     ],
@@ -54,13 +54,13 @@ const cards: Card[] = [
   {
     href: "/case-studies/laravel-modernization-healthcare-saas",
     overline: "Sprint 2 — Backend",
-    title: "Laravel 8 → 13 Modernization Plan",
+    title: "Laravel 8 → 13 Modernization",
     meta: "HIPAA Healthcare SaaS",
-    desc: "A 7-service Laravel backend audit and phased modernization plan. Security exposure mapped. CI gaps identified. HIPAA risk picture written for leadership in plain English. The roadmap that's driving the next phase of the engagement.",
+    desc: "A 7-service Laravel backend audited and modernized end-to-end. Laravel 8/9 → 13, PHP 7.3 → 8.5, MySQL 5.7 → 8.4 LTS. Security exposure cleared. CI and test baseline shipped. HIPAA risk picture written for leadership in plain English.",
     metrics: [
-      { value: "7", label: "Services audited" },
+      { value: "7", label: "Services modernized" },
       { value: "184", label: "Controllers mapped" },
-      { value: "71", label: "Advisories prioritized" },
+      { value: "71", label: "Advisories resolved" },
     ],
   },
 ];

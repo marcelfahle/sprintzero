@@ -20,9 +20,9 @@ const cards: Card[] = [
     metrics: [
       { value: "993", label: "Files migrated" },
       {
-        value: "194 → 0",
+        value: "194 → 29",
         label: "Vulnerabilities",
-        caption: "Backed by our ship-or-keep-working guarantee",
+        caption: "85% reduction at handoff; falling under our 30-day guarantee",
       },
       { value: "25+ → 4", label: "Reducers" },
     ],
@@ -31,16 +31,16 @@ const cards: Card[] = [
   },
   {
     label: "Sprint 2 — Backend",
-    title: "Laravel 8 → 13, PHP 7.3 → 8.3",
+    title: "Laravel 8 → 13, PHP 7.3 → 8.5",
     tags: ["Laravel", "PHP", "MySQL", "HIPAA"],
     metrics: [
-      { value: "7", label: "Services audited" },
+      { value: "7", label: "Services modernized" },
       { value: "184", label: "Controllers mapped" },
-      { value: "13", label: "Critical + high findings" },
-      { value: "71", label: "Advisories surfaced" },
+      { value: "13", label: "Critical + high findings closed" },
+      { value: "71", label: "Advisories resolved" },
       { value: "2,400+", label: "Dead lines removed" },
     ],
-    desc: "Audit + scoped modernization plan for a 7-service Laravel backend. Risk picture mapped against HIPAA. Phased delivery plan that's now driving the next sprint.",
+    desc: "7-service Laravel backend modernized end-to-end. Stack moved to Laravel 13 on PHP 8.5. Security debt cleared. CI and test baseline shipped. HIPAA posture mapped and addressed.",
     href: "/case-studies/laravel-modernization-healthcare-saas",
   },
 ];

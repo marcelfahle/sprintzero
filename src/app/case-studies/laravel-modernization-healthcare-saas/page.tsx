@@ -14,31 +14,31 @@ import { BOOKING_URL, XRAY_PRICE } from "@/lib/constants";
 const URL = "https://sprintzero.sh/case-studies/laravel-modernization-healthcare-saas";
 
 export const metadata: Metadata = {
-  title: "Laravel 8 → 13 Modernization Case Study: HIPAA Backend Audit | SprintZero",
+  title: "Laravel 8 → 13 Modernization Case Study: HIPAA Backend | SprintZero",
   description:
-    "Inside our audit and modernization plan for a HIPAA-compliant Laravel 8 backend. 7 services, 184 controllers, 71 advisories — and the path to a current, supportable platform.",
+    "How we modernized a HIPAA-compliant Laravel 8 backend in one sprint. 7 services, 184 controllers, 71 advisories resolved — to Laravel 13 on PHP 8.5.",
   alternates: { canonical: URL },
   openGraph: {
     type: "article",
     url: URL,
-    title: "Laravel 8 → 13 Modernization: HIPAA Backend Audit | SprintZero",
+    title: "Laravel 8 → 13 Modernization: HIPAA Backend | SprintZero",
     description:
-      "7 services. 184 controllers. 71 advisories. The audit that drove the modernization plan.",
+      "7 services. 184 controllers. 71 advisories resolved. From Laravel 8/PHP 7.3 to Laravel 13/PHP 8.5.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Laravel 8 → 13 Modernization: HIPAA Backend Audit | SprintZero",
+    title: "Laravel 8 → 13 Modernization: HIPAA Backend | SprintZero",
     description:
-      "7 services. 184 controllers. 71 advisories. The audit that drove the modernization plan.",
+      "7 services. 184 controllers. 71 advisories resolved. From Laravel 8/PHP 7.3 to Laravel 13/PHP 8.5.",
   },
 };
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Laravel 8 → 13 Modernization Case Study: HIPAA Backend Audit",
+  headline: "Laravel 8 → 13 Modernization Case Study: HIPAA Backend",
   description:
-    "Inside our audit and modernization plan for a HIPAA-compliant Laravel 8 backend. 7 services, 184 controllers, 71 advisories.",
+    "How we modernized a HIPAA-compliant Laravel 8 backend. 7 services, 184 controllers, 71 advisories resolved — to Laravel 13 on PHP 8.5.",
   author: { "@type": "Person", name: "Marcel Fahle" },
   publisher: {
     "@type": "Organization",
@@ -82,14 +82,14 @@ export default function BackendCaseStudyPage() {
       <main>
         <CaseStudyLayout
           overline="Case study · Backend"
-          title="HIPAA SaaS backend audit and modernization plan."
-          subtitle="7 services. 184 controllers. The plan that took it forward."
-          intro="After we shipped the frontend, the same client came back. The next problem was bigger: a 7-service Laravel backend running on PHP 7.3, accumulated security debt, and almost no automated test coverage. We audited the entire backend and delivered the modernization roadmap that's now driving the next phase of the engagement."
+          title="HIPAA SaaS Laravel backend modernization."
+          subtitle="7 services. 184 controllers. Modernized end-to-end."
+          intro="After we shipped the frontend, the same client came back. The next problem was bigger: a 7-service Laravel backend running on PHP 7.3, accumulated security debt, and almost no automated test coverage. We audited the entire backend, then shipped the modernization."
           heroMetrics={[
-            { value: "7", label: "Services audited" },
+            { value: "7", label: "Services modernized" },
             { value: "184", label: "Controllers mapped" },
-            { value: "71", label: "Composer advisories surfaced" },
-            { value: "13", label: "Critical + high findings" },
+            { value: "71", label: "Composer advisories resolved" },
+            { value: "13", label: "Critical + high findings closed" },
           ]}
         >
           <CaseStudySection
@@ -124,60 +124,67 @@ export default function BackendCaseStudyPage() {
             <p>For a HIPAA platform, that&apos;s the kind of inventory you can&apos;t keep.</p>
           </CaseStudySection>
 
-          <CaseStudySection
-            overline="What we delivered"
-            title="A real audit, written for the technical lead and the executive team simultaneously."
-          >
+          <CaseStudySection overline="The audit" title="Three components that shaped the sprint.">
+            <p>
+              Before we shipped the modernization, we ran the audit that shaped it. Three
+              components, written for the technical lead and the executive team simultaneously:
+            </p>
             <p>
               <strong className="font-semibold text-fg-primary">
                 1. Modernization Foundation.
               </strong>{" "}
-              Where every service is, what it costs to keep there, and what the end state should
+              Where every service was, what it cost to keep there, and what the end state should
               look like. Current → supportable → boring enough that a normal engineering team can
               move fast on it.
             </p>
             <p>
               <strong className="font-semibold text-fg-primary">2. Modernization Roadmap.</strong>{" "}
-              The phased delivery plan.
+              The phased delivery plan we then executed against.
             </p>
-            <ul className="flex flex-col gap-3 pl-5 [&>li]:list-disc [&>li]:marker:text-accent-500">
-              <li>
-                <strong className="font-semibold text-fg-primary">
-                  Phase 0: Contain the risk.
-                </strong>{" "}
-                Lock down the exposed authentication surfaces. Rotate any credentials sitting where
-                they shouldn&apos;t be. Restore CSRF where it belongs. Turn rate limiting back on.
-                The work that should not stay open for one more quarter.
-              </li>
-              <li>
-                <strong className="font-semibold text-fg-primary">
-                  Phase 1: Build the safety net.
-                </strong>{" "}
-                Make each repo boot from a clean checkout. Stand up CI to install, test, and run
-                dependency audits on every push. Write smoke tests for the cross-service flows that
-                actually matter. Add contract tests around the shared service-registry surfaces.
-              </li>
-              <li>
-                <strong className="font-semibold text-fg-primary">Phase 2: Move to current.</strong>{" "}
-                Staged Laravel and PHP upgrades, in the right order. Latest supported versions,
-                supported runtimes, supported tooling.
-              </li>
-            </ul>
             <p>
               <strong className="font-semibold text-fg-primary">3. HIPAA and Security Risk.</strong>{" "}
               Plain-English risk picture for leadership. OCR&apos;s 2024–2025 audit program is
               leaning harder into Security Rule controls. The proposed December 2024 Security Rule
               update raises the bar further. We mapped the current backend posture against it. The
-              answer was uncomfortable, and now it&apos;s actionable.
+              answer was uncomfortable, and we made it actionable.
             </p>
-            <p>
-              <strong className="font-semibold text-fg-primary">
-                Plus an architecture simplification add-on:
-              </strong>{" "}
-              a candid read on which services should stay split and which should merge into a
-              modular core. Several were flagged as strong merge candidates — fewer repos, fewer
-              deploy surfaces, fewer coordination costs.
-            </p>
+          </CaseStudySection>
+
+          <CaseStudySection overline="What we shipped" title="The roadmap, executed.">
+            <ul className="flex flex-col gap-4 pl-5 [&>li]:list-disc [&>li]:marker:text-accent-500">
+              <li>
+                <strong className="font-semibold text-fg-primary">
+                  Phase 0: Contained the risk.
+                </strong>{" "}
+                Locked down the exposed authentication surfaces. Rotated any credentials sitting
+                where they shouldn&apos;t be. Restored CSRF where it belonged. Turned rate limiting
+                back on. The work that couldn&apos;t stay open for another quarter — done first.
+              </li>
+              <li>
+                <strong className="font-semibold text-fg-primary">
+                  Phase 1: Built the safety net.
+                </strong>{" "}
+                Each repo now boots from a clean checkout. CI installs, tests, and runs dependency
+                audits on every push. Smoke tests cover the cross-service flows that actually
+                matter. Contract tests live around the shared service-registry surfaces.
+              </li>
+              <li>
+                <strong className="font-semibold text-fg-primary">
+                  Phase 2: Moved to current.
+                </strong>{" "}
+                Staged Laravel and PHP upgrades, in the right order. Laravel 8/9 → 13. PHP 7.3–8.0.2
+                → 8.5. Node 8 → 24 LTS. MySQL 5.7 → 8.4 LTS. Latest supported versions, supported
+                runtimes, supported tooling.
+              </li>
+              <li>
+                <strong className="font-semibold text-fg-primary">
+                  Architecture simplification.
+                </strong>{" "}
+                We delivered a candid read on which services should stay split and which should
+                merge into a modular core. Several were flagged as strong merge candidates — fewer
+                repos, fewer deploy surfaces, fewer coordination costs.
+              </li>
+            </ul>
           </CaseStudySection>
 
           <CaseStudySection overline="The numbers" title="Audit findings.">
