@@ -5,6 +5,7 @@ import { ProblemSection } from "@/components/problem-section";
 import { CaseStudy } from "@/components/case-study";
 import { WhatWeAre } from "@/components/what-we-are";
 import { HowItWorks } from "@/components/how-it-works";
+import { HandoverSection } from "@/components/handover-section";
 import { FrameworkBar } from "@/components/framework-bar";
 import { ComparisonSection } from "@/components/comparison-section";
 import { FounderTrust } from "@/components/founder-trust";
@@ -27,6 +28,7 @@ export default function HomePage() {
         <CaseStudy />
         <WhatWeAre />
         <HowItWorks />
+        <HandoverSection />
         <FrameworkBar />
         <ComparisonSection />
         <FounderTrust />

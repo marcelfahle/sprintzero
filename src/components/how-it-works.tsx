@@ -18,8 +18,8 @@ const steps = [
   },
   {
     n: "04",
-    title: "Handoff + retainer",
-    desc: "Your team gets a documented, AI-ready codebase with a walkthrough. Optional guardrail retainer keeps things clean.",
+    title: "Handover",
+    desc: "Live workshop, custom AI skills package, and a 2-week catch-up. Your team owns the new codebase and the AI workflows that built it.",
   },
 ];
 
