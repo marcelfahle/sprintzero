@@ -66,6 +66,7 @@ const articleSchema = {
     url: "https://sprintzero.sh",
   },
   datePublished: "2026-05-06",
+  dateModified: "2026-05-06",
   url: URL,
   mainEntityOfPage: URL,
   articleSection: "Case Study",
@@ -111,6 +112,7 @@ export default function BackendCaseStudyPage() {
             { value: "71", label: "Composer advisories resolved" },
             { value: "13", label: "Critical + high findings closed" },
           ]}
+          lastUpdated={{ iso: "2026-05-06", display: "May 2026" }}
         >
           <CaseStudySection
             overline="The situation"

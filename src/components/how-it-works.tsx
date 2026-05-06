@@ -23,9 +23,29 @@ const steps = [
   },
 ];
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How a SprintZero modernization engagement works",
+  description:
+    "Four-step process for modernizing a legacy SaaS codebase in 30 days — Codebase X-Ray to Handover.",
+  totalTime: "P30D",
+  step: steps.map((step, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: step.title,
+    text: step.desc,
+  })),
+};
+
 export function HowItWorks() {
   return (
     <section id="how" className="bg-bg-secondary py-20">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
       <Container>
         <div className="mb-14">
           <p className="mb-4 font-mono text-[13px] font-medium tracking-mono text-accent-600">

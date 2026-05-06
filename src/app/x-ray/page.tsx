@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
 };
 
+const LAST_UPDATED_ISO = "2026-05-06";
+const LAST_UPDATED_DISPLAY = "May 2026";
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -167,6 +170,31 @@ const faqs = [
   },
 ];
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How the Codebase X-Ray works",
+  description:
+    "Four-step process for the SprintZero Codebase X-Ray diagnostic — kickoff to walkthrough in one week.",
+  totalTime: "P7D",
+  step: steps.map((step, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: step.title,
+    text: step.desc,
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function XRayPage() {
   return (
     <>
@@ -196,6 +224,10 @@ export default function XRayPage() {
             >
               Book the Codebase X-Ray — {XRAY_PRICE} →
             </a>
+            <p className="mt-8 font-mono text-[12px] tracking-mono text-fg-tertiary uppercase">
+              Last updated{" "}
+              <time dateTime={LAST_UPDATED_ISO}>{LAST_UPDATED_DISPLAY}</time>
+            </p>
           </Container>
         </header>
 
@@ -415,6 +447,16 @@ export default function XRayPage() {
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   );

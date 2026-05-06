@@ -9,6 +9,7 @@ export function CaseStudyLayout({
   subtitle,
   intro,
   heroMetrics,
+  lastUpdated,
   children,
 }: {
   overline: string;
@@ -16,6 +17,7 @@ export function CaseStudyLayout({
   subtitle: string;
   intro: string;
   heroMetrics: HeroMetric[];
+  lastUpdated?: { iso: string; display: string };
   children: ReactNode;
 }) {
   return (
@@ -34,6 +36,12 @@ export function CaseStudyLayout({
           <p className="max-w-[760px] text-[17px] leading-[1.65] text-fg-secondary sm:text-[18px]">
             {intro}
           </p>
+          {lastUpdated ? (
+            <p className="mt-8 font-mono text-[12px] tracking-mono text-fg-tertiary uppercase">
+              Last updated{" "}
+              <time dateTime={lastUpdated.iso}>{lastUpdated.display}</time>
+            </p>
+          ) : null}
           <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-border-default pt-10 sm:grid-cols-4">
             {heroMetrics.map((metric) => (
               <div key={metric.label} className="flex flex-col gap-1.5">
