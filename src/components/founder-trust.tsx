@@ -68,7 +68,6 @@ export function FounderTrust() {
                 engagement personally, not farming your project out to subcontractors. When we say
                 shipped in 30 days, he&apos;s the one writing the code.
               </p>
-              <p className="font-mono text-[13px] text-accent-600">First client hired us twice.</p>
             </div>
           </article>
         </div>
