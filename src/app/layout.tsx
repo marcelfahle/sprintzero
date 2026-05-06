@@ -23,14 +23,16 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
-const TITLE = "Your codebase is the bottleneck. We fix it in 30 days.";
+const SEO_TITLE =
+  "Your codebase is the bottleneck. Legacy codebase modernization in 30 days.";
+const SOCIAL_TITLE = "Your codebase is the bottleneck. We fix it in 30 days.";
 const DESCRIPTION =
   "AI-assisted engineering, not vibe coding. For SaaS teams on aging React, Laravel, Rails, and Phoenix stacks. Starts with a $2,500 Codebase X-Ray; modernization sprint from $35K.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sprintzero.sh"),
   title: {
-    default: `${TITLE} — SprintZero`,
+    default: `${SEO_TITLE} — SprintZero`,
     template: "%s — SprintZero",
   },
   description: DESCRIPTION,
@@ -39,13 +41,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://sprintzero.sh",
     siteName: "SprintZero",
-    title: TITLE,
+    title: SOCIAL_TITLE,
     description: DESCRIPTION,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: TITLE,
+    title: SOCIAL_TITLE,
     description: DESCRIPTION,
   },
 };

@@ -33,6 +33,26 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://sprintzero.sh" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Case Studies",
+      item: "https://sprintzero.sh/case-studies",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "CRA → Vite Migration",
+      item: URL,
+    },
+  ],
+};
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -221,6 +241,11 @@ export default function FrontendCaseStudyPage() {
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </>
   );

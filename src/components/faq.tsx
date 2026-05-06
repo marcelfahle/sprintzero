@@ -5,7 +5,9 @@ import { Container } from "./container";
 
 const DEFAULT_OPEN = new Set([0, 1]);
 
-const items = [
+type FaqItem = { q: string; a: string };
+
+const items: FaqItem[] = [
   {
     q: "Why a paid X-Ray instead of a free audit?",
     a: "Because a real diagnostic takes real work — repo access, architecture analysis, dependency auditing. A free call is a sales pitch. The X-Ray is an engineering deliverable you can use whether you hire us or not. And it's credited 100% toward the sprint if you do.",
@@ -51,8 +53,23 @@ export function FAQ() {
     });
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <section className="bg-bg-primary py-20">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Container>
         <div className="mb-12">
           <p className="mb-4 font-mono text-[13px] font-medium tracking-mono text-accent-600">
