@@ -19,13 +19,13 @@ export function XRayOffer() {
               The offer
             </p>
             <h2 className="font-display text-[32px] leading-[1.1] font-bold tracking-heading text-fg-primary sm:text-[40px]">
-              Two steps. One price ladder.
+              X-Ray. Sprint. Handover.
             </h2>
             <p className="text-[17px] leading-[1.65] text-fg-secondary">
               Start with the Codebase X-Ray — a fixed-price diagnostic that tells you exactly
               what&apos;s broken, what&apos;s risky, and what to modernize first. You get a plan
               whether you hire us or not. If you proceed, the X-Ray fee credits 100% toward the
-              modernization sprint.
+              sprint, and the full handover ships with it.
             </p>
             <ol className="flex flex-col gap-3 rounded-lg border border-border-default bg-bg-secondary p-5">
               <li className="flex items-baseline gap-3">
@@ -44,6 +44,18 @@ export function XRayOffer() {
                 <span className="flex-1 text-[15px] text-fg-primary">
                   <strong className="font-semibold">Modernization Sprint</strong> — 30 days, fixed
                   scope, <span className="font-mono">starting at $35K</span>
+                </span>
+              </li>
+              <li className="flex items-baseline gap-3 border-t border-border-default pt-3">
+                <span className="font-mono text-[12px] font-semibold tracking-mono text-accent-600 uppercase">
+                  Step 3
+                </span>
+                <span className="flex-1 text-[15px] text-fg-primary">
+                  <strong className="font-semibold">Handover</strong> — workshop, custom AI skills,
+                  2-week catch-up.{" "}
+                  <span className="rounded-full bg-accent-500/15 px-2 py-0.5 font-mono text-[11px] font-semibold tracking-mono whitespace-nowrap text-accent-700 uppercase">
+                    Included
+                  </span>
                 </span>
               </li>
             </ol>
