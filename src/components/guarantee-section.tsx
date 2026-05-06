@@ -9,15 +9,13 @@ export function GuaranteeSection() {
             Our guarantee
           </p>
           <h2 className="font-display text-[32px] leading-[1.1] font-bold tracking-heading text-fg-primary sm:text-[40px]">
-            Ship the agreed scope in 30 days, or we keep working — for free —
-            until it does.
+            Ship the agreed scope in 30 days, or we keep working — for free — until it does.
           </h2>
           <div className="flex flex-col gap-4 text-[17px] leading-[1.7] text-fg-secondary">
             <p>
-              We&apos;re not measuring lines of code or PRs merged. We&apos;re
-              measuring whether your team is shipping faster, your
-              vulnerabilities are gone, and your codebase is one your
-              engineers actually want to open.
+              We&apos;re not measuring lines of code or PRs merged. We&apos;re measuring whether
+              your team is shipping faster, your vulnerabilities are gone, and your codebase is one
+              your engineers actually want to open.
             </p>
             <p>If we miss the bar, the work continues at our cost.</p>
           </div>

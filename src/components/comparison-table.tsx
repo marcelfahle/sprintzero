@@ -1,12 +1,6 @@
 type Row = { label: string; values: string[] };
 
-export function ComparisonTable({
-  columns,
-  rows,
-}: {
-  columns: string[];
-  rows: Row[];
-}) {
+export function ComparisonTable({ columns, rows }: { columns: string[]; rows: Row[] }) {
   return (
     <>
       {/* Desktop / tablet table */}
@@ -19,9 +13,7 @@ export function ComparisonTable({
                 <th
                   key={col}
                   className={`border-l border-border-default px-5 py-4 font-display text-[15px] font-semibold tracking-tight ${
-                    i === 0
-                      ? "bg-accent-500/10 text-accent-700"
-                      : "text-fg-secondary"
+                    i === 0 ? "bg-accent-500/10 text-accent-700" : "text-fg-secondary"
                   }`}
                 >
                   {col}
@@ -33,25 +25,21 @@ export function ComparisonTable({
             {rows.map((row, rowIndex) => (
               <tr
                 key={row.label}
-                className={
-                  rowIndex === rows.length - 1
-                    ? ""
-                    : "border-b border-border-default"
-                }
+                className={rowIndex === rows.length - 1 ? "" : "border-b border-border-default"}
               >
                 <td className="px-5 py-4 font-mono text-[12px] font-semibold tracking-mono text-fg-tertiary uppercase">
                   {row.label}
                 </td>
-                {row.values.map((value, i) => (
+                {columns.map((col, i) => (
                   <td
-                    key={`${row.label}-${i}`}
+                    key={`${row.label}-${col}`}
                     className={`border-l border-border-default px-5 py-4 text-[15px] leading-snug ${
                       i === 0
                         ? "bg-accent-500/[0.06] font-medium text-fg-primary"
                         : "text-fg-secondary"
                     }`}
                   >
-                    {value}
+                    {row.values[i]}
                   </td>
                 ))}
               </tr>
@@ -87,9 +75,7 @@ export function ComparisonTable({
                   <dt className="font-mono text-[11px] font-semibold tracking-mono text-fg-tertiary uppercase">
                     {row.label}
                   </dt>
-                  <dd className="text-right text-[14px] text-fg-primary">
-                    {row.values[colIndex]}
-                  </dd>
+                  <dd className="text-right text-[14px] text-fg-primary">{row.values[colIndex]}</dd>
                 </div>
               ))}
             </dl>

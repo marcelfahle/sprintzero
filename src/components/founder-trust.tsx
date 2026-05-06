@@ -63,10 +63,9 @@ export function FounderTrust() {
                 </p>
               </div>
               <p className="text-[16px] leading-[1.65] text-fg-secondary">
-                25+ years building and rescuing software. Operating exclusively
-                with AI-powered workflows since mid-2024 — before most CTOs
-                knew Cursor existed. He leads every engagement personally, not
-                farming your project out to subcontractors. When we say
+                25+ years building and rescuing software. Operating exclusively with AI-powered
+                workflows since mid-2024 — before most CTOs knew Cursor existed. He leads every
+                engagement personally, not farming your project out to subcontractors. When we say
                 shipped in 30 days, he&apos;s the one writing the code.
               </p>
               <p className="font-mono text-[13px] text-accent-600">First client hired us twice.</p>

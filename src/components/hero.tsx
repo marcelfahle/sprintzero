@@ -13,9 +13,8 @@ export function Hero() {
           Your codebase is the bottleneck. We fix it in 30 days.
         </h1>
         <p className="mb-10 max-w-[680px] text-[18px] leading-[1.65] text-fg-secondary sm:text-[19px]">
-          993 files migrated. 85% vulnerability reduction. Zero feature
-          regressions. One sprint. For SaaS teams on aging React, Laravel,
-          Rails, and Phoenix stacks.
+          993 files migrated. 85% vulnerability reduction. Zero feature regressions. One sprint. For
+          SaaS teams on aging React, Laravel, Rails, and Phoenix stacks.
         </p>
         <div className="flex flex-wrap items-center gap-4">
           <a

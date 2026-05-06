@@ -122,9 +122,7 @@ export function CaseStudyCTA({
           </a>
         ) : null}
       </div>
-      {caption ? (
-        <p className="text-[14px] text-fg-tertiary">{caption}</p>
-      ) : null}
+      {caption ? <p className="text-[14px] text-fg-tertiary">{caption}</p> : null}
     </section>
   );
 }

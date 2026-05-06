@@ -1,12 +1,7 @@
 import { Container } from "./container";
 import { ComparisonTable } from "./comparison-table";
 
-const columns = [
-  "SprintZero",
-  "Outsourced shop",
-  "Full rewrite",
-  "Hiring senior eng",
-];
+const columns = ["SprintZero", "Outsourced shop", "Full rewrite", "Hiring senior eng"];
 
 const rows = [
   {
@@ -19,12 +14,7 @@ const rows = [
   },
   {
     label: "Risk",
-    values: [
-      "Fixed scope, guaranteed",
-      "Open-ended",
-      "High failure rate",
-      "Long ramp",
-    ],
+    values: ["Fixed scope, guaranteed", "Open-ended", "High failure rate", "Long ramp"],
   },
   {
     label: "Output",
@@ -49,8 +39,7 @@ export function ComparisonSection() {
             How this compares to the alternatives.
           </h2>
           <p className="text-[18px] leading-[1.6] text-fg-secondary">
-            Same outcome. Wildly different price tag, timeline, and risk
-            profile.
+            Same outcome. Wildly different price tag, timeline, and risk profile.
           </p>
         </div>
         <ComparisonTable columns={columns} rows={rows} />

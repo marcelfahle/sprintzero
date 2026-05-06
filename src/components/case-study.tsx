@@ -7,7 +7,9 @@ type Card = {
   tags: string[];
   metrics: { value: string; label: string; caption?: string }[];
   desc: string;
-  href: "/case-studies/cra-to-vite-migration-healthcare-saas" | "/case-studies/laravel-modernization-healthcare-saas";
+  href:
+    | "/case-studies/cra-to-vite-migration-healthcare-saas"
+    | "/case-studies/laravel-modernization-healthcare-saas";
 };
 
 const cards: Card[] = [

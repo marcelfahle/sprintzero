@@ -184,10 +184,9 @@ export default function XRayPage() {
               The first week of work, before you commit to the sprint.
             </p>
             <p className="mb-10 max-w-[760px] text-[18px] leading-[1.65] text-fg-secondary">
-              Two and a half thousand dollars. One week. A real engineering
-              deliverable — not a sales call dressed up as an audit. You get a
-              complete modernization plan whether you hire us or not. If you
-              do, the entire fee credits toward the sprint.
+              Two and a half thousand dollars. One week. A real engineering deliverable — not a
+              sales call dressed up as an audit. You get a complete modernization plan whether you
+              hire us or not. If you do, the entire fee credits toward the sprint.
             </p>
             <a
               href={BOOKING_URL}
@@ -210,8 +209,8 @@ export default function XRayPage() {
                 Not a one-page PDF and a follow-up call.
               </h2>
               <p className="text-[17px] leading-[1.65] text-fg-secondary">
-                It&apos;s the same kind of artifact our clients get at the end
-                of a sprint — just front-loaded into the diagnostic phase.
+                It&apos;s the same kind of artifact our clients get at the end of a sprint — just
+                front-loaded into the diagnostic phase.
               </p>
             </div>
             <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -228,9 +227,7 @@ export default function XRayPage() {
                       {d.title}
                     </h3>
                   </div>
-                  <p className="text-[15px] leading-[1.55] text-fg-secondary">
-                    {d.desc}
-                  </p>
+                  <p className="text-[15px] leading-[1.55] text-fg-secondary">{d.desc}</p>
                 </li>
               ))}
             </ul>
@@ -253,10 +250,9 @@ export default function XRayPage() {
                 </p>
               </div>
               <p className="text-[16px] leading-[1.65] text-fg-secondary">
-                The X-Ray costs less than one week of your current team
-                spinning on the wrong problems. A full rewrite costs
-                $300K–$500K and takes 9–12 months with no guarantee it ships.
-                The X-Ray takes a week and gives you a plan either way.
+                The X-Ray costs less than one week of your current team spinning on the wrong
+                problems. A full rewrite costs $300K–$500K and takes 9–12 months with no guarantee
+                it ships. The X-Ray takes a week and gives you a plan either way.
               </p>
               <a
                 href={BOOKING_URL}
@@ -281,21 +277,18 @@ export default function XRayPage() {
               </h2>
               <div className="flex flex-col gap-4 text-[17px] leading-[1.7] text-fg-secondary">
                 <p>
-                  The X-Ray is a real to-do list — not a sales document. If
-                  your team has the senior bandwidth and the AI-tooling
-                  fluency to execute it, you&apos;ve got everything you need
-                  to do this yourselves.
+                  The X-Ray is a real to-do list — not a sales document. If your team has the senior
+                  bandwidth and the AI-tooling fluency to execute it, you&apos;ve got everything you
+                  need to do this yourselves.
                 </p>
                 <p>
-                  Most clients hire us because executing the plan is 30 days
-                  of focused senior engineering work, and pulling someone off
-                  the roadmap for a month is more expensive than the sprint.
-                  But we&apos;d rather you have the plan and walk away than
-                  book a sprint you didn&apos;t need.
+                  Most clients hire us because executing the plan is 30 days of focused senior
+                  engineering work, and pulling someone off the roadmap for a month is more
+                  expensive than the sprint. But we&apos;d rather you have the plan and walk away
+                  than book a sprint you didn&apos;t need.
                 </p>
                 <p className="font-medium text-fg-primary">
-                  That&apos;s why the X-Ray is the deliverable, not the sales
-                  call.
+                  That&apos;s why the X-Ray is the deliverable, not the sales call.
                 </p>
               </div>
             </div>
@@ -313,15 +306,13 @@ export default function XRayPage() {
               </h2>
               <div className="flex flex-col gap-4 text-[17px] leading-[1.7] text-fg-secondary">
                 <p>
-                  If you don&apos;t think the X-Ray was worth $2,500 of senior
-                  engineering time, we refund it. No questions, no
-                  negotiations, no &ldquo;let me explain why you&apos;re
-                  wrong.&rdquo; We&apos;d rather have your trust than your
-                  money.
+                  If you don&apos;t think the X-Ray was worth $2,500 of senior engineering time, we
+                  refund it. No questions, no negotiations, no &ldquo;let me explain why you&apos;re
+                  wrong.&rdquo; We&apos;d rather have your trust than your money.
                 </p>
                 <p>
-                  This has never been used. We don&apos;t expect it ever will
-                  be. But it&apos;s there.
+                  This has never been used. We don&apos;t expect it ever will be. But it&apos;s
+                  there.
                 </p>
               </div>
             </div>
@@ -350,9 +341,7 @@ export default function XRayPage() {
                   <h3 className="font-display text-[18px] font-semibold tracking-tight text-fg-primary">
                     {step.title}
                   </h3>
-                  <p className="text-[15px] leading-[1.6] text-fg-secondary">
-                    {step.desc}
-                  </p>
+                  <p className="text-[15px] leading-[1.6] text-fg-secondary">{step.desc}</p>
                 </li>
               ))}
             </ol>
@@ -391,9 +380,7 @@ export default function XRayPage() {
                     <dt className="font-display text-[18px] font-semibold tracking-tight text-fg-primary">
                       {item.q}
                     </dt>
-                    <dd className="text-[16px] leading-[1.65] text-fg-secondary">
-                      {item.a}
-                    </dd>
+                    <dd className="text-[16px] leading-[1.65] text-fg-secondary">{item.a}</dd>
                   </div>
                 ))}
               </dl>
@@ -408,8 +395,8 @@ export default function XRayPage() {
                 Book the X-Ray.
               </h2>
               <p className="text-[17px] leading-[1.6] text-[#a8a8a1]">
-                One week. Engineering deliverable. Money back if useless. 100%
-                credited to the sprint if you proceed.
+                One week. Engineering deliverable. Money back if useless. 100% credited to the
+                sprint if you proceed.
               </p>
               <a
                 href={BOOKING_URL}

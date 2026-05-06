@@ -29,15 +29,9 @@ export function MetricsTable({
           {rows.map((row, i) => (
             <tr
               key={row.metric}
-              className={
-                i === rows.length - 1
-                  ? ""
-                  : "border-b border-border-default"
-              }
+              className={i === rows.length - 1 ? "" : "border-b border-border-default"}
             >
-              <td className="px-5 py-3.5 text-[15px] font-medium text-fg-primary">
-                {row.metric}
-              </td>
+              <td className="px-5 py-3.5 text-[15px] font-medium text-fg-primary">{row.metric}</td>
               <td className="border-l border-border-default px-5 py-3.5 font-mono text-[14px] text-fg-secondary tabular-nums">
                 {row.before}
               </td>

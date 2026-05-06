@@ -28,7 +28,9 @@ export const metadata: Metadata = {
 };
 
 type Card = {
-  href: "/case-studies/cra-to-vite-migration-healthcare-saas" | "/case-studies/laravel-modernization-healthcare-saas";
+  href:
+    | "/case-studies/cra-to-vite-migration-healthcare-saas"
+    | "/case-studies/laravel-modernization-healthcare-saas";
   overline: string;
   title: string;
   meta: string;
@@ -42,8 +44,7 @@ const cards: Card[] = [
     overline: "Sprint 1 — Frontend",
     title: "CRA → Vite + Redux Saga → RTK",
     meta: "HIPAA Healthcare SaaS · 30 days",
-    desc:
-      "A 993-file React modernization for a HIPAA-compliant healthcare platform. End-of-life build toolchain replaced. Redux Saga complexity unwound. First automated test suite ever shipped for the codebase.",
+    desc: "A 993-file React modernization for a HIPAA-compliant healthcare platform. End-of-life build toolchain replaced. Redux Saga complexity unwound. First automated test suite ever shipped for the codebase.",
     metrics: [
       { value: "0", label: "Production vulnerabilities at handoff" },
       { value: "993", label: "Files migrated" },
@@ -55,8 +56,7 @@ const cards: Card[] = [
     overline: "Sprint 2 — Backend",
     title: "Laravel 8 → 13 Modernization Plan",
     meta: "HIPAA Healthcare SaaS",
-    desc:
-      "A 7-service Laravel backend audit and phased modernization plan. Security exposure mapped. CI gaps identified. HIPAA risk picture written for leadership in plain English. The roadmap that's driving the next phase of the engagement.",
+    desc: "A 7-service Laravel backend audit and phased modernization plan. Security exposure mapped. CI gaps identified. HIPAA risk picture written for leadership in plain English. The roadmap that's driving the next phase of the engagement.",
     metrics: [
       { value: "7", label: "Services audited" },
       { value: "184", label: "Controllers mapped" },
@@ -79,11 +79,10 @@ export default function CaseStudiesIndexPage() {
               Same client. Twice.
             </h1>
             <p className="max-w-[780px] text-[18px] leading-[1.65] text-fg-secondary sm:text-[19px]">
-              Most agencies brag about logos. We&apos;d rather show the same
-              client coming back. Our first SprintZero engagement was a
-              frontend modernization for a HIPAA-compliant healthcare SaaS.
-              After we shipped, they hired us again — this time for the
-              backend. Two sprints, one client, full-stack proof.
+              Most agencies brag about logos. We&apos;d rather show the same client coming back. Our
+              first SprintZero engagement was a frontend modernization for a HIPAA-compliant
+              healthcare SaaS. After we shipped, they hired us again — this time for the backend.
+              Two sprints, one client, full-stack proof.
             </p>
           </Container>
         </header>
@@ -104,18 +103,14 @@ export default function CaseStudiesIndexPage() {
                     {card.title}
                   </h2>
                   <p className="text-[14px] text-fg-tertiary">{card.meta}</p>
-                  <p className="text-[16px] leading-[1.6] text-fg-secondary">
-                    {card.desc}
-                  </p>
+                  <p className="text-[16px] leading-[1.6] text-fg-secondary">{card.desc}</p>
                   <dl className="mt-auto grid grid-cols-3 gap-4 border-t border-border-default pt-5">
                     {card.metrics.map((m) => (
                       <div key={m.label} className="flex flex-col gap-1">
                         <dd className="font-mono text-[18px] font-bold tracking-tight text-fg-primary">
                           {m.value}
                         </dd>
-                        <dt className="text-[12px] leading-tight text-fg-tertiary">
-                          {m.label}
-                        </dt>
+                        <dt className="text-[12px] leading-tight text-fg-tertiary">{m.label}</dt>
                       </div>
                     ))}
                   </dl>
@@ -136,16 +131,14 @@ export default function CaseStudiesIndexPage() {
               </h2>
               <div className="flex flex-col gap-4 text-[17px] leading-[1.7] text-fg-secondary">
                 <p>
-                  We could put up a wall of logos. We&apos;d rather put up two
-                  engagements deep. Both case studies cover the actual work —
-                  the moves we made, the numbers that came out, the patterns
-                  that drove decisions. No marketing slides. No edited
-                  highlight reels. Just the work, described the way an
-                  engineer would describe it.
+                  We could put up a wall of logos. We&apos;d rather put up two engagements deep.
+                  Both case studies cover the actual work — the moves we made, the numbers that came
+                  out, the patterns that drove decisions. No marketing slides. No edited highlight
+                  reels. Just the work, described the way an engineer would describe it.
                 </p>
                 <p>
-                  If you want to see what the same depth of analysis looks
-                  like for your codebase, that&apos;s what the X-Ray is for.
+                  If you want to see what the same depth of analysis looks like for your codebase,
+                  that&apos;s what the X-Ray is for.
                 </p>
               </div>
             </div>
@@ -159,9 +152,8 @@ export default function CaseStudiesIndexPage() {
                 Want one of these for your codebase?
               </h2>
               <p className="text-[16px] leading-[1.65] text-fg-secondary">
-                The Codebase X-Ray is the first step. One week. $2,500.
-                Credited 100% toward the sprint if you proceed. You walk away
-                with a plan whether you hire us or not.
+                The Codebase X-Ray is the first step. One week. $2,500. Credited 100% toward the
+                sprint if you proceed. You walk away with a plan whether you hire us or not.
               </p>
               <div className="flex flex-wrap items-center gap-5">
                 <a
