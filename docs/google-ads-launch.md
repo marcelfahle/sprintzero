@@ -2,48 +2,61 @@
 
 Copy-paste-ready campaign for $210/mo Google Search. Two ad groups, four
 RSAs, sitelinks, callouts, structured snippets, negative keywords, bid
-recommendations. Voice constraints applied: no marketing language, no
+recommendations. **Conversion tracking via Plausible** — no GA4 or Google
+Tag setup required. Voice constraints applied: no marketing language, no
 exclamation points, specific numbers, mirrors searcher pain.
+
+> **Trade-off note:** Plausible-only means **no automated bid
+> optimization** (Google Ads can't read Plausible's conversion data
+> directly). At $210/mo budget you don't have enough volume for
+> automated bidding to learn anyway, so this is fine. Manual CPC + manual
+> review of Plausible Goals weekly is the right move at this scale. If
+> you scale past ~$2K/mo, revisit GA4 + Google Ads conversion import for
+> bid optimization (or use offline conversion upload via the Plausible
+> Goals API).
 
 ---
 
 ## Pre-launch checklist (do these in order)
 
 1. **Create Google Ads account** at ads.google.com.
-2. **Create GA4 property** at analytics.google.com — get the Measurement ID
-   (`G-XXXXXXXXXX`).
-3. **In Google Ads → Tools → Conversions → New conversion action**:
-   - Type: Website
-   - Goal: Submit lead form (or use "Book appointment" goal)
-   - Name: "Book X-Ray"
-   - Value: One-time $250 (10% of \$2,500 X-Ray ARPU; conservative for bid
-     optimization)
-   - Count: One per click
-   - Click-through window: 30 days
-   - View-through window: 1 day
-   - Tag setup: Use Google tag (already on site once env vars set)
-   - Save → copy the **Conversion ID** and **Conversion Label**.
-4. **In Vercel project → Settings → Environment Variables**, set:
-   - `NEXT_PUBLIC_GTAG_ID` = `G-XXXXXXXXXX` (GA4) **or** `AW-XXXXXXXXX` (Google Ads
-     conversion ID, if not using GA4 import)
-   - `NEXT_PUBLIC_GADS_CONVERSION_LABEL` = the conversion label from step 3
-5. **Redeploy** so new env vars take effect.
-6. **Verify the tag is firing**: open sprintzero.sh in Chrome, click Book
-   the Codebase X-Ray, watch GA4 DebugView or Google Tag Assistant for the
-   conversion event.
+2. **Set up the Plausible Goal** at plausible.io/sprintzero.sh/settings/goals
+   (or wherever your Plausible dashboard is):
+   - Click **Add goal**
+   - Select **Custom event**
+   - Event name: `Book X-Ray` (exact spelling — the tracking code already
+     fires this)
+   - Save
+3. **Verify the goal fires**:
+   - Open `https://sprintzero.sh` in a Chrome tab
+   - Open DevTools → Network tab → filter by `event`
+   - Click any "Book the Codebase X-Ray" CTA
+   - You should see a request to `plausible.io/api/event` with
+     `name=Book X-Ray` in the payload
+   - Refresh your Plausible dashboard's Goals section — the event count
+     should increment
+4. **(Optional but recommended)** Set up custom property breakdown in
+   Plausible:
+   - In Plausible dashboard → Site settings → Custom properties → Add
+   - Property: `location`
+   - This will let you see whether the "hero" CTA, "final-cta" CTA, or
+     "sticky-mobile" CTA converts best
+
+No env vars needed for Plausible — it's already wired up in the layout.
 
 ---
 
 ## Campaign settings
 
 - **Campaign type**: Search
-- **Bid strategy**: Manual CPC (switch to Maximize Conversions only after
-  30+ recorded conversions)
+- **Bid strategy**: **Manual CPC** (keep this — automated bidding needs
+  Google's own conversion signal, which Plausible doesn't provide)
 - **Networks**: Google Search Network only — uncheck Display, Search
   Partners
 - **Daily budget**: $7/day ($210/month)
 - **Languages**: English
-- **Conversion tracking**: Book X-Ray (created above)
+- **Conversion tracking**: **Plausible Goal "Book X-Ray"** (manual
+  review, not Google Ads automated)
 - **Ad rotation**: Optimize (default)
 - **Audience targeting**: Observation, not Targeting (for now — gather
   data without restricting reach)
@@ -89,8 +102,13 @@ each metro exclusion.
 
 **Daily budget**: $4
 **Max CPC**: $7
-**Final URL**: `https://sprintzero.sh/x-ray`
+**Final URL**: `https://sprintzero.sh/x-ray?utm_source=google&utm_medium=cpc&utm_campaign=rewrite-trap&utm_content={creative}&utm_term={keyword}`
 **Display path**: `sprintzero.sh / modernization`
+
+> **UTM note**: Use the `{creative}` and `{keyword}` Google Ads ValueTrack
+> parameters in the Final URL so Plausible captures which ad and which
+> keyword drove each click. The tracking code preserves these UTMs all
+> the way through to SavvyCal.
 
 ### RSA 1.A — "Skip the rewrite"
 
@@ -163,7 +181,7 @@ each metro exclusion.
 
 **Daily budget**: $3
 **Max CPC**: $5
-**Final URL**: `https://sprintzero.sh/case-studies/cra-to-vite-migration-healthcare-saas`
+**Final URL**: `https://sprintzero.sh/case-studies/cra-to-vite-migration-healthcare-saas?utm_source=google&utm_medium=cpc&utm_campaign=stack-eol&utm_content={creative}&utm_term={keyword}`
 **Display path**: `sprintzero.sh / migration`
 
 > Note on landing page: the URL above is the CRA→Vite case study, which
@@ -389,15 +407,20 @@ After 30 days of data:
 - If a keyword has clicks but zero conversions → consider lowering bid 30%
 - If a keyword has conversions → raise bid by 20% per week until volume
   caps or CPA gets uncomfortable
-- Once you have 30+ conversions across the campaign, switch bid strategy
-  to **Maximize Conversions** with target CPA = your manual-CPC CPA
+- **Stay on Manual CPC** while you're on Plausible-only tracking. Don't
+  switch to Maximize Conversions — Google Ads can't see your Plausible
+  conversions and will optimize for clicks instead.
 
 ---
 
 ## Pre-launch QA checklist
 
-- [ ] Conversion tag fires on Book the Codebase X-Ray click (verify via
-      Tag Assistant)
+- [ ] Plausible Goal "Book X-Ray" created in dashboard
+- [ ] Goal fires when clicking "Book the Codebase X-Ray" CTA (verify in
+      Network tab + Plausible dashboard)
+- [ ] UTM parameters survive the SavvyCal handoff (open SavvyCal preview
+      with `?utm_source=test&utm_medium=cpc` — UTMs should appear in
+      Plausible properties)
 - [ ] Test ad preview on desktop and mobile in Google Ads UI
 - [ ] Verify all sitelink anchors resolve (`/#how`, `/#guarantee`,
       `/case-studies`, `/x-ray`)
@@ -410,16 +433,63 @@ After 30 days of data:
 
 ---
 
+## Reading conversions in Plausible
+
+Open your Plausible dashboard → **Goals** tab. You'll see:
+
+- **Total conversions** — how many "Book X-Ray" events fired
+- **Conversion rate** — % of unique visitors who converted
+- **Source breakdown** — which UTM sources drove conversions
+- **Custom property "location"** — which CTA on the page converts best
+  (hero / final-cta / sticky-mobile / etc.)
+
+To attribute Google Ads spend to conversions:
+1. Filter by **utm_source = google**
+2. See unique visitors and goal completions for that source
+3. Divide your weekly Google Ads spend by goal completions = your real CPA
+
+To attribute by ad group:
+1. Filter by **utm_campaign = rewrite-trap** or **utm_campaign = stack-eol**
+2. Same calc as above per ad group
+
+To attribute by keyword:
+1. Filter by **utm_term = [keyword]**
+2. See which keyword actually books X-Rays vs. just sucks budget
+
+---
+
 ## Week 1 monitoring
 
 Daily for first 7 days, then 3x/week:
 
-- Impressions per keyword (drop keywords at 0 impressions after 7 days)
-- CTR per ad (target 4%+; <2% = re-write the headlines)
-- Search Terms report — add new negatives weekly
-- Bounce rate from Google Ads traffic on /x-ray and case-study landing
-  pages (>80% = landing-page mismatch)
-- Conversion events firing in Google Ads UI
+- **In Google Ads**: Impressions per keyword (drop keywords at 0
+  impressions after 7 days)
+- **In Google Ads**: CTR per ad (target 4%+; <2% = re-write the
+  headlines)
+- **In Google Ads**: Search Terms report — add new negatives weekly
+- **In Plausible** (filter by utm_source=google): Bounce rate from ads on
+  /x-ray and case-study landing pages (>80% = landing-page mismatch)
+- **In Plausible**: Goal completions per ad group (utm_campaign filter)
+- **In Plausible**: Conversion rate by location property (which CTA
+  works)
 
 After 30 days, kill the bottom-performing RSA in each ad group, replace
 with a fresh variant testing one new angle (e.g., compliance pressure).
+
+---
+
+## When to add GA4 + Google Ads conversion (not now)
+
+Skip this until **at least one of these is true**:
+
+- Monthly ad spend exceeds ~$2,000
+- You have 30+ X-Ray bookings/month from ads (enough volume for
+  automated bidding to actually learn)
+- You want to run additional campaign types (Performance Max, etc.)
+  that require Google's own conversion signal
+
+When you do add it: see the env vars already wired up in
+`src/components/marketing-scripts.tsx` — set `NEXT_PUBLIC_GTAG_ID` and
+`NEXT_PUBLIC_GADS_CONVERSION_LABEL`, redeploy, and the existing tracking
+code will automatically start firing both Plausible **and** Google Ads
+conversions in parallel. No code changes.
