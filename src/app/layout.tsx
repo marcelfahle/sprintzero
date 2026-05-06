@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import PlausibleProvider from "next-plausible";
+import { StickyMobileCTA } from "@/components/sticky-mobile-cta";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -44,7 +46,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <PlausibleProvider enabled>
+          {children}
+          <StickyMobileCTA />
+        </PlausibleProvider>
+      </body>
     </html>
   );
 }
