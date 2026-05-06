@@ -46,7 +46,7 @@ const cards: Card[] = [
     meta: "HIPAA Healthcare SaaS · 30 days",
     desc: "A 993-file React modernization for a HIPAA-compliant healthcare platform. End-of-life build toolchain replaced. Redux Saga complexity unwound. First automated test suite ever shipped for the codebase.",
     metrics: [
-      { value: "85%", label: "Vulnerability reduction at handoff" },
+      { value: "0", label: "Production vulnerabilities at handoff" },
       { value: "993", label: "Files migrated" },
       { value: "4", label: "Reducers (down from 25+)" },
     ],

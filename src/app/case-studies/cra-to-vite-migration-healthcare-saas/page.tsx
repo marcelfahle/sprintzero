@@ -16,7 +16,7 @@ const URL = "https://sprintzero.sh/case-studies/cra-to-vite-migration-healthcare
 export const metadata: Metadata = {
   title: "CRA → Vite Migration Case Study: 993 Files, 30 Days, Zero Regressions | SprintZero",
   description:
-    "How we migrated a HIPAA-compliant React app from Create React App to Vite in 30 days. 993 files, 85% vulnerability reduction, first automated test suite. The full case study.",
+    "How we migrated a HIPAA-compliant React app from Create React App to Vite in 30 days. 993 files, 194 → 0 production vulnerabilities, first automated test suite. The full case study.",
   alternates: { canonical: URL },
   openGraph: {
     type: "article",
@@ -38,7 +38,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "CRA → Vite Migration Case Study: 993 Files, 30 Days, Zero Regressions",
   description:
-    "How we migrated a HIPAA-compliant React app from Create React App to Vite in 30 days. 993 files, 85% vulnerability reduction, first automated test suite.",
+    "How we migrated a HIPAA-compliant React app from Create React App to Vite in 30 days. 993 files, 194 → 0 production vulnerabilities, first automated test suite.",
   author: { "@type": "Person", name: "Marcel Fahle" },
   publisher: {
     "@type": "Organization",
@@ -52,7 +52,7 @@ const articleSchema = {
 };
 
 const metricsRows = [
-  { metric: "Production vulnerabilities", before: "194", after: "29 (falling)" },
+  { metric: "Production vulnerabilities", before: "194", after: "0" },
   { metric: "Build toolchain", before: "CRA (end-of-life)", after: "Vite" },
   {
     metric: "State management",
@@ -63,7 +63,6 @@ const metricsRows = [
   { metric: "Global reducers", before: "25+", after: "4" },
   { metric: "Automated tests", before: "None", after: "Playwright E2E + Vitest" },
   { metric: "Files modernized", before: "—", after: "993" },
-  { metric: "Net lines removed", before: "—", after: "2,400+" },
 ];
 
 export default function FrontendCaseStudyPage() {
@@ -77,7 +76,7 @@ export default function FrontendCaseStudyPage() {
           subtitle="993 files migrated. Zero feature regressions. One sprint."
           intro="A mid-market healthcare SaaS came to us with a Create React App build, a Redux Saga state management layer that punished every new feature, and 194 production vulnerabilities. We modernized the entire frontend in 30 days. Then they hired us again for the backend."
           heroMetrics={[
-            { value: "85%", label: "Vulnerability reduction at handoff" },
+            { value: "0", label: "Production vulnerabilities at handoff" },
             { value: "993", label: "Files migrated" },
             { value: "0", label: "Feature regressions" },
             { value: "30 days", label: "Fixed scope" },
@@ -136,9 +135,10 @@ export default function FrontendCaseStudyPage() {
             </p>
             <p>
               <strong className="font-semibold text-fg-primary">
-                Security: 194 production vulnerabilities → 29.
+                Security: 194 production vulnerabilities → 0.
               </strong>{" "}
-              85% reduction at handoff, falling under our 30-day commitment guarantee.
+              85% reduction at handoff, then continued to zero under our 30-day commitment
+              guarantee.
             </p>
           </CaseStudySection>
 
