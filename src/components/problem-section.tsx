@@ -2,15 +2,15 @@ import { Container } from "./container";
 
 const pains = [
   {
-    title: "Every feature takes too long",
+    title: "Six files for one change.",
     desc: "Your team isn't slow — the architecture is. Each change requires touching six files, three workarounds, and a prayer. Shipping velocity is a function of codebase quality, not headcount.",
   },
   {
-    title: "AI tools produce garbage",
-    desc: "Copilot and Cursor are only as good as the code they read. When your codebase is full of anti-patterns and dead abstractions, AI generates more of the same. Garbage in, garbage out.",
+    title: "AI is only as good as the code it reads.",
+    desc: "When your codebase is full of anti-patterns and dead abstractions, Copilot and Cursor generate more of the same. Garbage in, garbage out.",
   },
   {
-    title: "Compliance is coming",
+    title: "Diligence is coming.",
     desc: "SOC 2, HIPAA audits, due diligence for your next raise — they're all going to look at your dependency tree, your vulnerability count, and your test coverage. You know what they'll find.",
   },
 ];
