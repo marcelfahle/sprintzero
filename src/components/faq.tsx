@@ -11,6 +11,10 @@ const items = [
     a: "Because a real diagnostic takes real work — repo access, architecture analysis, dependency auditing. A free call is a sales pitch. The X-Ray is an engineering deliverable you can use whether you hire us or not. And it's credited 100% toward the sprint if you do.",
   },
   {
+    q: "Isn't this just vibe coding — running Cursor through everything?",
+    a: "No. This is AI-assisted engineering with 25+ years of architecture experience behind it. AI handles the mechanical transformation at scale — consistent across every file. Marcel makes every architecture decision, runs quality control, and ensures the output is code your team can actually maintain. AI is the tool. Engineering judgment is the product.",
+  },
+  {
     q: "Do we need a full rewrite?",
     a: "Almost certainly not. Rewrites are expensive, risky, and rarely ship. We modernize incrementally — migrate build tools, consolidate state management, eliminate dead code, upgrade frameworks — while preserving every feature. Your users never notice.",
   },

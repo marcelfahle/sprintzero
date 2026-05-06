@@ -19,23 +19,53 @@ export function XRayOffer() {
               The offer
             </p>
             <h2 className="font-display text-[32px] leading-[1.1] font-bold tracking-heading text-fg-primary sm:text-[40px]">
-              Start with the Codebase X-Ray.
+              Two steps. One price ladder.
             </h2>
             <p className="text-[17px] leading-[1.65] text-fg-secondary">
-              A fixed-price diagnostic that tells you exactly what&apos;s broken, what&apos;s risky,
-              and what to modernize first. You get a plan whether you hire us or not.
+              Start with the Codebase X-Ray — a fixed-price diagnostic that tells you exactly
+              what&apos;s broken, what&apos;s risky, and what to modernize first. You get a plan
+              whether you hire us or not. If you proceed, the X-Ray fee credits 100% toward the
+              modernization sprint.
             </p>
+            <ol className="flex flex-col gap-3 rounded-lg border border-border-default bg-bg-secondary p-5">
+              <li className="flex items-baseline gap-3">
+                <span className="font-mono text-[12px] font-semibold tracking-mono text-accent-600 uppercase">
+                  Step 1
+                </span>
+                <span className="flex-1 text-[15px] text-fg-primary">
+                  <strong className="font-semibold">Codebase X-Ray</strong> — one week, fixed{" "}
+                  <span className="font-mono">{XRAY_PRICE}</span>
+                </span>
+              </li>
+              <li className="flex items-baseline gap-3 border-t border-border-default pt-3">
+                <span className="font-mono text-[12px] font-semibold tracking-mono text-accent-600 uppercase">
+                  Step 2
+                </span>
+                <span className="flex-1 text-[15px] text-fg-primary">
+                  <strong className="font-semibold">Modernization Sprint</strong> — 30 days, fixed
+                  scope, <span className="font-mono">starting at $35K</span>
+                </span>
+              </li>
+            </ol>
             <div className="rounded-lg border border-border-default bg-bg-secondary px-6 py-4 text-[15px] leading-[1.6] text-fg-tertiary">
               <strong className="text-fg-primary">The alternative?</strong> A full rewrite:
               $300K–$500K, 6–12 months, and a coin flip on whether it ships. The X-Ray costs less
               than one week of your current team spinning on the wrong problems.
             </div>
+            <p className="font-mono text-[13px] tracking-mono text-fg-tertiary">
+              Capacity-capped at 2 sprint engagements per month.
+            </p>
           </div>
 
           <article className="flex flex-col gap-5 rounded-lg border border-border-default bg-bg-secondary p-10">
-            <h3 className="font-display text-[28px] font-bold tracking-subhead text-fg-primary">
-              Codebase X-Ray
-            </h3>
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="font-display text-[28px] font-bold tracking-subhead text-fg-primary">
+                Codebase X-Ray
+              </h3>
+              <span className="rounded-full bg-accent-500/10 px-3 py-1 font-mono text-[11px] font-semibold tracking-mono text-accent-700 uppercase">
+                Step 1
+              </span>
+            </div>
             <div className="font-mono text-[48px] font-bold tracking-heading text-fg-primary">
               {XRAY_PRICE}
             </div>
@@ -56,7 +86,7 @@ export function XRayOffer() {
               rel="noopener noreferrer"
               className="mt-2 block rounded-full bg-fg-primary px-8 py-4 text-center text-[16px] font-semibold text-fg-inverse transition-opacity duration-200 hover:opacity-90"
             >
-              Book the Codebase X-Ray
+              Book the Codebase X-Ray — {XRAY_PRICE}
             </a>
             <p className="text-center font-mono text-[13px] text-accent-500">
               100% credited toward the modernization sprint

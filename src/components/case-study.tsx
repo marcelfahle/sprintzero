@@ -110,14 +110,17 @@ export function CaseStudy() {
           ))}
         </div>
 
-        <div className="mt-8 flex items-center gap-4 rounded-lg border border-accent-400/15 bg-accent-400/[0.06] px-6 py-5">
-          <div>
-            <p className="text-[15px] font-medium text-[#fafaf9]">This client bought twice.</p>
-            <p className="text-[14px] text-[#a8a8a1]">
-              They hired us for the frontend, then came back for the backend. That&apos;s the proof.
-            </p>
-          </div>
-        </div>
+        <figure className="mt-10 flex flex-col gap-4 rounded-xl border border-accent-400/20 bg-accent-400/[0.06] p-8">
+          <blockquote className="font-display text-[22px] leading-[1.3] font-semibold tracking-subhead text-[#fafaf9] sm:text-[26px]">
+            &ldquo;Where can I deploy more money for this?&rdquo;
+          </blockquote>
+          <figcaption className="font-mono text-[13px] tracking-mono text-accent-400 uppercase">
+            — SaaS founder, after our first sprint together
+          </figcaption>
+          <p className="border-t border-[#292927] pt-4 text-[14px] leading-[1.5] text-[#a8a8a1]">
+            They came back for Sprint 2. Same client. Twice. That&apos;s the proof.
+          </p>
+        </figure>
       </Container>
     </section>
   );
