@@ -24,10 +24,10 @@ export function ProblemSection() {
             The real problem
           </p>
           <h2 className="mb-4 font-display text-[36px] leading-[1.1] font-bold tracking-heading text-fg-primary sm:text-[44px]">
-            Your codebase is the bottleneck.
+            It&apos;s not your team. It&apos;s the code.
           </h2>
           <p className="text-[18px] leading-[1.6] text-fg-secondary">
-            Not your team. Not your process. The code underneath everything.
+            Three symptoms. Same root cause.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
