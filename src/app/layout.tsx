@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import PlausibleProvider from "next-plausible";
+import { MarketingScripts } from "@/components/marketing-scripts";
 import { StickyMobileCTA } from "@/components/sticky-mobile-cta";
+import { Tracking } from "@/components/tracking";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -59,7 +61,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <PlausibleProvider enabled>
           {children}
           <StickyMobileCTA />
+          <Tracking />
         </PlausibleProvider>
+        <MarketingScripts />
       </body>
     </html>
   );

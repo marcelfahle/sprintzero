@@ -2,7 +2,7 @@ import { Container } from "./container";
 
 export function GuaranteeSection() {
   return (
-    <section className="bg-bg-secondary py-20">
+    <section id="guarantee" className="bg-bg-secondary py-20">
       <Container>
         <div className="mx-auto flex max-w-[820px] flex-col items-start gap-6 rounded-2xl border border-accent-500/40 bg-bg-primary p-10 sm:p-12">
           <p className="font-mono text-[13px] font-medium tracking-mono text-accent-600 uppercase">
