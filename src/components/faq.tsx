@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Container } from "./container";
 
+const DEFAULT_OPEN = new Set([0, 1]);
+
 const items = [
   {
     q: "Why a paid X-Ray instead of a free audit?",
@@ -31,7 +33,19 @@ const items = [
 ];
 
 export function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<Set<number>>(() => new Set(DEFAULT_OPEN));
+
+  const toggle = (i: number) => {
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(i)) {
+        next.delete(i);
+      } else {
+        next.add(i);
+      }
+      return next;
+    });
+  };
 
   return (
     <section className="bg-bg-primary py-20">
@@ -46,13 +60,13 @@ export function FAQ() {
         </div>
         <div className="border-t border-border-default">
           {items.map((item, i) => {
-            const isOpen = open === i;
+            const isOpen = open.has(i);
             return (
               <div key={item.q} className="border-b border-border-default">
                 <button
                   type="button"
                   aria-expanded={isOpen}
-                  onClick={() => setOpen(isOpen ? null : i)}
+                  onClick={() => toggle(i)}
                   className="flex w-full cursor-pointer items-center justify-between gap-6 py-5 text-left text-[17px] font-semibold text-fg-primary"
                 >
                   <span>{item.q}</span>

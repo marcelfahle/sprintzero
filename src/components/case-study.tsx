@@ -1,11 +1,13 @@
+import Link from "next/link";
 import { Container } from "./container";
 
 type Card = {
   label: string;
   title: string;
   tags: string[];
-  metrics: { value: string; label: string }[];
+  metrics: { value: string; label: string; caption?: string }[];
   desc: string;
+  href: "/case-studies/cra-to-vite-migration-healthcare-saas" | "/case-studies/laravel-modernization-healthcare-saas";
 };
 
 const cards: Card[] = [
@@ -15,21 +17,29 @@ const cards: Card[] = [
     tags: ["React", "CRA", "Redux Saga", "Vite", "RTK Query"],
     metrics: [
       { value: "993", label: "Files migrated" },
-      { value: "194 → 29", label: "Vulnerabilities" },
+      {
+        value: "194 → 0",
+        label: "Vulnerabilities",
+        caption: "Backed by our ship-or-keep-working guarantee",
+      },
       { value: "25+ → 4", label: "Reducers" },
     ],
     desc: "993 files migrated from Create React App to Vite. 25+ Redux Saga reducers consolidated to 4 RTK slices. First real test suite added. Zero feature regressions.",
+    href: "/case-studies/cra-to-vite-migration-healthcare-saas",
   },
   {
     label: "Sprint 2 — Backend",
     title: "Laravel 8 → 13, PHP 7.3 → 8.3",
     tags: ["Laravel", "PHP", "MySQL", "HIPAA"],
     metrics: [
-      { value: "184 → 27", label: "Controllers" },
-      { value: "71", label: "Advisories resolved" },
+      { value: "7", label: "Services audited" },
+      { value: "184", label: "Controllers mapped" },
+      { value: "13", label: "Critical + high findings" },
+      { value: "71", label: "Advisories surfaced" },
       { value: "2,400+", label: "Dead lines removed" },
     ],
-    desc: "Laravel 8 on PHP 7.3. Secrets in the repo. No CI pipeline. Shipped Laravel 13 on PHP 8.3 with full test coverage and a clean deployment pipeline.",
+    desc: "Audit + scoped modernization plan for a 7-service Laravel backend. Risk picture mapped against HIPAA. Phased delivery plan that's now driving the next sprint.",
+    href: "/case-studies/laravel-modernization-healthcare-saas",
   },
 ];
 
@@ -72,17 +82,28 @@ export function CaseStudy() {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-8">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
                 {c.metrics.map((m) => (
                   <div key={m.label} className="flex flex-col gap-1">
                     <span className="font-mono text-[20px] font-semibold text-[#fafaf9]">
                       {m.value}
                     </span>
                     <span className="text-[13px] text-[#737370]">{m.label}</span>
+                    {m.caption ? (
+                      <span className="text-[11px] leading-tight text-accent-400/80">
+                        {m.caption}
+                      </span>
+                    ) : null}
                   </div>
                 ))}
               </div>
               <p className="text-[16px] leading-[1.6] text-[#a8a8a1]">{c.desc}</p>
+              <Link
+                href={c.href}
+                className="mt-auto text-[15px] font-medium text-accent-400 underline-offset-4 hover:underline"
+              >
+                Read the full case study →
+              </Link>
             </article>
           ))}
         </div>

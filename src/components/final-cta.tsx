@@ -23,12 +23,10 @@ export function FinalCTA() {
               Book the Codebase X-Ray — {XRAY_PRICE}
             </a>
             <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/x-ray"
               className="rounded-full border border-[#3f3f3c] px-9 py-4 text-[16px] font-medium text-[#fafaf9] transition-colors duration-200 hover:bg-white/5"
             >
-              Book a fit call
+              See an example X-Ray →
             </a>
           </div>
           <p className="font-mono text-[13px] text-[#737370]">Typically responds within 24 hours</p>
