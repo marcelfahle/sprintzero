@@ -12,17 +12,15 @@ export function ProofStrip() {
   return (
     <section className="bg-bg-primary px-0 pt-12 pb-16">
       <Container>
-        <div className="mb-8 flex flex-wrap items-baseline justify-between gap-3">
-          <p className="font-mono text-[13px] font-medium tracking-mono text-accent-600 uppercase">
-            What our last sprint shipped
-          </p>
-          <Link
-            href="/case-studies"
-            className="text-[14px] font-medium text-fg-primary underline-offset-4 hover:underline"
-          >
-            Read the case study →
-          </Link>
-        </div>
+        <Link
+          href="/case-studies"
+          className="group mb-8 inline-flex items-center gap-1.5 font-mono text-[13px] font-medium tracking-mono text-accent-600 uppercase underline-offset-4 hover:underline"
+        >
+          What our last sprint shipped
+          <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-0.5">
+            →
+          </span>
+        </Link>
         <div className="flex flex-wrap items-stretch gap-10 sm:gap-12">
           {stats.map((s, i) => (
             <div key={s.label} className="flex items-center gap-10 sm:gap-12">
