@@ -16,8 +16,12 @@ const AI_BOTS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
-      ...AI_BOTS.map((userAgent) => ({ userAgent, allow: "/" })),
+      { userAgent: "*", allow: "/", disallow: "/thanks-xray" },
+      ...AI_BOTS.map((userAgent) => ({
+        userAgent,
+        allow: "/",
+        disallow: "/thanks-xray",
+      })),
     ],
     sitemap: "https://sprintzero.sh/sitemap.xml",
   };

@@ -2,9 +2,9 @@
 
 Copy-paste-ready campaign for $210/mo Google Search. Two ad groups, four
 RSAs, sitelinks, callouts, structured snippets, negative keywords, bid
-recommendations. **Conversion tracking via Plausible** — no GA4 or Google
-Tag setup required. Voice constraints applied: no marketing language, no
-exclamation points, specific numbers, mirrors searcher pain.
+recommendations. **Conversion tracking via Plausible Pageview Goal on
+`/thanks-xray`** — fires only after a real SavvyCal booking redirects to
+the thank-you page. No false conversions from button clicks.
 
 > **Trade-off note:** Plausible-only means **no automated bid
 > optimization** (Google Ads can't read Plausible's conversion data
@@ -12,37 +12,82 @@ exclamation points, specific numbers, mirrors searcher pain.
 > automated bidding to learn anyway, so this is fine. Manual CPC + manual
 > review of Plausible Goals weekly is the right move at this scale. If
 > you scale past ~$2K/mo, revisit GA4 + Google Ads conversion import for
-> bid optimization (or use offline conversion upload via the Plausible
-> Goals API).
+> bid optimization.
+
+---
+
+## Conversion flow
+
+```
+Ad click  →  /x-ray?utm_*&gclid=...
+         ├─  Tracking captures UTMs to localStorage
+         ├─  Tracking appends UTMs to all SavvyCal links
+         ↓
+User clicks "Book the Codebase X-Ray"
+         ├─  Click sets sz_intent_at = Date.now() in localStorage
+         ├─  Plausible fires "Click Book CTA" (funnel-step event,
+         │    not the conversion goal)
+         ↓
+SavvyCal opens (new tab) — user picks a slot, confirms booking
+         ↓
+SavvyCal redirects to https://sprintzero.sh/thanks-xray
+         ↓
+/thanks-xray page loads
+         ├─  Reads sz_intent_at; only fires if < 30 min old (kills
+         │    direct/bookmarked-URL false conversions)
+         ├─  Plausible records pageview (= the Goal)
+         ├─  Plausible "Book X-Ray" custom event with stored UTMs as
+         │    props (so you can filter conversions by ad group / keyword)
+         ├─  Optional: gtag/fbq/lintrk fire if env vars set
+         └─  localStorage cleared so refreshes don't double-count
+```
+
+The conversion only counts when SavvyCal actually completes. A user who
+opens SavvyCal and bails out never sees `/thanks-xray` and is not
+counted.
 
 ---
 
 ## Pre-launch checklist (do these in order)
 
-1. **Create Google Ads account** at ads.google.com.
-2. **Set up the Plausible Goal** at plausible.io/sprintzero.sh/settings/goals
-   (or wherever your Plausible dashboard is):
-   - Click **Add goal**
-   - Select **Custom event**
-   - Event name: `Book X-Ray` (exact spelling — the tracking code already
-     fires this)
-   - Save
-3. **Verify the goal fires**:
-   - Open `https://sprintzero.sh` in a Chrome tab
-   - Open DevTools → Network tab → filter by `event`
-   - Click any "Book the Codebase X-Ray" CTA
-   - You should see a request to `plausible.io/api/event` with
-     `name=Book X-Ray` in the payload
-   - Refresh your Plausible dashboard's Goals section — the event count
-     should increment
-4. **(Optional but recommended)** Set up custom property breakdown in
-   Plausible:
-   - In Plausible dashboard → Site settings → Custom properties → Add
-   - Property: `location`
-   - This will let you see whether the "hero" CTA, "final-cta" CTA, or
-     "sticky-mobile" CTA converts best
+1. **Configure SavvyCal post-booking redirect**:
+   - In SavvyCal → your "SprintZero / Codebase X-Ray" link → Edit
+   - Find **Confirmation page** or **Redirect after booking** setting
+   - Set redirect URL to: `https://sprintzero.sh/thanks-xray?booking=confirmed`
+   - Save. Test by booking a slot in the live link — you should land on
+     the thanks page.
 
-No env vars needed for Plausible — it's already wired up in the layout.
+2. **Create the Plausible Goal** at plausible.io/sprintzero.sh/settings/goals:
+   - Click **Add goal**
+   - Select **Pageview**
+   - Path: `/thanks-xray`
+   - Save
+   - **Why pageview, not custom event:** Plausible auto-tracks pageviews,
+     so the goal fires every time `/thanks-xray` loads — no JS code
+     required for the goal itself. The page also fires a `Book X-Ray`
+     custom event with UTM props, which you can use as a *secondary*
+     custom-event goal if you want richer breakdowns. One pageview goal
+     is enough for the basic CPA math.
+
+3. **(Optional)** Add a second Plausible Goal — Custom Event "Book X-Ray"
+   — to capture the UTM props (utm_source, utm_campaign, utm_term, etc.)
+   for richer attribution. The pageview goal counts; the custom event
+   gives you the dimensions to slice by.
+
+4. **Verify both fire**:
+   - Open `https://sprintzero.sh/x-ray?utm_source=test&utm_campaign=test`
+     in Chrome
+   - Click the Book CTA → complete a real test booking in SavvyCal
+   - You'll be redirected to `/thanks-xray`
+   - In DevTools → Network, filter by `event` — you should see one
+     `pageview` request and one `custom-event` request to plausible.io
+   - In Plausible dashboard → Goals tab, both goals should show 1
+     conversion within ~60 seconds
+
+5. **Create the Google Ads account** at ads.google.com.
+
+No env vars or Google Ads conversion setup required at this stage — see
+"When to add GA4" at the end of this doc for when to wire that in later.
 
 ---
 
@@ -55,17 +100,13 @@ No env vars needed for Plausible — it's already wired up in the layout.
   Partners
 - **Daily budget**: $7/day ($210/month)
 - **Languages**: English
-- **Conversion tracking**: **Plausible Goal "Book X-Ray"** (manual
-  review, not Google Ads automated)
+- **Conversion tracking**: **Plausible Pageview Goal `/thanks-xray`**
+  (manual review, not Google Ads automated)
 - **Ad rotation**: Optimize (default)
-- **Audience targeting**: Observation, not Targeting (for now — gather
-  data without restricting reach)
+- **Audience targeting**: Observation, not Targeting (gather data without
+  restricting reach)
 
-### Geo targeting (refined from original spec)
-
-Apply geo at the **metro/city** level instead of state. The original
-spec excluded entire states (CA, NY, MA, WA), which cuts more qualified
-leads than it excludes high-CPC zones. Refined exclusions:
+### Geo targeting (metros, not states)
 
 **Include:**
 - United States
@@ -91,6 +132,23 @@ each metro exclusion.
 
 ---
 
+## Both ad groups land on `/x-ray`
+
+The X-Ray page is the only page on the site engineered to *close* the
+X-Ray sale — it has the deliverable list, refund guarantee, FAQ, price
+comparison, and the booking CTA inline. Case study pages don't carry that
+machinery. Routing both ad groups to `/x-ray` keeps every paid click on
+the page that converts.
+
+After 30 days of data, optionally A/B-test a Laravel- or CRA-specific
+landing page variant for AG2. Don't split traffic on day 1 with no
+baseline.
+
+**All Final URLs in this doc**: `https://sprintzero.sh/x-ray` (with
+campaign-specific UTMs).
+
+---
+
 ## Ad Group 1: The Rewrite Trap
 
 **Keywords (phrase match):**
@@ -101,16 +159,16 @@ each metro exclusion.
 ```
 
 **Daily budget**: $4
-**Max CPC**: $7
-**Final URL**: `https://sprintzero.sh/x-ray?utm_source=google&utm_medium=cpc&utm_campaign=rewrite-trap&utm_content={creative}&utm_term={keyword}`
-**Display path**: `sprintzero.sh / modernization`
+**Max CPC**: **$5.00** (research estimate ~$4; small premium for headroom,
+not a 75% premium)
+**Final URL base**: `https://sprintzero.sh/x-ray`
 
-> **UTM note**: Use the `{creative}` and `{keyword}` Google Ads ValueTrack
-> parameters in the Final URL so Plausible captures which ad and which
-> keyword drove each click. The tracking code preserves these UTMs all
-> the way through to SavvyCal.
+> Append these UTMs to each Final URL using Google Ads ValueTrack
+> parameters: `?utm_source=google&utm_medium=cpc&utm_campaign=rewrite-trap&utm_content={creative}&utm_term={keyword}`
 
 ### RSA 1.A — "Skip the rewrite"
+
+**Display path**: `sprintzero.sh / no-rewrite`
 
 **Headlines (15):**
 ```
@@ -120,7 +178,7 @@ each metro exclusion.
 4.  Codebase modernization
 5.  Fixed-scope 30-day sprint
 6.  993 files, one sprint
-7.  Save 6 months on a rewrite
+7.  Skip the 6-month rewrite
 8.  194 → 0 vulnerabilities
 9.  Legacy SaaS modernization
 10. $35K. 30 days. Done.
@@ -141,14 +199,16 @@ each metro exclusion.
 
 ### RSA 1.B — "30-day fix"
 
+**Display path**: `sprintzero.sh / 30-day-sprint`
+
 **Headlines (15):**
 ```
 1.  Avoid the rewrite trap
 2.  30 days. Fixed price.
 3.  We modernize, not rewrite
-4.  Legacy code, fixed in 30
+4.  Legacy code, 30-day fix
 5.  $300K rewrite? Skip it.
-6.  From legacy to AI-ready
+6.  Legacy code, modernized
 7.  993 files. 30 days.
 8.  Rescue legacy SaaS code
 9.  Fixed-scope modernization
@@ -180,17 +240,14 @@ each metro exclusion.
 ```
 
 **Daily budget**: $3
-**Max CPC**: $5
-**Final URL**: `https://sprintzero.sh/case-studies/cra-to-vite-migration-healthcare-saas?utm_source=google&utm_medium=cpc&utm_campaign=stack-eol&utm_content={creative}&utm_term={keyword}`
-**Display path**: `sprintzero.sh / migration`
+**Max CPC**: **$5.00**
+**Final URL base**: `https://sprintzero.sh/x-ray`
 
-> Note on landing page: the URL above is the CRA→Vite case study, which
-> matches CRA-related queries directly. If most of your impressions come
-> from the Laravel keyword, rotate the URL to
-> `/case-studies/laravel-modernization-healthcare-saas` after week 2 based
-> on impression share.
+> UTMs: `?utm_source=google&utm_medium=cpc&utm_campaign=stack-eol&utm_content={creative}&utm_term={keyword}`
 
 ### RSA 2.A — CRA-focused
+
+**Display path**: `sprintzero.sh / cra-migration`
 
 **Headlines (15):**
 ```
@@ -221,6 +278,8 @@ each metro exclusion.
 
 ### RSA 2.B — Laravel/stack-EOL
 
+**Display path**: `sprintzero.sh / laravel-upgrade`
+
 **Headlines (15):**
 ```
 1.  Laravel 8 → 13 upgrade
@@ -235,7 +294,7 @@ each metro exclusion.
 10. HIPAA Laravel modernization
 11. 30-day Laravel sprint
 12. Founder-led, AI-assisted
-13. Stack moved to current
+13. Modern, supported stack
 14. $2,500 X-Ray, credits 100%
 15. Laravel 8 to 13 in 30 days
 ```
@@ -298,8 +357,9 @@ Phoenix Modernization
 
 ## Negative keywords (campaign level)
 
-Paste the entire block. Format: one per line, exact match unless `+`
-prefix. For phrase-match negatives, wrap in quotes.
+Format note: each line is a single broad-match negative unless wrapped
+in quotes (phrase-match negative). Paste each block into the appropriate
+Google Ads negative-keyword editor.
 
 ### Job seekers
 ```
@@ -316,9 +376,8 @@ glassdoor
 "remote work"
 "hire developer"
 "find developer"
-contractor
-freelancer
-freelance
+"freelance developer"
+"contractor wanted"
 ```
 
 ### DIY / education
@@ -342,6 +401,22 @@ documentation
 docs
 "best practices"
 principles
+reddit
+stackoverflow
+quora
+```
+
+### Research vs buying intent
+```
+review
+reviews
+comparison
+compare
+vs
+alternatives
+"vs alternatives"
+"top 10"
+"best of"
 ```
 
 ### Wrong tech stack
@@ -385,20 +460,23 @@ sap
 oracle
 salesforce
 "white label"
-agency
-"agency partnership"
 offshore
 outsourcing
 ```
+
+> **Removed from earlier draft**: `agency` (legitimate buyer query — "best
+> agency for legacy SaaS modernization"), bare `contractor` and bare
+> `freelancer` (too broad — replaced with phrase-match `"freelance
+> developer"` and `"contractor wanted"`).
 
 ---
 
 ## Bid recommendations
 
-| Ad group              | Max CPC | Daily | Reasoning                                     |
-|-----------------------|--------:|------:|-----------------------------------------------|
-| 1. The Rewrite Trap   |   $7.00 | $4.00 | Broader pain, more competition. ~$5 expected. |
-| 2. Specific Stack EOL |   $5.00 | $3.00 | Niche, low competition. ~$3.50 expected.      |
+| Ad group              | Max CPC | Daily | Reasoning                                                                                  |
+|-----------------------|--------:|------:|--------------------------------------------------------------------------------------------|
+| 1. The Rewrite Trap   |   $5.00 | $4.00 | Research estimate ~$4. Small headroom, not a worst-case bid. Raise after 4 days if no impressions. |
+| 2. Specific Stack EOL |   $5.00 | $3.00 | Niche, low competition. Research estimate ~$3.50.                                           |
 
 Total daily: $7. Total monthly: ~$210.
 
@@ -415,21 +493,25 @@ After 30 days of data:
 
 ## Pre-launch QA checklist
 
-- [ ] Plausible Goal "Book X-Ray" created in dashboard
-- [ ] Goal fires when clicking "Book the Codebase X-Ray" CTA (verify in
-      Network tab + Plausible dashboard)
-- [ ] UTM parameters survive the SavvyCal handoff (open SavvyCal preview
-      with `?utm_source=test&utm_medium=cpc` — UTMs should appear in
-      Plausible properties)
-- [ ] Test ad preview on desktop and mobile in Google Ads UI
-- [ ] Verify all sitelink anchors resolve (`/#how`, `/#guarantee`,
+- [ ] SavvyCal post-booking redirect set to
+      `https://sprintzero.sh/thanks-xray?booking=confirmed`
+- [ ] Plausible Goal "Pageview /thanks-xray" created
+- [ ] (Optional) Plausible Goal "Custom Event Book X-Ray" created
+- [ ] End-to-end test booking lands on `/thanks-xray` and registers a
+      goal in Plausible within 60 seconds
+- [ ] Direct visit to `/thanks-xray` does **not** record a goal (the
+      30-min intent flag prevents false conversions)
+- [ ] UTM parameters survive the SavvyCal handoff (book with
+      `?utm_source=test` — UTMs should appear as Plausible event props)
+- [ ] All sitelink anchors resolve (`/#how`, `/#guarantee`,
       `/case-studies`, `/x-ray`)
-- [ ] Negative keywords pasted in, no false positives flagged
+- [ ] Negative keywords pasted in
 - [ ] Geo exclusions applied via radius targeting on each metro
 - [ ] Languages: English only
 - [ ] Networks: Search Network only (no Display, no Search Partners)
 - [ ] Ad rotation: Optimize
 - [ ] Bid strategy: Manual CPC
+- [ ] Test ad preview on desktop and mobile in Google Ads UI
 
 ---
 
@@ -437,16 +519,17 @@ After 30 days of data:
 
 Open your Plausible dashboard → **Goals** tab. You'll see:
 
-- **Total conversions** — how many "Book X-Ray" events fired
-- **Conversion rate** — % of unique visitors who converted
-- **Source breakdown** — which UTM sources drove conversions
-- **Custom property "location"** — which CTA on the page converts best
-  (hero / final-cta / sticky-mobile / etc.)
+- **Pageview /thanks-xray** — total real bookings (the conversion count)
+- **Click Book CTA** — funnel-step event; total clicks on Book buttons
+  (use to compute CTA-click → booking conversion rate)
+- **Book X-Ray** (custom event with props) — same booking count as the
+  pageview goal, but sliceable by `utm_source`, `utm_campaign`,
+  `utm_term`, `utm_content`
 
-To attribute Google Ads spend to conversions:
+To attribute Google Ads spend to bookings:
 1. Filter by **utm_source = google**
-2. See unique visitors and goal completions for that source
-3. Divide your weekly Google Ads spend by goal completions = your real CPA
+2. See Pageview /thanks-xray completions for that filter
+3. Divide your weekly Google Ads spend by completions = your real CPA
 
 To attribute by ad group:
 1. Filter by **utm_campaign = rewrite-trap** or **utm_campaign = stack-eol**
@@ -455,6 +538,12 @@ To attribute by ad group:
 To attribute by keyword:
 1. Filter by **utm_term = [keyword]**
 2. See which keyword actually books X-Rays vs. just sucks budget
+
+Funnel diagnostics:
+- **Click Book CTA / Pageview /thanks-xray** = drop-off rate inside
+  SavvyCal. If you have lots of CTA clicks but few completions, the
+  drop is *inside* SavvyCal — friction in the booking form, calendar
+  availability, etc. Not an ad problem.
 
 ---
 
@@ -468,10 +557,11 @@ Daily for first 7 days, then 3x/week:
   headlines)
 - **In Google Ads**: Search Terms report — add new negatives weekly
 - **In Plausible** (filter by utm_source=google): Bounce rate from ads on
-  /x-ray and case-study landing pages (>80% = landing-page mismatch)
-- **In Plausible**: Goal completions per ad group (utm_campaign filter)
-- **In Plausible**: Conversion rate by location property (which CTA
-  works)
+  /x-ray (>80% = landing-page mismatch)
+- **In Plausible**: Pageview /thanks-xray goal completions per ad group
+  (utm_campaign filter)
+- **In Plausible**: Click Book CTA / /thanks-xray ratio per ad group
+  (high ratio = SavvyCal friction; low ratio = ad/landing mismatch)
 
 After 30 days, kill the bottom-performing RSA in each ad group, replace
 with a fresh variant testing one new angle (e.g., compliance pressure).
@@ -488,8 +578,33 @@ Skip this until **at least one of these is true**:
 - You want to run additional campaign types (Performance Max, etc.)
   that require Google's own conversion signal
 
-When you do add it: see the env vars already wired up in
-`src/components/marketing-scripts.tsx` — set `NEXT_PUBLIC_GTAG_ID` and
-`NEXT_PUBLIC_GADS_CONVERSION_LABEL`, redeploy, and the existing tracking
-code will automatically start firing both Plausible **and** Google Ads
-conversions in parallel. No code changes.
+When you're ready, the order matters — Step 2 generates the values you
+need for Step 3:
+
+1. **Create the GA4 property** at analytics.google.com — note the
+   Measurement ID (`G-XXXXXXXXXX`).
+2. **In Google Ads → Tools → Conversions → New conversion action**:
+   - Type: Website
+   - Goal: Submit lead form (or "Book appointment")
+   - Name: "Book X-Ray"
+   - Value: $250 (one-time, conservative; raise once you have CPA data)
+   - Count: One per click
+   - Click-through window: 30 days
+   - Tag setup: Use Google tag (already on site once env vars set)
+   - **Save** — then in the conversion's detail view, find:
+     - **Conversion ID** — labeled "AW-XXXXXXXXX" or shown in the gtag
+       snippet as `'AW-XXXXXXXXX/abcDEFghi'`. **Copy the AW-XXXXXXXXX
+       part.**
+     - **Conversion Label** — the part after the `/`, e.g.
+       `abcDEFghi`. **Copy this separately.**
+3. **Wait — you need both values from Step 2 before continuing.**
+4. **In Vercel project → Settings → Environment Variables**, set:
+   - `NEXT_PUBLIC_GTAG_ID` = the `AW-XXXXXXXXX` from Step 2
+   - `NEXT_PUBLIC_GADS_CONVERSION_LABEL` = the conversion label from Step 2
+5. **Redeploy** so new env vars take effect.
+6. **Verify** by completing a test booking with Chrome DevTools → Network
+   open. Look for a request to `googleadservices.com/pagead/conversion`
+   firing on `/thanks-xray` page load.
+
+The existing `ThanksXrayConversion` component already has the gtag call
+wired — env vars activate it automatically; no code changes needed.

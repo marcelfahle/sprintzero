@@ -14,6 +14,11 @@ const UTM_KEYS = [
   "li_fat_id",
 ] as const;
 
+const STORAGE_KEYS = {
+  utms: "sz_utms",
+  intentAt: "sz_intent_at",
+} as const;
+
 declare global {
   interface Window {
     plausible?: (
@@ -26,9 +31,6 @@ declare global {
   }
 }
 
-const GADS_CONVERSION_LABEL = process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL;
-const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
-
 export function Tracking() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -40,7 +42,7 @@ export function Tracking() {
 
     if (collected.size > 0) {
       try {
-        sessionStorage.setItem("sz_utms", collected.toString());
+        localStorage.setItem(STORAGE_KEYS.utms, collected.toString());
       } catch {
         // ignore storage errors (private mode, quota, etc.)
       }
@@ -48,7 +50,7 @@ export function Tracking() {
 
     const stored = (() => {
       try {
-        return sessionStorage.getItem("sz_utms") ?? collected.toString();
+        return localStorage.getItem(STORAGE_KEYS.utms) ?? collected.toString();
       } catch {
         return collected.toString();
       }
@@ -72,23 +74,25 @@ export function Tracking() {
       .querySelectorAll<HTMLAnchorElement>(`a[href*="${SAVVYCAL_HOST}"]`)
       .forEach(enhanceLink);
 
+    // Mark booking intent on click. The actual conversion fires on
+    // /thanks-xray after SavvyCal redirects back. Without this flag, a
+    // direct visit to /thanks-xray would record a false conversion.
     const onClick = (event: MouseEvent) => {
       const target = (event.target as HTMLElement | null)?.closest?.("a");
       if (!(target instanceof HTMLAnchorElement)) return;
       if (!target.href.includes(SAVVYCAL_HOST)) return;
 
-      window.plausible?.("Book X-Ray", {
-        props: { location: target.dataset.track ?? "default" },
-      });
-
-      if (window.gtag && GTAG_ID && GADS_CONVERSION_LABEL) {
-        window.gtag("event", "conversion", {
-          send_to: `${GTAG_ID}/${GADS_CONVERSION_LABEL}`,
-        });
+      try {
+        localStorage.setItem(STORAGE_KEYS.intentAt, String(Date.now()));
+      } catch {
+        // ignore storage errors
       }
 
-      window.fbq?.("track", "Lead");
-      window.lintrk?.("track", { conversion_id: "savvycal-click" });
+      // Funnel-step event — distinct from the conversion goal. Lets us
+      // see click-through-rate from SavvyCal CTA to actual booking.
+      window.plausible?.("Click Book CTA", {
+        props: { location: target.dataset.track ?? "default" },
+      });
     };
 
     document.addEventListener("click", onClick);
