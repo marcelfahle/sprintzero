@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Container } from "./container";
 import { Wordmark } from "./wordmark";
-import { BOOKING_URL } from "@/lib/constants";
+import { BOOKING_URL, TECH_DUE_DILIGENCE_BOOKING_URL } from "@/lib/constants";
 
 const anchorLinks = [
   { label: "Problem", href: "/#problem" },
@@ -14,6 +15,9 @@ const anchorLinks = [
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isTechDueDiligence = pathname === "/tech-due-diligence";
+  const bookingUrl = isTechDueDiligence ? TECH_DUE_DILIGENCE_BOOKING_URL : BOOKING_URL;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -53,13 +57,22 @@ export function Nav() {
             Case studies
           </Link>
           <a
-            href={BOOKING_URL}
+            href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-fg-primary px-3.5 py-2 text-[13px] font-semibold whitespace-nowrap text-fg-inverse transition-opacity duration-200 hover:opacity-90 sm:px-5 sm:py-2.5 sm:text-[14px]"
           >
-            <span className="sm:hidden">Book X-Ray</span>
-            <span className="hidden sm:inline">Book a Codebase X-Ray</span>
+            {isTechDueDiligence ? (
+              <>
+                <span className="sm:hidden">Book call</span>
+                <span className="hidden sm:inline">Book intro call</span>
+              </>
+            ) : (
+              <>
+                <span className="sm:hidden">Book X-Ray</span>
+                <span className="hidden sm:inline">Book a Codebase X-Ray</span>
+              </>
+            )}
           </a>
         </nav>
       </Container>

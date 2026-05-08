@@ -1,13 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BOOKING_URL, XRAY_PRICE } from "@/lib/constants";
+import { usePathname } from "next/navigation";
+import { BOOKING_URL, TECH_DUE_DILIGENCE_BOOKING_URL, XRAY_PRICE } from "@/lib/constants";
 
 const SHOW_AFTER_PX = 600;
 const HIDE_NEAR_BOTTOM_PX = 800;
 
 export function StickyMobileCTA() {
   const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
+  const isTechDueDiligence = pathname === "/tech-due-diligence";
+  const bookingUrl = isTechDueDiligence ? TECH_DUE_DILIGENCE_BOOKING_URL : BOOKING_URL;
 
   useEffect(() => {
     const onScroll = () => {
@@ -35,12 +39,12 @@ export function StickyMobileCTA() {
     >
       <div className="mx-3 mb-3 rounded-full border border-border-default bg-fg-primary px-4 py-3 shadow-lg shadow-black/15">
         <a
-          href={BOOKING_URL}
+          href={bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 text-[15px] font-semibold text-fg-inverse"
         >
-          Book the Codebase X-Ray — {XRAY_PRICE}
+          {isTechDueDiligence ? "Book the intro call" : `Book the Codebase X-Ray — ${XRAY_PRICE}`}
           <span aria-hidden>→</span>
         </a>
       </div>
