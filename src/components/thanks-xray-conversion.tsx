@@ -9,7 +9,7 @@ const STORAGE_KEYS = {
 
 const INTENT_TTL_MS = 30 * 60 * 1000; // 30 minutes
 
-const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
+const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID ?? "AW-18147937800";
 const GADS_CONVERSION_LABEL = process.env.NEXT_PUBLIC_GADS_CONVERSION_LABEL;
 
 export function ThanksXrayConversion() {

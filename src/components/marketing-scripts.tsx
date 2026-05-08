@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
+const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID ?? "AW-18147937800";
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID;
 
