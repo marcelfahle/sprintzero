@@ -231,9 +231,10 @@ export default function TechDueDiligencePage() {
             <p className="mb-5 font-mono text-[13px] font-medium tracking-mono text-accent-600 uppercase">
               Technical Due Diligence
             </p>
-            <h1 className="mb-6 max-w-[920px] font-display text-[44px] leading-[1.05] font-bold tracking-display text-fg-primary sm:text-[56px] lg:text-[64px]">
+            <h1 className="mb-6 max-w-[920px] font-display text-[36px] leading-[1.05] font-bold tracking-display text-fg-primary sm:text-[56px] lg:text-[64px]">
               Technical due diligence for SaaS acquisitions.
               <br className="hidden sm:block" />
+              {" "}
               <span className="text-fg-secondary">
                 A written assessment by senior engineers, sized for the deal.
               </span>
@@ -254,7 +255,7 @@ export default function TechDueDiligencePage() {
                 href={BOOKING_URL_UTM}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex justify-center rounded-full bg-fg-primary px-8 py-3.5 text-[16px] font-semibold text-fg-inverse transition-opacity duration-200 hover:opacity-90"
+                className="inline-flex justify-center self-start rounded-full bg-fg-primary px-8 py-3.5 text-[16px] font-semibold text-fg-inverse transition-opacity duration-200 hover:opacity-90 sm:self-auto"
               >
                 Book a 30-minute intro call →
               </a>

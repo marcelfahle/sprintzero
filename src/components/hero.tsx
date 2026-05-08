@@ -21,13 +21,14 @@ export function Hero() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-fg-primary px-8 py-3.5 text-[16px] font-semibold text-fg-inverse transition-opacity duration-200 hover:opacity-90"
+            className="w-full rounded-full bg-fg-primary px-6 py-3.5 text-center text-[16px] font-semibold text-fg-inverse transition-opacity duration-200 hover:opacity-90 sm:w-auto sm:px-8"
           >
-            Book the Codebase X-Ray — {XRAY_PRICE}
+            <span className="sm:hidden">Book the X-Ray</span>
+            <span className="hidden sm:inline">Book the Codebase X-Ray — {XRAY_PRICE}</span>
           </a>
           <a
             href="/case-studies"
-            className="rounded-full border border-border-strong px-8 py-3.5 text-[16px] font-medium text-fg-primary transition-colors duration-200 hover:bg-bg-secondary"
+            className="w-full rounded-full border border-border-strong px-6 py-3.5 text-center text-[16px] font-medium text-fg-primary transition-colors duration-200 hover:bg-bg-secondary sm:w-auto sm:px-8"
           >
             See the case study →
           </a>

@@ -11,6 +11,7 @@ const anchorLinks = [
   { label: "Problem", href: "/#problem" },
   { label: "How it works", href: "/#how" },
   { label: "Pricing", href: "/#pricing" },
+  { label: "Due diligence", href: "/tech-due-diligence" },
 ];
 
 export function Nav() {
@@ -52,7 +53,7 @@ export function Nav() {
           </div>
           <Link
             href="/case-studies"
-            className="ml-auto text-[14px] font-medium text-fg-secondary transition-colors duration-200 hover:text-fg-primary md:ml-0 md:text-[15px]"
+            className="ml-auto hidden text-[14px] font-medium text-fg-secondary transition-colors duration-200 hover:text-fg-primary sm:block md:ml-0 md:text-[15px]"
           >
             Case studies
           </Link>
@@ -69,7 +70,7 @@ export function Nav() {
               </>
             ) : (
               <>
-                <span className="sm:hidden">Book X-Ray</span>
+                <span className="sm:hidden">Book</span>
                 <span className="hidden sm:inline">Book a Codebase X-Ray</span>
               </>
             )}

@@ -13,6 +13,7 @@ import { FounderTrust } from "@/components/founder-trust";
 import { Deliverables } from "@/components/deliverables";
 import { GuaranteeSection } from "@/components/guarantee-section";
 import { XRayOffer } from "@/components/x-ray-offer";
+import { TechnicalDueDiligenceCard } from "@/components/technical-due-diligence-card";
 import { ForNotFor } from "@/components/for-not-for";
 import { FAQ } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
@@ -107,6 +108,7 @@ export default function HomePage() {
         <Deliverables />
         <GuaranteeSection />
         <XRayOffer />
+        <TechnicalDueDiligenceCard />
         <ForNotFor />
         <FAQ />
         <FinalCTA />

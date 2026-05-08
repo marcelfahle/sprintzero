@@ -18,13 +18,14 @@ export function FinalCTA() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#fafaf9] px-9 py-4 text-[16px] font-semibold text-[#0a0a09] transition-opacity duration-200 hover:opacity-90"
+              className="w-full rounded-full bg-[#fafaf9] px-6 py-4 text-[16px] font-semibold text-[#0a0a09] transition-opacity duration-200 hover:opacity-90 sm:w-auto sm:px-9"
             >
-              Book the Codebase X-Ray — {XRAY_PRICE}
+              <span className="sm:hidden">Book the X-Ray</span>
+              <span className="hidden sm:inline">Book the Codebase X-Ray — {XRAY_PRICE}</span>
             </a>
             <a
               href="/x-ray"
-              className="rounded-full border border-[#3f3f3c] px-9 py-4 text-[16px] font-medium text-[#fafaf9] transition-colors duration-200 hover:bg-white/5"
+              className="w-full rounded-full border border-[#3f3f3c] px-6 py-4 text-[16px] font-medium text-[#fafaf9] transition-colors duration-200 hover:bg-white/5 sm:w-auto sm:px-9"
             >
               See an example X-Ray →
             </a>

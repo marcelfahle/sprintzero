@@ -2,9 +2,13 @@ import Link from "next/link";
 import { Container } from "./container";
 import { Wordmark } from "./wordmark";
 
-const links: { href: "/case-studies" | "/x-ray" | "/about"; label: string }[] = [
+const links: {
+  href: "/case-studies" | "/x-ray" | "/tech-due-diligence" | "/about";
+  label: string;
+}[] = [
   { href: "/case-studies", label: "Case studies" },
   { href: "/x-ray", label: "Codebase X-Ray" },
+  { href: "/tech-due-diligence", label: "Tech due diligence" },
   { href: "/about", label: "About" },
 ];
 
