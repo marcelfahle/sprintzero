@@ -10,7 +10,7 @@ const MARCEL_EMAIL = "marcel@sprintzero.sh";
 
 const TITLE = "Technical Due Diligence for SaaS Acquisitions | SprintZero";
 const DESCRIPTION =
-  "Pre-close technical due diligence for SaaS acquisitions. Written assessment from senior engineers — codebase risk map, dependency posture, architectural debt, modernization cost range. $5K starting, $10K typical. 1–2 weeks.";
+  "Pre-close technical due diligence for SaaS acquisitions. Written assessment by senior engineers covering codebase risk, dependency and security posture, architectural debt, hiring risk, and a modernization cost range. From $5,000. Typical $10,000. Delivered in 1 to 2 weeks.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -42,7 +42,7 @@ const serviceSchema = {
   name: "Technical Due Diligence",
   serviceType: "Technical Due Diligence",
   description:
-    "Pre-close technical due diligence for SaaS acquisitions. Written assessment from senior engineers covering codebase risk, dependency and security posture, architectural debt, hiring and handover risk, and a modernization cost estimate range. Delivered in 1–2 weeks.",
+    "Pre-close technical due diligence for SaaS acquisitions. A written assessment by senior engineers covering codebase risk, dependency and security posture, architectural debt, hiring and handover risk, and a modernization cost estimate range. Delivered in 1 to 2 weeks.",
   provider: {
     "@type": "Organization",
     name: "SprintZero",
@@ -57,7 +57,7 @@ const serviceSchema = {
   offers: [
     {
       "@type": "Offer",
-      name: "Technical Due Diligence — starting",
+      name: "Technical Due Diligence (starting)",
       price: "5000",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
@@ -65,7 +65,7 @@ const serviceSchema = {
     },
     {
       "@type": "Offer",
-      name: "Technical Due Diligence — typical",
+      name: "Technical Due Diligence (typical)",
       price: "10000",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
@@ -77,27 +77,27 @@ const serviceSchema = {
 const deliverableSections = [
   {
     title: "Codebase risk map",
-    desc: "What is load-bearing, what is brittle, and what is silently rotting. Prioritized by impact on continuity, integration cost, and post-close engineering load.",
+    desc: "What is load-bearing, what is brittle, what is decaying. Findings are prioritized by impact on continuity, integration cost, and post-close engineering load.",
   },
   {
     title: "Dependency and security posture",
-    desc: "Full inventory of CVEs, advisories, end-of-life libraries, and committed secrets. A real production vulnerability count, with exploitability and remediation effort scored per item.",
+    desc: "Inventory of CVEs, advisories, end-of-life libraries, and committed secrets. Production vulnerability count with exploitability and remediation effort scored per item.",
   },
   {
     title: "Architectural debt summary",
-    desc: "Distributed-monolith patterns, framework-version drift, abandoned migrations, dead code, and the structural decisions an acquirer will inherit. Written in language a non-technical buyer can defend in committee.",
+    desc: "Distributed-monolith patterns, framework version drift, abandoned migrations, dead code, and the structural decisions an acquirer will inherit. Written so a non-technical buyer can defend it in committee.",
   },
   {
     title: "Hiring and handover risk",
-    desc: "Bus factor, single-engineer dependencies, undocumented systems, and how findable replacement engineers are for the stack as it stands today. The question every buyer asks: what happens if the lead engineer leaves day-one post-close.",
+    desc: "Bus factor, single-engineer dependencies, undocumented systems, and the availability of replacement engineers for the stack as it stands. Addresses the question every buyer asks: what happens if the lead engineer leaves on day one post-close.",
   },
   {
     title: "Modernization cost estimate range",
-    desc: "A defensible cost band to bring the codebase to a maintainable, hire-able, AI-tooling-ready state — with reasoning. Used as a price-adjustment input or post-close capex line, not a sales pitch.",
+    desc: "A defensible cost band to bring the codebase to a maintainable, hireable, AI-tooling-ready state, with the reasoning behind it. Designed to function as a price-adjustment input or a post-close capex line item.",
   },
   {
-    title: "Written report + 30-minute walkthrough",
-    desc: "Shareable PDF deliverable, structured for buyer-side legal, technical, and financial review. One live walkthrough with the assessment lead. Buyer or seller may forward the report internally without redaction.",
+    title: "Written report and 30-minute walkthrough",
+    desc: "Shareable PDF, structured for buyer-side legal, technical, and financial review. One live walkthrough with the assessment lead. The commissioning party may forward the report internally without redaction.",
   },
 ];
 
@@ -122,7 +122,7 @@ const steps = [
   {
     n: "01",
     title: "Intro call (30 minutes)",
-    desc: "Stack confirmation, deal context, timeline, conflict-of-interest check. Scope and final fee are set on this call — no contact-form pricing theater.",
+    desc: "Stack confirmation, deal context, timeline, and conflict-of-interest check. Scope and final fee are set on this call. No contact-form pricing.",
   },
   {
     n: "02",
@@ -131,13 +131,13 @@ const steps = [
   },
   {
     n: "03",
-    title: "Assessment (5–10 business days)",
-    desc: "Senior-engineer review of the codebase, dependencies, infrastructure posture, and team artifacts. Asynchronous clarification questions to the seller's technical lead, routed through the buyer or advisor.",
+    title: "Assessment (5 to 10 business days)",
+    desc: "Senior-engineer review of the codebase, dependencies, infrastructure posture, and team artifacts. Clarification questions are routed asynchronously to the seller's technical lead through the buyer or advisor.",
   },
   {
     n: "04",
     title: "Written report and walkthrough",
-    desc: "Final report delivered as a structured PDF. 30-minute live walkthrough with buyer, advisor, and (where appropriate) seller. Total elapsed time, kickoff to delivery: 1–2 weeks.",
+    desc: "Final report delivered as a structured PDF. 30-minute live walkthrough with buyer, advisor, and where appropriate the seller. Total elapsed time, kickoff to delivery: 1 to 2 weeks.",
   },
 ];
 
@@ -156,7 +156,7 @@ const proofFindings = [
     code: "Finding B",
     descriptor: "Vertical SaaS, single-product, PHP/Laravel + MySQL on shared hosting",
     items: [
-      "13-year-old Laravel application; PHP 7.x; MySQL 5.7 — all past end-of-life",
+      "13-year-old Laravel application. PHP 7.x; MySQL 5.7. All past end-of-life",
       "Authentication implemented in-app with weak hashing and no rate limiting",
       "No database migration system; schema changes applied by hand in production",
       "Single engineer with full operational knowledge; no runbooks, no documented deployment",
@@ -167,31 +167,31 @@ const proofFindings = [
 const faqs = [
   {
     q: "How is this different from a SOC 2 or security audit?",
-    a: "A SOC 2 audit assesses whether the organization has frameworks and controls in place. We assess the code itself — what it actually does, what it depends on, what it inherits, what it costs to keep running. The two are complementary: SOC 2 covers governance, this covers the engineering substrate underneath. Buyers usually need both; they answer different questions.",
+    a: "A SOC 2 audit assesses whether the organization has frameworks and controls in place. We assess the code itself: what it does, what it depends on, what it inherits, and what it costs to keep running. The two are complementary. SOC 2 covers governance. This covers the engineering substrate underneath. Buyers typically need both; they answer different questions.",
   },
   {
     q: "How do you handle confidentiality?",
-    a: "Mutual NDA before any code or documentation moves. Repository access is read-only and time-bounded to the engagement window. Access is revoked and any local working copy is deleted on delivery. The written report is the buyer's (or commissioning party's) property; we retain no copy beyond the engagement and do not reuse client material in marketing without written consent.",
+    a: "Mutual NDA before any code or documentation moves. Repository access is read-only and time-bounded to the engagement window. Access is revoked and any local working copy is deleted on delivery. The written report is the property of the commissioning party. We retain no copy beyond the engagement and do not reuse client material in marketing without written consent.",
   },
   {
     q: "What is your conflict-of-interest policy?",
-    a: "We will not run an assessment on a target where we have an ongoing engineering relationship with the seller, the buyer, or a competing bidder on the same deal. Conflicts are disclosed and resolved on the intro call before NDA. We will refer the engagement to a peer firm if a conflict exists.",
+    a: "We will not run an assessment on a target where we have an ongoing engineering relationship with the seller, the buyer, or a competing bidder on the same deal. Conflicts are disclosed and resolved on the intro call before NDA. Where a conflict exists, we refer the engagement to a peer firm.",
   },
   {
     q: "Can you work for the buy-side, the sell-side, or both?",
-    a: "Both, but never the same deal. Most engagements are buy-side: a strategic, PE platform, or vertical aggregator commissions the assessment ahead of close. Sell-side engagements are typically founders running their own pre-diligence ahead of LOI to surface and price issues before an acquirer finds them. The deliverable is structurally identical; the audience and framing of the executive summary differs.",
+    a: "Both, but never the same deal. Most engagements are buy-side: a strategic acquirer, PE platform, or vertical aggregator commissions the assessment ahead of close. Sell-side engagements are typically founders running pre-LOI diligence on themselves to surface and price issues before an acquirer finds them. The deliverable is structurally identical. The audience and the framing of the executive summary differ.",
   },
   {
     q: "What if the target stack is outside the list above?",
-    a: "We refer to specialists rather than fake the expertise. Our scope is intentionally narrow — JavaScript ecosystem, Elixir/Phoenix, Rails, Laravel, Django. For .NET, Java, Go, Rust, mainframe, and Kubernetes platform diligence we maintain a referral list of firms with the right depth. Tell us the stack on the intro call; if it is not ours, we will say so on that call.",
+    a: "We refer to specialists rather than fake the expertise. Our scope is intentionally narrow: JavaScript ecosystem, Elixir/Phoenix, Rails, Laravel, Django. For .NET, Java, Go, Rust, mainframe, and Kubernetes platform diligence we maintain a referral list of firms with the right depth. Confirm the stack on the intro call. If it is outside our scope, we will say so on that call before any commitment.",
   },
   {
     q: "Who writes the assessment?",
-    a: "Senior engineers with 15+ years on the in-scope stacks, working under Marcel Fahle's review. Not generalist consultants, not analysts working from a checklist, not offshore farmed-out review. The same person who writes a finding is available on the walkthrough call to defend it.",
+    a: "Senior engineers with 15+ years on the in-scope stacks, working under Marcel Fahle's review. Not generalist consultants, not analysts working from a checklist, not offshore farmed-out review. The engineer who writes a finding is available on the walkthrough call to defend it.",
   },
   {
     q: "Can the report be shared with our investment committee, lenders, or QoE provider?",
-    a: "Yes. The report is structured for buyer-side legal, technical, and financial review and may be forwarded internally without redaction. For onward sharing with parties outside the original engagement (lenders, additional advisors), the commissioning party owns the distribution decision.",
+    a: "Yes. The report is structured for buyer-side legal, technical, and financial review and may be forwarded internally without redaction. For onward sharing with parties outside the original engagement, such as lenders or additional advisors, the commissioning party owns the distribution decision.",
   },
 ];
 
@@ -200,7 +200,7 @@ const howToSchema = {
   "@type": "HowTo",
   name: "How a SprintZero technical due diligence engagement works",
   description:
-    "Four-step process for SprintZero technical due diligence — intro call to written report and walkthrough in 1–2 weeks.",
+    "Four-step process for SprintZero technical due diligence: intro call to written report and walkthrough in 1–2 weeks.",
   totalTime: "P14D",
   step: steps.map((step, i) => ({
     "@type": "HowToStep",
@@ -232,14 +232,16 @@ export default function TechDueDiligencePage() {
               Technical Due Diligence
             </p>
             <h1 className="mb-6 max-w-[920px] font-display text-[44px] leading-[1.05] font-bold tracking-display text-fg-primary sm:text-[56px] lg:text-[64px]">
-              Technical due diligence for SaaS acquisitions —
+              Technical due diligence for SaaS acquisitions.
               <br className="hidden sm:block" />
-              assessment from senior engineers who ship production code, not generalist consultants.
+              <span className="text-fg-secondary">
+                A written assessment by senior engineers, sized for the deal.
+              </span>
             </h1>
             <p className="mb-8 max-w-[820px] text-[18px] leading-[1.65] text-fg-secondary">
               For M&amp;A advisors, private-equity buy-side teams, vertical SaaS aggregators, and
-              technical co-founders preparing for an acquirer&apos;s diligence. A written
-              deliverable a buyer&apos;s legal, technical, and finance teams can read and price
+              technical co-founders preparing for an acquirer&apos;s diligence. The deliverable is a
+              report a buyer&apos;s legal, technical, and finance teams can read together and price
               against.
             </p>
             <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -280,8 +282,9 @@ export default function TechDueDiligencePage() {
                 A written assessment, structured for the buyer&apos;s table.
               </h2>
               <p className="text-[17px] leading-[1.65] text-fg-secondary">
-                Six sections, every one defensible in committee. The same artifact whether the
-                commissioning party is buy-side, sell-side, or an advisor running pre-LOI diligence.
+                Six sections, each one defensible in committee. The same deliverable structure
+                whether the commissioning party is buy-side, sell-side, or an advisor running
+                pre-LOI diligence.
               </p>
             </div>
             <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -321,9 +324,8 @@ export default function TechDueDiligencePage() {
                 Stacks we assess. Stacks we refer.
               </h2>
               <p className="text-[17px] leading-[1.65] text-fg-secondary">
-                Specificity over breadth. If the target stack is outside our scope we refer to firms
-                with the right depth, on the intro call, before NDA. We do not fake expertise we do
-                not have.
+                Depth over breadth. If the target stack is outside our scope, we refer to firms with
+                the right depth on the intro call, before NDA.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -345,7 +347,7 @@ export default function TechDueDiligencePage() {
               </div>
               <div className="rounded-xl border border-border-default bg-bg-secondary p-7">
                 <p className="mb-4 font-mono text-[12px] font-semibold tracking-mono text-fg-tertiary uppercase">
-                  Out of scope — referred
+                  Out of scope (referred)
                 </p>
                 <ul className="flex flex-col gap-3 text-[15px] leading-[1.55] text-fg-secondary">
                   {stackOut.map((s) => (
@@ -402,7 +404,7 @@ export default function TechDueDiligencePage() {
                   Pricing
                 </p>
                 <h2 className="font-display text-[32px] leading-[1.1] font-bold tracking-heading text-fg-primary sm:text-[40px]">
-                  Set on the intro call. No contact-form pricing.
+                  Quoted on the intro call. No contact-form pricing.
                 </h2>
               </div>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -415,7 +417,7 @@ export default function TechDueDiligencePage() {
                   </p>
                   <p className="text-[15px] leading-[1.55] text-fg-secondary">
                     Single repository, in-scope stack, narrow scope. Typical for early-stage targets
-                    and pre-LOI sell-side prep.
+                    and pre-LOI sell-side preparation.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 rounded-xl border border-accent-500/40 bg-accent-500/[0.06] p-6">
@@ -426,16 +428,17 @@ export default function TechDueDiligencePage() {
                     {PRICE_TYPICAL}
                   </p>
                   <p className="text-[15px] leading-[1.55] text-fg-secondary">
-                    Multi-repo SaaS, in-scope stack, full deliverable: codebase, dependencies,
-                    architecture, hiring risk, modernization cost range.
+                    Multi-repository SaaS, in-scope stack, full deliverable: codebase, dependencies,
+                    architecture, hiring risk, and modernization cost range.
                   </p>
                 </div>
               </div>
               <p className="text-[15px] leading-[1.65] text-fg-tertiary">
-                Final scope and fee are set on the 30-minute intro call after stack confirmation,
-                deal context, and conflict-of-interest check. Engagements above the typical band are
-                quoted at that point — usually a function of repository count, infrastructure review
-                depth, or reporting requirements specific to the buyer&apos;s investment committee.
+                Final scope and fee are agreed on the 30-minute intro call, after stack
+                confirmation, deal context, and conflict-of-interest check. Engagements above the
+                typical band are quoted at that point. Drivers are usually repository count,
+                infrastructure review depth, and reporting requirements specific to the buyer&apos;s
+                investment committee.
               </p>
               <a
                 href={BOOKING_URL_UTM}
@@ -449,7 +452,7 @@ export default function TechDueDiligencePage() {
           </Container>
         </section>
 
-        {/* 6. Proof — diligence-shaped findings */}
+        {/* 6. Proof: diligence-shaped findings */}
         <section className="bg-bg-secondary py-20">
           <Container>
             <div className="mb-12 max-w-[820px]">
@@ -457,11 +460,11 @@ export default function TechDueDiligencePage() {
                 Anonymized findings
               </p>
               <h2 className="mb-4 font-display text-[36px] leading-[1.1] font-bold tracking-heading text-fg-primary sm:text-[44px]">
-                What previous assessments surfaced.
+                What recent assessments surfaced.
               </h2>
               <p className="text-[17px] leading-[1.65] text-fg-secondary">
-                Two recent engagements, anonymized to vertical and revenue band. Numbers are exact;
-                identifying detail is generalized.
+                Two recent engagements, anonymized to vertical and revenue band. Numbers are exact.
+                Identifying detail is generalized.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -538,16 +541,16 @@ export default function TechDueDiligencePage() {
               </h2>
               <div className="flex flex-col gap-4 text-[16px] leading-[1.7] text-fg-secondary">
                 <p>
-                  Where the assessment identifies remediation work that needs to land before close —
-                  vulnerability remediation, framework upgrades, architectural cleanup,
-                  test-coverage baseline — SprintZero executes a fixed-scope 30-day modernization
+                  Where the assessment identifies remediation work that needs to land before close,
+                  whether vulnerability remediation, framework upgrades, architectural cleanup, or a
+                  test-coverage baseline, SprintZero can execute a fixed-scope 30-day modernization
                   sprint starting at {REMEDIATION_PRICE}. The assessment fee is credited toward the
                   sprint when the same party commissions both.
                 </p>
                 <p>
                   This is optional and disclosed up front. The written assessment stands on its own
-                  and is usable to brief any other vendor, internal team, or post-close engineering
-                  function.
+                  and is usable to brief any other vendor, an internal team, or a post-close
+                  engineering function.
                 </p>
               </div>
               <a
@@ -571,6 +574,9 @@ export default function TechDueDiligencePage() {
                 Stack confirmation, deal context, conflict check, and final scope. Engagements begin
                 under NDA within 48 hours of the call.
               </p>
+              <p className="text-[14px] text-[#7a7a73]">
+                Confidential. NDA on request. No deck required.
+              </p>
               <a
                 href={BOOKING_URL_UTM}
                 target="_blank"
@@ -580,7 +586,7 @@ export default function TechDueDiligencePage() {
                 Book the intro call →
               </a>
               <p className="text-[14px] text-[#a8a8a1]">
-                Async alternative —{" "}
+                Async alternative:{" "}
                 <a
                   href={`mailto:${MARCEL_EMAIL}?subject=Technical%20due%20diligence%20inquiry`}
                   className="underline underline-offset-4 hover:text-[#fafaf9]"
@@ -637,19 +643,19 @@ function SampleReport() {
         <span className="size-2.5 rounded-full bg-fg-tertiary/40" aria-hidden />
         <span className="size-2.5 rounded-full bg-fg-tertiary/40" aria-hidden />
         <span className="ml-3 font-mono text-[11px] tracking-mono text-fg-tertiary uppercase">
-          assessment-report.pdf — anonymized excerpt
+          assessment-report.pdf (anonymized excerpt)
         </span>
       </div>
       <div className="flex flex-col gap-5 p-7 sm:p-9">
         <header className="flex flex-col gap-1 border-b border-border-default pb-5">
           <p className="font-mono text-[11px] font-semibold tracking-mono text-fg-tertiary uppercase">
-            SprintZero — Technical Due Diligence
+            SprintZero · Technical Due Diligence
           </p>
           <p className="font-display text-[20px] font-bold tracking-tight text-fg-primary">
             Target: HIPAA-regulated SaaS · ~$5M ARR · React + Laravel
           </p>
           <p className="font-mono text-[11px] tracking-mono text-fg-tertiary">
-            Prepared for [Acquirer] · Confidential — NDA in force
+            Prepared for [Acquirer] · Confidential. NDA in force
           </p>
         </header>
 
@@ -700,7 +706,7 @@ function SampleReport() {
         </div>
 
         <p className="font-mono text-[11px] tracking-mono text-fg-tertiary">
-          [Sample excerpt — full reports run 18–32 pages depending on scope.]
+          [Sample excerpt. Full reports run 18–32 pages depending on scope.]
         </p>
       </div>
     </figure>
